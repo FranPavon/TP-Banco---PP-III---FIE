@@ -82,17 +82,32 @@
 			<Add library="liboleacc.a" />
 			<Add library="libuxtheme.a" />
 		</Linker>
+		<Unit filename="AgregarCliente.cpp" />
+		<Unit filename="AgregarCliente.h" />
+		<Unit filename="AgregarCuenta.cpp" />
+		<Unit filename="AgregarCuenta.h" />
 		<Unit filename="AppPrincipal.cpp" />
 		<Unit filename="AppPrincipal.h" />
+		<Unit filename="BajaCliente.cpp" />
+		<Unit filename="BajaCliente.h" />
 		<Unit filename="Banco_P_PApp.cpp" />
 		<Unit filename="Banco_P_PApp.h" />
 		<Unit filename="Banco_P_PMain.cpp" />
 		<Unit filename="Banco_P_PMain.h" />
+		<Unit filename="Deposito.cpp" />
+		<Unit filename="Deposito.h" />
+		<Unit filename="Extraccion.cpp" />
+		<Unit filename="Extraccion.h" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="wxsmith/AgregarCliente.wxs" />
+		<Unit filename="wxsmith/AgregarCuenta.wxs" />
 		<Unit filename="wxsmith/AppPrincipal.wxs" />
+		<Unit filename="wxsmith/BajaCliente.wxs" />
 		<Unit filename="wxsmith/Banco_P_Pframe.wxs" />
+		<Unit filename="wxsmith/Deposito.wxs" />
+		<Unit filename="wxsmith/Extraccion.wxs" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">
@@ -100,6 +115,11 @@
 				<resources>
 					<wxFrame wxs="wxsmith/Banco_P_Pframe.wxs" src="Banco_P_PMain.cpp" hdr="Banco_P_PMain.h" fwddecl="0" i18n="1" name="Banco_P_PFrame" language="CPP" />
 					<wxFrame wxs="wxsmith/AppPrincipal.wxs" src="AppPrincipal.cpp" hdr="AppPrincipal.h" fwddecl="0" i18n="1" name="AppPrincipal" language="CPP" />
+					<wxFrame wxs="wxsmith/AgregarCliente.wxs" src="AgregarCliente.cpp" hdr="AgregarCliente.h" fwddecl="0" i18n="1" name="AgregarCliente" language="CPP" />
+					<wxDialog wxs="wxsmith/BajaCliente.wxs" src="BajaCliente.cpp" hdr="BajaCliente.h" fwddecl="0" i18n="1" name="BajaCliente" language="CPP" />
+					<wxDialog wxs="wxsmith/AgregarCuenta.wxs" src="AgregarCuenta.cpp" hdr="AgregarCuenta.h" fwddecl="0" i18n="1" name="AgregarCuenta" language="CPP" />
+					<wxDialog wxs="wxsmith/Deposito.wxs" src="Deposito.cpp" hdr="Deposito.h" fwddecl="0" i18n="1" name="Deposito" language="CPP" />
+					<wxDialog wxs="wxsmith/Extraccion.wxs" src="Extraccion.cpp" hdr="Extraccion.h" fwddecl="0" i18n="1" name="Extraccion" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

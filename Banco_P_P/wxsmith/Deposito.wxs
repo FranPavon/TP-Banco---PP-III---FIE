@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="Deposito">
+		<title>Deposito</title>
+		<size>400,224</size>
+		<fg>#008080</fg>
+		<bg>#303030</bg>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<handler function="OnInit" entry="EVT_INIT_DIALOG" />
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+			<label>Ingrese el monto a depositar</label>
+			<pos>24,80</pos>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+			<maxlength>10</maxlength>
+			<pos>208,80</pos>
+			<size>144,23</size>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+			<label>Debe ser entre 1 y 1.000.000</label>
+			<pos>208,120</pos>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+			<label>CONFIRMAR</label>
+			<pos>56,168</pos>
+			<size>120,32</size>
+			<fg>#FFFFFF</fg>
+			<bg>#606060</bg>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+			<label>SALIR</label>
+			<pos>208,168</pos>
+			<size>120,32</size>
+			<fg>#FFFFFF</fg>
+			<bg>#606060</bg>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButton2Click" entry="EVT_BUTTON" />
+		</object>
+	</object>
+</wxsmith>

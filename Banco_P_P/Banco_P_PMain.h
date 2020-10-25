@@ -30,19 +30,20 @@ class Banco_P_PFrame: public wxFrame
         //(*Handlers(Banco_P_PFrame)
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
+        void OnMenuIngresarSelected(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(Banco_P_PFrame)
         static const long ID_STATICTEXT1;
         static const long ID_STATICBITMAP1;
-        static const long ID_MENUITEM1;
+        static const long ID_MENUINGRESAR;
         static const long idMenuQuit;
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
         //*)
 
         //(*Declarations(Banco_P_PFrame)
-        wxMenuItem* MenuItem3;
+        wxMenuItem* MenuIngresar;
         wxStaticBitmap* StaticBitmap1;
         wxStaticText* StaticText1;
         wxStatusBar* StatusBar1;

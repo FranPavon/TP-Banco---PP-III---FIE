@@ -8,6 +8,7 @@
  **************************************************************/
 
 #include "Banco_P_PMain.h"
+#include "AppPrincipal.h"
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(Banco_P_PFrame)
@@ -47,7 +48,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 //(*IdInit(Banco_P_PFrame)
 const long Banco_P_PFrame::ID_STATICTEXT1 = wxNewId();
 const long Banco_P_PFrame::ID_STATICBITMAP1 = wxNewId();
-const long Banco_P_PFrame::ID_MENUITEM1 = wxNewId();
+const long Banco_P_PFrame::ID_MENUINGRESAR = wxNewId();
 const long Banco_P_PFrame::idMenuQuit = wxNewId();
 const long Banco_P_PFrame::idMenuAbout = wxNewId();
 const long Banco_P_PFrame::ID_STATUSBAR1 = wxNewId();
@@ -69,14 +70,16 @@ Banco_P_PFrame::Banco_P_PFrame(wxWindow* parent,wxWindowID id)
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
     SetClientSize(wxSize(438,470));
+    SetBackgroundColour(wxColour(32,32,32));
     StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Bienvenido al Banco P and P"), wxPoint(104,8), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+    StaticText1->SetForegroundColour(wxColour(0,128,128));
     wxFont StaticText1Font(18,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
     StaticText1->SetFont(StaticText1Font);
     StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\Pancho\\Desktop\\PP III\\TP-Banco---PP-III---FIE\\Banco_P_P\\banco_P_P.jpg"))), wxPoint(40,48), wxDefaultSize, 0, _T("ID_STATICBITMAP1"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
-    MenuItem3 = new wxMenuItem(Menu1, ID_MENUITEM1, _("Ingresar"), _("Ingresar a la aplicación"), wxITEM_NORMAL);
-    Menu1->Append(MenuItem3);
+    MenuIngresar = new wxMenuItem(Menu1, ID_MENUINGRESAR, _("Ingresar"), _("Ingresar a la aplicación"), wxITEM_NORMAL);
+    Menu1->Append(MenuIngresar);
     MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Salir\tAlt-F4"), _("Salir de la aplicación"), wxITEM_NORMAL);
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&Archivo"));
@@ -92,6 +95,7 @@ Banco_P_PFrame::Banco_P_PFrame(wxWindow* parent,wxWindowID id)
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
 
+    Connect(ID_MENUINGRESAR,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&Banco_P_PFrame::OnMenuIngresarSelected);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&Banco_P_PFrame::OnQuit);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&Banco_P_PFrame::OnAbout);
     //*)
@@ -112,4 +116,10 @@ void Banco_P_PFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = "Aplicación realizada con Code:Blocks 20.03 y wxWidgets 3.1";
     wxMessageBox(msg, _("Bienvenido al Banco P&P"));
+}
+
+void Banco_P_PFrame::OnMenuIngresarSelected(wxCommandEvent& event)
+{
+    AppPrincipal *frm = new AppPrincipal (this);
+    frm->Show();
 }

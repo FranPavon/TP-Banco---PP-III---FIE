@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="Extraccion">
+		<fg>#008080</fg>
+		<bg>#303030</bg>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxPanel" name="ID_PANEL1" variable="Extracciones" member="yes">
+			<pos>296,144</pos>
+			<size>400,336</size>
+			<fg>#008080</fg>
+			<bg>#303030</bg>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+				<label>Ingrese el monto a extraer</label>
+				<pos>48,96</pos>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Agency FB</face>
+				</font>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+				<maxlength>7</maxlength>
+				<pos>216,96</pos>
+				<size>136,23</size>
+			</object>
+			<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+				<label>CONFIRMAR</label>
+				<pos>80,216</pos>
+				<size>105,39</size>
+				<fg>#FFFFFF</fg>
+				<bg>#606060</bg>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Agency FB</face>
+				</font>
+			</object>
+			<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+				<label>Label</label>
+				<pos>224,216</pos>
+				<size>104,39</size>
+				<fg>#FFFFFF</fg>
+				<bg>#606060</bg>
+				<font>
+					<size>14</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Agency FB</face>
+				</font>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+				<label>Debe ser entre 1 y 1.000.000</label>
+				<pos>216,136</pos>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Agency FB</face>
+				</font>
+			</object>
+		</object>
+	</object>
+</wxsmith>

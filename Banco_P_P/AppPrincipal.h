@@ -6,6 +6,7 @@
 #include <wx/frame.h>
 #include <wx/listctrl.h>
 #include <wx/statbox.h>
+#include <wx/stattext.h>
 //*)
 
 class AppPrincipal: public wxFrame
@@ -16,19 +17,20 @@ class AppPrincipal: public wxFrame
 		virtual ~AppPrincipal();
 
 		//(*Declarations(AppPrincipal)
-		wxButton* Button1;
-		wxButton* Button2;
-		wxButton* Button3;
-		wxButton* Button4;
-		wxButton* Button5;
-		wxButton* Button6;
-		wxButton* Button7;
+		wxButton* ButtonAgregarCliente;
+		wxButton* ButtonAgregarCuenta;
+		wxButton* ButtonBajaCliente;
+		wxButton* ButtonBajaCuenta;
+		wxButton* ButtonDeposito;
+		wxButton* ButtonExtraccion;
+		wxButton* ButtonModificarCliente;
 		wxListCtrl* ListCtrl1;
 		wxListView* ListView1;
 		wxListView* ListView2;
 		wxStaticBox* StaticBox1;
 		wxStaticBox* StaticBox2;
 		wxStaticBox* StaticBox3;
+		wxStaticText* StaticText1;
 		//*)
 
 	protected:
@@ -37,16 +39,17 @@ class AppPrincipal: public wxFrame
 		static const long ID_STATICBOX1;
 		static const long ID_STATICBOX2;
 		static const long ID_STATICBOX3;
-		static const long ID_BUTTON1;
-		static const long ID_BUTTON2;
-		static const long ID_BUTTON3;
-		static const long ID_BUTTON4;
-		static const long ID_BUTTON5;
-		static const long ID_BUTTON6;
-		static const long ID_BUTTON7;
+		static const long ID_BUTTONAGREGARCLIENTE;
+		static const long ID_BUTTONMODIFICARCLIENTE;
+		static const long ID_BUTTONBAJACLIENTE;
+		static const long ID_BUTTONAGREGARCUENTA;
+		static const long ID_BUTTONBAJACUENTA;
+		static const long ID_BUTTONEXTRACCION;
+		static const long ID_BUTTONDEPOSITO;
 		static const long ID_LISTVIEW1;
 		static const long ID_LISTCTRL1;
 		static const long ID_LISTVIEW2;
+		static const long ID_STATICTEXT1;
 		//*)
 
 	private:
@@ -54,6 +57,11 @@ class AppPrincipal: public wxFrame
 		//(*Handlers(AppPrincipal)
 		void OnButton1Click(wxCommandEvent& event);
 		void OnButton2Click(wxCommandEvent& event);
+		void OnButtonAgregarClienteClick(wxCommandEvent& event);
+		void OnButtonBajaClienteClick(wxCommandEvent& event);
+		void OnButtonAgregarCuentaClick(wxCommandEvent& event);
+		void OnButtonDepositoClick(wxCommandEvent& event);
+		void OnButtonExtraccionClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

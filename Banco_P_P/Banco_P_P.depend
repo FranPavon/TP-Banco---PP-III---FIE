@@ -1500,7 +1500,7 @@
 1595438406 c:\wxwidgets\include\wx\univ\theme.h
 	"wx/string.h"
 
-1603658222 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.h
+1603660759 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.h
 	<wx/frame.h>
 	<wx/menu.h>
 	<wx/statbmp.h>
@@ -1664,8 +1664,9 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\stattext.h
 
-1603658329 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.cpp
+1603661528 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.cpp
 	"Banco_P_PMain.h"
+	"AppPrincipal.h"
 	<wx/msgdlg.h>
 	<wx/bitmap.h>
 	<wx/font.h>
@@ -1761,18 +1762,23 @@
 1595438406 c:\wxwidgets\include\wx\qt\msgdlg.h
 	"wx/msgdlg.h"
 
-1603659612 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\appprincipal.cpp
+1603665827 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\appprincipal.cpp
 	"AppPrincipal.h"
+	"AgregarCliente.h"
+	"BajaCliente.h"
+	"AgregarCuenta.h"
+	"Deposito.h"
+	"Extraccion.h"
 	<wx/font.h>
 	<wx/intl.h>
-	<wx/settings.h>
 	<wx/string.h>
 
-1603659490 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\appprincipal.h
+1603665430 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\appprincipal.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/listctrl.h>
 	<wx/statbox.h>
+	<wx/stattext.h>
 
 1595438406 c:\wxwidgets\include\wx\listctrl.h
 	"wx/defs.h"
@@ -1959,4 +1965,186 @@
 1595438406 c:\wxwidgets\include\wx\osx\statbox.h
 
 1595438406 c:\wxwidgets\include\wx\qt\statbox.h
+
+1603662782 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.cpp
+	"AgregarCliente.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603662741 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1603663367 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+	"BajaCliente.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603663254 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/listctrl.h>
+	<wx/stattext.h>
+
+1603664176 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.h
+	<wx/button.h>
+	<wx/choice.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1595438406 c:\wxwidgets\include\wx\choice.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/choice.h"
+	"wx/msw/choice.h"
+	"wx/motif/choice.h"
+	"wx/gtk/choice.h"
+	"wx/gtk1/choice.h"
+	"wx/osx/choice.h"
+	"wx/qt/choice.h"
+
+1595438406 c:\wxwidgets\include\wx\ctrlsub.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/control.h"
+	<vector>
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
+	"wx/qt/ctrlsub.h"
+
+1595438406 c:\wxwidgets\include\wx\msw\ctrlsub.h
+
+1595438406 c:\wxwidgets\include\wx\motif\ctrlsub.h
+	"wx/dynarray.h"
+	"wx/generic/ctrlsub.h"
+
+1595438406 c:\wxwidgets\include\wx\generic\ctrlsub.h
+	"wx/dynarray.h"
+
+1595438406 c:\wxwidgets\include\wx\qt\ctrlsub.h
+
+1595438406 c:\wxwidgets\include\wx\univ\choice.h
+	"wx/combobox.h"
+
+1595438406 c:\wxwidgets\include\wx\combobox.h
+	"wx/defs.h"
+	"wx/textctrl.h"
+	"wx/ctrlsub.h"
+	"wx/textentry.h"
+	"wx/univ/combobox.h"
+	"wx/msw/combobox.h"
+	"wx/motif/combobox.h"
+	"wx/gtk/combobox.h"
+	"wx/gtk1/combobox.h"
+	"wx/osx/combobox.h"
+	"wx/qt/combobox.h"
+
+1595438406 c:\wxwidgets\include\wx\univ\combobox.h
+	"wx/combo.h"
+
+1595438406 c:\wxwidgets\include\wx\combo.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/renderer.h"
+	"wx/bitmap.h"
+	"wx/textentry.h"
+	"wx/time.h"
+	"wx/msw/combo.h"
+	"wx/generic/combo.h"
+
+1595438406 c:\wxwidgets\include\wx\time.h
+	"wx/longlong.h"
+
+1595438406 c:\wxwidgets\include\wx\msw\combo.h
+	"wx/timer.h"
+
+1595438406 c:\wxwidgets\include\wx\timer.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/longlong.h"
+	"wx/event.h"
+	"wx/stopwatch.h"
+	"wx/utils.h"
+
+1595438406 c:\wxwidgets\include\wx\stopwatch.h
+	"wx/defs.h"
+	"wx/longlong.h"
+	"wx/time.h"
+
+1595438406 c:\wxwidgets\include\wx\generic\combo.h
+	"wx/containr.h"
+
+1595438406 c:\wxwidgets\include\wx\msw\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1595438406 c:\wxwidgets\include\wx\motif\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1595438406 c:\wxwidgets\include\wx\gtk\combobox.h
+	"wx/choice.h"
+
+1595438406 c:\wxwidgets\include\wx\gtk1\combobox.h
+	"wx/defs.h"
+	"wx/object.h"
+
+1595438406 c:\wxwidgets\include\wx\osx\combobox.h
+	"wx/containr.h"
+	"wx/choice.h"
+	"wx/textctrl.h"
+
+1595438406 c:\wxwidgets\include\wx\qt\combobox.h
+	"wx/choice.h"
+
+1595438406 c:\wxwidgets\include\wx\msw\choice.h
+
+1595438406 c:\wxwidgets\include\wx\motif\choice.h
+	"wx/clntdata.h"
+	"wx/dynarray.h"
+
+1595438406 c:\wxwidgets\include\wx\gtk\choice.h
+
+1595438406 c:\wxwidgets\include\wx\gtk1\choice.h
+
+1595438406 c:\wxwidgets\include\wx\osx\choice.h
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/arrstr.h"
+
+1595438406 c:\wxwidgets\include\wx\qt\choice.h
+
+1603664409 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+	"AgregarCuenta.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603665080 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\deposito.cpp
+	"Deposito.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603664938 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\deposito.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1603664547 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\extraccion.cpp
+	"Extraccion.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1603666379 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\extraccion.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
 
