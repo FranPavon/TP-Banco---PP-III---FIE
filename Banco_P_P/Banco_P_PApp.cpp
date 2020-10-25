@@ -2,7 +2,7 @@
  * Name:      Banco_P_PApp.cpp
  * Purpose:   Code for Application Class
  * Author:    Horacio Patricelli & Francisco Pavon (pavonfrancisco@gmail.com)
- * Created:   2020-10-23
+ * Created:   2020-10-25
  * Copyright: Horacio Patricelli & Francisco Pavon (https://github.com/CTPavon)
  * License:
  **************************************************************/

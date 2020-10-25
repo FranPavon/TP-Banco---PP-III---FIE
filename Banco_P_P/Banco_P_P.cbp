@@ -20,23 +20,10 @@
 					<Add directory="C:/wxWidgets/lib/gcc_lib/mswu" />
 				</ResourceCompiler>
 				<Linker>
-					<Add library="libwxmsw31u_richtext.a" />
-					<Add library="libwxmsw31u_xrc.a" />
-					<Add library="libwxmsw31u_aui.a" />
-					<Add library="libwxmsw31u_media.a" />
-					<Add library="libwxbase31u_net.a" />
-					<Add library="libwxmsw31u_gl.a" />
-					<Add library="libwxbase31u_xml.a" />
-					<Add library="libwxmsw31u_adv.a" />
-					<Add library="libwxmsw31u_html.a" />
 					<Add library="libwxmsw31u_core.a" />
 					<Add library="libwxbase31u.a" />
 					<Add library="libwxpng.a" />
-					<Add library="libwxjpeg.a" />
-					<Add library="libwxtiff.a" />
 					<Add library="libwxzlib.a" />
-					<Add library="libwxregexu.a" />
-					<Add library="libwxexpat.a" />
 					<Add directory="C:/wxWidgets/lib/gcc_lib" />
 				</Linker>
 			</Target>
@@ -55,23 +42,10 @@
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="libwxmsw31u_richtext.a" />
-					<Add library="libwxmsw31u_xrc.a" />
-					<Add library="libwxmsw31u_aui.a" />
-					<Add library="libwxmsw31u_media.a" />
-					<Add library="libwxbase31u_net.a" />
-					<Add library="libwxmsw31u_gl.a" />
-					<Add library="libwxbase31u_xml.a" />
-					<Add library="libwxmsw31u_adv.a" />
-					<Add library="libwxmsw31u_html.a" />
 					<Add library="libwxmsw31u_core.a" />
 					<Add library="libwxbase31u.a" />
 					<Add library="libwxpng.a" />
-					<Add library="libwxjpeg.a" />
-					<Add library="libwxtiff.a" />
 					<Add library="libwxzlib.a" />
-					<Add library="libwxregexu.a" />
-					<Add library="libwxexpat.a" />
 					<Add directory="C:/wxWidgets/lib/gcc_lib" />
 				</Linker>
 			</Target>
@@ -108,6 +82,8 @@
 			<Add library="liboleacc.a" />
 			<Add library="libuxtheme.a" />
 		</Linker>
+		<Unit filename="AppPrincipal.cpp" />
+		<Unit filename="AppPrincipal.h" />
 		<Unit filename="Banco_P_PApp.cpp" />
 		<Unit filename="Banco_P_PApp.h" />
 		<Unit filename="Banco_P_PMain.cpp" />
@@ -115,12 +91,15 @@
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="wxsmith/AppPrincipal.wxs" />
 		<Unit filename="wxsmith/Banco_P_Pframe.wxs" />
 		<Extensions>
+			<lib_finder disable_auto="1" />
 			<wxsmith version="1">
 				<gui name="wxWidgets" src="Banco_P_PApp.cpp" main="Banco_P_PFrame" init_handlers="necessary" language="CPP" />
 				<resources>
 					<wxFrame wxs="wxsmith/Banco_P_Pframe.wxs" src="Banco_P_PMain.cpp" hdr="Banco_P_PMain.h" fwddecl="0" i18n="1" name="Banco_P_PFrame" language="CPP" />
+					<wxFrame wxs="wxsmith/AppPrincipal.wxs" src="AppPrincipal.cpp" hdr="AppPrincipal.h" fwddecl="0" i18n="1" name="AppPrincipal" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

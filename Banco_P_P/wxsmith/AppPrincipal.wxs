@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="AppPrincipal">
+		<centered>1</centered>
+		<size>1053,468</size>
+		<hidden>1</hidden>
+		<id_arg>0</id_arg>
+		<object class="wxStaticBox" name="ID_STATICBOX1" variable="StaticBox1" member="yes">
+			<label>Clientes</label>
+			<pos>32,48</pos>
+			<size>456,400</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticBox" name="ID_STATICBOX2" variable="StaticBox2" member="yes">
+			<label>Cuentas</label>
+			<pos>584,48</pos>
+			<size>432,184</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticBox" name="ID_STATICBOX3" variable="StaticBox3" member="yes">
+			<label>Movimientos</label>
+			<pos>584,248</pos>
+			<size>432,200</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+			<label>Agregar</label>
+			<pos>64,88</pos>
+			<size>104,23</size>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+			<handler function="OnButton1Click" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+			<label>Modificar</label>
+			<pos>208,88</pos>
+			<size>104,23</size>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+			<handler function="OnButton2Click" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON3" variable="Button3" member="yes">
+			<label>Baja</label>
+			<pos>344,88</pos>
+			<size>104,23</size>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+		</object>
+		<object class="wxButton" name="ID_BUTTON4" variable="Button4" member="yes">
+			<label>Agregar</label>
+			<pos>616,72</pos>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+		</object>
+		<object class="wxButton" name="ID_BUTTON5" variable="Button5" member="yes">
+			<label>Baja</label>
+			<pos>728,72</pos>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+		</object>
+		<object class="wxButton" name="ID_BUTTON6" variable="Button6" member="yes">
+			<label>Extracción</label>
+			<pos>736,272</pos>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+		</object>
+		<object class="wxButton" name="ID_BUTTON7" variable="Button7" member="yes">
+			<label>Depósito</label>
+			<pos>616,272</pos>
+			<bg>wxSYS_COLOUR_MENUHILIGHT</bg>
+		</object>
+		<object class="wxListView" name="ID_LISTVIEW1" variable="ListView1" member="yes">
+			<pos>64,136</pos>
+			<size>392,280</size>
+		</object>
+		<object class="wxListCtrl" name="ID_LISTCTRL1" variable="ListCtrl1" member="yes">
+			<pos>608,104</pos>
+			<size>384,104</size>
+		</object>
+		<object class="wxListView" name="ID_LISTVIEW2" variable="ListView2" member="yes">
+			<pos>608,304</pos>
+			<size>384,120</size>
+		</object>
+	</object>
+</wxsmith>

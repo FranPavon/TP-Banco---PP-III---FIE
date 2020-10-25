@@ -1,30 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
-    <object class="wxFrame" name="Banco_P_PFrame">
-        <object class="wxMenuBar" variable="MenuBar1" member="no">
-            <object class="wxMenu" variable="Menu1" member="no">
-                <label>&amp;File</label>
-                <object class="wxMenuItem" name="idMenuQuit" variable="MenuItem1" member="no">
-                    <label>Quit</label>
-                    <accel>Alt-F4</accel>
-                    <help>Quit the application</help>
-                    <handler function="OnQuit" entry="EVT_MENU" />
-                </object>
-            </object>
-            <object class="wxMenu" variable="Menu2" member="no">
-                <label>Help</label>
-                <object class="wxMenuItem" name="idMenuAbout" variable="MenuItem2" member="no">
-                    <label>About</label>
-                    <accel>F1</accel>
-                    <help>Show info about this application</help>
-                    <handler function="OnAbout" entry="EVT_MENU" />
-                </object>
-            </object>
-        </object>
-        <object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
-            <fields>1</fields>
-            <widths>-1</widths>
-            <styles>wxSB_NORMAL</styles>
-        </object>
-    </object>
+	<object class="wxFrame" name="Banco_P_PFrame">
+		<size>438,470</size>
+		<id_arg>0</id_arg>
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+			<label>Bienvenido al Banco P and P</label>
+			<pos>104,8</pos>
+			<font>
+				<size>18</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+			<bitmap>C:\Users\Pancho\Desktop\PP III\TP-Banco---PP-III---FIE\Banco_P_P\banco_P_P.jpg</bitmap>
+			<pos>40,48</pos>
+		</object>
+		<object class="wxMenuBar" variable="MenuBar1" member="no">
+			<object class="wxMenu" variable="Menu1" member="no">
+				<label>&amp;Archivo</label>
+				<object class="wxMenuItem" name="ID_MENUITEM1" variable="MenuItem3" member="yes">
+					<label>Ingresar</label>
+					<help>Ingresar a la aplicación</help>
+				</object>
+				<object class="wxMenuItem" name="idMenuQuit" variable="MenuItem1" member="no">
+					<label>Salir</label>
+					<accel>Alt-F4</accel>
+					<help>Salir de la aplicación</help>
+					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu2" member="no">
+				<label>Ayuda</label>
+				<object class="wxMenuItem" name="idMenuAbout" variable="MenuItem2" member="no">
+					<label>Sobre</label>
+					<accel>F1</accel>
+					<help>Muestra la información de la aplicación</help>
+					<handler function="OnAbout" entry="EVT_MENU" />
+				</object>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="ID_STATUSBAR1" variable="StatusBar1" member="yes">
+			<fields>1</fields>
+			<widths>-1</widths>
+			<styles>wxSB_NORMAL</styles>
+		</object>
+	</object>
 </wxsmith>
