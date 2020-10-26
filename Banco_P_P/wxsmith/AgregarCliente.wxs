@@ -98,10 +98,10 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGAR" variable="ButtonAgregar" member="yes">
 			<label>Agregar</label>
-			<pos>144,328</pos>
-			<size>192,32</size>
-			<fg>#FFFFFF</fg>
-			<bg>#606060</bg>
+			<pos>80,328</pos>
+			<size>128,32</size>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
 			<font>
 				<size>14</size>
 				<style>normal</style>
@@ -110,6 +110,22 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
+			<label>Salir</label>
+			<pos>264,328</pos>
+			<size>128,31</size>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonSalirClick" entry="EVT_BUTTON" />
 		</object>
 	</object>
 </wxsmith>

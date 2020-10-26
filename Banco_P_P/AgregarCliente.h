@@ -17,6 +17,7 @@ class AgregarCliente: public wxFrame
 
 		//(*Declarations(AgregarCliente)
 		wxButton* ButtonAgregar;
+		wxButton* ButtonSalir;
 		wxStaticText* StaticText1;
 		wxStaticText* StaticText2;
 		wxStaticText* StaticText3;
@@ -45,11 +46,13 @@ class AgregarCliente: public wxFrame
 		static const long ID_TEXTCTRL5;
 		static const long ID_STATICTEXT6;
 		static const long ID_BUTTONAGREGAR;
+		static const long ID_BUTTONSALIR;
 		//*)
 
 	private:
 
 		//(*Handlers(AgregarCliente)
+		void OnButtonSalirClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

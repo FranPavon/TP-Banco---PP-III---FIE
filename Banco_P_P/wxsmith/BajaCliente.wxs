@@ -21,10 +21,10 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
 			<label>CONFIRMAR</label>
-			<pos>128,184</pos>
+			<pos>56,184</pos>
 			<size>136,32</size>
-			<fg>#FFFFFF</fg>
-			<bg>#606060</bg>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
 			<font>
 				<size>14</size>
 				<style>normal</style>
@@ -37,6 +37,21 @@
 		<object class="wxListView" name="ID_LISTVIEW1" variable="ListView1" member="yes">
 			<pos>56,88</pos>
 			<size>288,56</size>
+		</object>
+		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
+			<label>SALIR</label>
+			<pos>208,184</pos>
+			<size>136,31</size>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 		</object>
 	</object>
 </wxsmith>

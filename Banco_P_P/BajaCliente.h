@@ -17,6 +17,7 @@ class BajaCliente: public wxDialog
 
 		//(*Declarations(BajaCliente)
 		wxButton* Button1;
+		wxButton* ButtonSalir;
 		wxListView* ListView1;
 		wxStaticText* StaticText1;
 		//*)
@@ -27,6 +28,7 @@ class BajaCliente: public wxDialog
 		static const long ID_STATICTEXT1;
 		static const long ID_BUTTON1;
 		static const long ID_LISTVIEW1;
+		static const long ID_BUTTONSALIR;
 		//*)
 
 	private:

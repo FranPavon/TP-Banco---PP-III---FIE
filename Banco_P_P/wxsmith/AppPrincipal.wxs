@@ -56,52 +56,112 @@
 		<object class="wxButton" name="ID_BUTTONAGREGARCLIENTE" variable="ButtonAgregarCliente" member="yes">
 			<label>Agregar</label>
 			<pos>64,88</pos>
-			<size>104,23</size>
-			<fg>#F0F0F0</fg>
+			<size>104,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 			<handler function="OnButtonAgregarClienteClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONMODIFICARCLIENTE" variable="ButtonModificarCliente" member="yes">
 			<label>Modificar</label>
 			<pos>208,88</pos>
-			<size>104,23</size>
-			<fg>#F0F0F0</fg>
+			<size>104,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 			<handler function="OnButton2Click" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACLIENTE" variable="ButtonBajaCliente" member="yes">
 			<label>Baja</label>
 			<pos>344,88</pos>
-			<size>104,23</size>
-			<fg>#F0F0F0</fg>
+			<size>104,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 			<handler function="OnButtonBajaClienteClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCUENTA" variable="ButtonAgregarCuenta" member="yes">
 			<label>Agregar</label>
 			<pos>616,72</pos>
-			<fg>#F0F0F0</fg>
+			<size>75,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 			<handler function="OnButtonAgregarCuentaClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACUENTA" variable="ButtonBajaCuenta" member="yes">
 			<label>Baja</label>
 			<pos>728,72</pos>
-			<fg>#F0F0F0</fg>
+			<size>75,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 		</object>
 		<object class="wxButton" name="ID_BUTTONEXTRACCION" variable="ButtonExtraccion" member="yes">
 			<label>Extracción</label>
 			<pos>728,272</pos>
-			<fg>#F0F0F0</fg>
+			<size>76,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 			<handler function="OnButtonExtraccionClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONDEPOSITO" variable="ButtonDeposito" member="yes">
 			<label>Depósito</label>
 			<pos>616,272</pos>
-			<fg>#F0F0F0</fg>
+			<size>75,32</size>
+			<fg>#000000</fg>
 			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
 			<handler function="OnButtonDepositoClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxListView" name="ID_LISTVIEW1" variable="ListView1" member="yes">
@@ -109,12 +169,12 @@
 			<size>392,280</size>
 		</object>
 		<object class="wxListCtrl" name="ID_LISTCTRL1" variable="ListCtrl1" member="yes">
-			<pos>608,104</pos>
-			<size>384,104</size>
+			<pos>608,112</pos>
+			<size>384,96</size>
 		</object>
 		<object class="wxListView" name="ID_LISTVIEW2" variable="ListView2" member="yes">
-			<pos>608,304</pos>
-			<size>384,120</size>
+			<pos>608,320</pos>
+			<size>384,104</size>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
 			<label>Sistema de administración de clientes, cuentas y moviemientos - Banco P and P</label>

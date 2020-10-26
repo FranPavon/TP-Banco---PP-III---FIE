@@ -19,6 +19,7 @@ const long AgregarCliente::ID_STATICTEXT5 = wxNewId();
 const long AgregarCliente::ID_TEXTCTRL5 = wxNewId();
 const long AgregarCliente::ID_STATICTEXT6 = wxNewId();
 const long AgregarCliente::ID_BUTTONAGREGAR = wxNewId();
+const long AgregarCliente::ID_BUTTONSALIR = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(AgregarCliente,wxFrame)
@@ -57,11 +58,18 @@ AgregarCliente::AgregarCliente(wxWindow* parent,wxWindowID id,const wxPoint& pos
 	StaticText6 = new wxStaticText(this, ID_STATICTEXT6, _("Todos los campos son obligatorios"), wxPoint(128,280), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
 	wxFont StaticText6Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText6->SetFont(StaticText6Font);
-	ButtonAgregar = new wxButton(this, ID_BUTTONAGREGAR, _("Agregar"), wxPoint(144,328), wxSize(192,32), 0, wxDefaultValidator, _T("ID_BUTTONAGREGAR"));
-	ButtonAgregar->SetForegroundColour(wxColour(255,255,255));
-	ButtonAgregar->SetBackgroundColour(wxColour(96,96,96));
+	ButtonAgregar = new wxButton(this, ID_BUTTONAGREGAR, _("Agregar"), wxPoint(80,328), wxSize(128,32), 0, wxDefaultValidator, _T("ID_BUTTONAGREGAR"));
+	ButtonAgregar->SetForegroundColour(wxColour(0,0,0));
+	ButtonAgregar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonAgregarFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonAgregar->SetFont(ButtonAgregarFont);
+	ButtonSalir = new wxButton(this, ID_BUTTONSALIR, _("Salir"), wxPoint(264,328), wxSize(128,31), 0, wxDefaultValidator, _T("ID_BUTTONSALIR"));
+	ButtonSalir->SetForegroundColour(wxColour(0,0,0));
+	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
+	wxFont ButtonSalirFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
+	ButtonSalir->SetFont(ButtonSalirFont);
+
+	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCliente::OnButtonSalirClick);
 	//*)
 }
 
@@ -71,3 +79,8 @@ AgregarCliente::~AgregarCliente()
 	//*)
 }
 
+
+void AgregarCliente::OnButtonSalirClick(wxCommandEvent& event)
+{
+    Close ();
+}
