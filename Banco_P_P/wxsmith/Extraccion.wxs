@@ -36,11 +36,11 @@
 			</font>
 		</object>
 		<object class="wxButton" name="ID_BUTTONCONFIRMAR" variable="ButtonConfirmar" member="yes">
-			<label>CONFIRMAR</label>
+			<label>Confirmar</label>
 			<pos>88,200</pos>
 			<size>104,39</size>
-			<fg>#FFFFFF</fg>
-			<bg>#606060</bg>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
 			<font>
 				<size>14</size>
 				<style>normal</style>
@@ -52,11 +52,11 @@
 			<handler function="OnButton1Click" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
-			<label>SALIR</label>
+			<label>Salir</label>
 			<pos>224,200</pos>
 			<size>104,39</size>
-			<fg>#FFFFFF</fg>
-			<bg>#606060</bg>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
 			<font>
 				<size>14</size>
 				<style>normal</style>

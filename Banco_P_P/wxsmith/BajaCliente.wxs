@@ -19,8 +19,8 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
-			<label>CONFIRMAR</label>
+		<object class="wxButton" name="ID_BUTTONCONFIRMAR" variable="ButtonConfirmar" member="yes">
+			<label>Confirmar</label>
 			<pos>56,184</pos>
 			<size>136,32</size>
 			<fg>#000000</fg>
@@ -39,7 +39,7 @@
 			<size>288,56</size>
 		</object>
 		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
-			<label>SALIR</label>
+			<label>Salir</label>
 			<pos>208,184</pos>
 			<size>136,31</size>
 			<fg>#000000</fg>
@@ -52,6 +52,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonSalirClick" entry="EVT_BUTTON" />
 		</object>
 	</object>
 </wxsmith>

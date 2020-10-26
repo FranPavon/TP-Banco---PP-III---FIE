@@ -2149,3 +2149,121 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
+1603720153 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.cpp
+	"AgregarCliente.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603720153 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1603722722 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+	"AgregarCuenta.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603722689 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.h
+	<wx/button.h>
+	<wx/choice.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1603720153 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\appprincipal.cpp
+	"AppPrincipal.h"
+	"AgregarCliente.h"
+	"BajaCliente.h"
+	"AgregarCuenta.h"
+	"Deposito.h"
+	"Extraccion.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603724175 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\appprincipal.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/listctrl.h>
+	<wx/statbox.h>
+	<wx/stattext.h>
+
+1603721534 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\bajacliente.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/listctrl.h>
+	<wx/stattext.h>
+
+1603721828 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\deposito.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1603720153 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\extraccion.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1603721565 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+	"BajaCliente.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603720153 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\banco_p_papp.cpp
+	"Banco_P_PApp.h"
+	"Banco_P_PMain.h"
+	<wx/image.h>
+
+1603720153 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\banco_p_papp.h
+	<wx/app.h>
+
+1603720153 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.h
+	<wx/frame.h>
+	<wx/menu.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	<wx/statusbr.h>
+
+1603720153 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.cpp
+	"Banco_P_PMain.h"
+	"AppPrincipal.h"
+	<wx/msgdlg.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603721875 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\deposito.cpp
+	"Deposito.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603722254 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\extraccion.cpp
+	"Extraccion.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603720154 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\resource.rc
+	"wx/msw/wx.rc"
+
+1603723861 source:c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.cpp
+	"BajaCuenta.h"
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1603723717 c:\users\usuario\desktop\tp progra 3\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.h
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/stattext.h>
+

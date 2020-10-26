@@ -131,6 +131,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonBajaCuentaClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONEXTRACCION" variable="ButtonExtraccion" member="yes">
 			<label>Extracción</label>

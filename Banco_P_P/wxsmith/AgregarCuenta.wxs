@@ -95,12 +95,12 @@
 			<pos>200,168</pos>
 			<size>136,23</size>
 		</object>
-		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
-			<label>CONFIRMAR</label>
-			<pos>120,216</pos>
+		<object class="wxButton" name="ID_BUTTONCONFIRMAR" variable="ButtonConfirmar" member="yes">
+			<label>Confirmar</label>
+			<pos>24,224</pos>
 			<size>160,48</size>
-			<fg>#FFFFFF</fg>
-			<bg>#606060</bg>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
 			<font>
 				<size>14</size>
 				<style>normal</style>
@@ -109,6 +109,20 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
+			<label>Salir</label>
+			<pos>208,224</pos>
+			<size>152,48</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonSalirClick" entry="EVT_BUTTON" />
 		</object>
 	</object>
 </wxsmith>

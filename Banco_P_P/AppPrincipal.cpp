@@ -2,8 +2,10 @@
 #include "AgregarCliente.h"
 #include "BajaCliente.h"
 #include "AgregarCuenta.h"
+#include "BajaCuenta.h"
 #include "Deposito.h"
 #include "Extraccion.h"
+
 
 //(*InternalHeaders(AppPrincipal)
 #include <wx/font.h>
@@ -103,6 +105,7 @@ AppPrincipal::AppPrincipal(wxWindow* parent,wxWindowID id)
 	Connect(ID_BUTTONMODIFICARCLIENTE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButton2Click);
 	Connect(ID_BUTTONBAJACLIENTE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonBajaClienteClick);
 	Connect(ID_BUTTONAGREGARCUENTA,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonAgregarCuentaClick);
+	Connect(ID_BUTTONBAJACUENTA,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonBajaCuentaClick);
 	Connect(ID_BUTTONEXTRACCION,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonExtraccionClick);
 	Connect(ID_BUTTONDEPOSITO,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonDepositoClick);
 	//*)
@@ -141,6 +144,7 @@ void AppPrincipal::OnButtonAgregarCuentaClick(wxCommandEvent& event)
     dlg-> Show();
 }
 
+
 void AppPrincipal::OnButtonDepositoClick(wxCommandEvent& event)
 {
     Deposito *dlg = new Deposito(this);
@@ -152,3 +156,10 @@ void AppPrincipal::OnButtonExtraccionClick(wxCommandEvent& event)
     Extraccion *dlg = new Extraccion(this);
     dlg-> Show();
 }
+
+void AppPrincipal::OnButtonBajaCuentaClick(wxCommandEvent& event)
+{
+    BajaCuenta *dlg = new BajaCuenta (this);
+    dlg-> Show();
+}
+

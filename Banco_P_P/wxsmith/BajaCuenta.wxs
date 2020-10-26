@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="BajaCuenta">
+		<size>404,288</size>
+		<fg>#008080</fg>
+		<bg>#303030</bg>
+		<object class="wxButton" name="ID_BUTTONCONFIRMAR" variable="ButtonConfirmar" member="yes">
+			<label>Confirmar</label>
+			<pos>48,208</pos>
+			<size>128,40</size>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
+			<label>Salir</label>
+			<pos>216,208</pos>
+			<size>120,40</size>
+			<fg>#000000</fg>
+			<bg>#008080</bg>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonSalirClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+			<label>Desea dar de baja la siguiente cuenta?</label>
+			<pos>88,48</pos>
+			<size>272,48</size>
+			<font>
+				<size>14</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+			<label>DNI titular: </label>
+			<pos>40,104</pos>
+			<size>72,16</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+			<label>Nro cuenta: </label>
+			<pos>40,144</pos>
+			<size>40,16</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+			<label>xxxxxxxx</label>
+			<pos>136,104</pos>
+			<size>120,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText5" member="yes">
+			<label>xxxxxxxx</label>
+			<pos>136,144</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+	</object>
+</wxsmith>

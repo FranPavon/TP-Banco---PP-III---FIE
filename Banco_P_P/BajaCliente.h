@@ -16,7 +16,7 @@ class BajaCliente: public wxDialog
 		virtual ~BajaCliente();
 
 		//(*Declarations(BajaCliente)
-		wxButton* Button1;
+		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
 		wxListView* ListView1;
 		wxStaticText* StaticText1;
@@ -26,7 +26,7 @@ class BajaCliente: public wxDialog
 
 		//(*Identifiers(BajaCliente)
 		static const long ID_STATICTEXT1;
-		static const long ID_BUTTON1;
+		static const long ID_BUTTONCONFIRMAR;
 		static const long ID_LISTVIEW1;
 		static const long ID_BUTTONSALIR;
 		//*)
@@ -34,6 +34,7 @@ class BajaCliente: public wxDialog
 	private:
 
 		//(*Handlers(BajaCliente)
+		void OnButtonSalirClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

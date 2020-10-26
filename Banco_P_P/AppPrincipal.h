@@ -62,6 +62,7 @@ class AppPrincipal: public wxFrame
 		void OnButtonAgregarCuentaClick(wxCommandEvent& event);
 		void OnButtonDepositoClick(wxCommandEvent& event);
 		void OnButtonExtraccionClick(wxCommandEvent& event);
+		void OnButtonBajaCuentaClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

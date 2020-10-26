@@ -34,14 +34,14 @@ Extraccion::Extraccion(wxWindow* parent,wxWindowID id,const wxPoint& pos,const w
 	StaticText2 = new wxStaticText(this, ID_STATICTEXT2, _("Debe ser entre 1 y 1.000.000"), wxPoint(224,136), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	wxFont StaticText2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText2->SetFont(StaticText2Font);
-	ButtonConfirmar = new wxButton(this, ID_BUTTONCONFIRMAR, _("CONFIRMAR"), wxPoint(88,200), wxSize(104,39), 0, wxDefaultValidator, _T("ID_BUTTONCONFIRMAR"));
-	ButtonConfirmar->SetForegroundColour(wxColour(255,255,255));
-	ButtonConfirmar->SetBackgroundColour(wxColour(96,96,96));
+	ButtonConfirmar = new wxButton(this, ID_BUTTONCONFIRMAR, _("Confirmar"), wxPoint(88,200), wxSize(104,39), 0, wxDefaultValidator, _T("ID_BUTTONCONFIRMAR"));
+	ButtonConfirmar->SetForegroundColour(wxColour(0,0,0));
+	ButtonConfirmar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonConfirmarFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonConfirmar->SetFont(ButtonConfirmarFont);
-	ButtonSalir = new wxButton(this, ID_BUTTONSALIR, _("SALIR"), wxPoint(224,200), wxSize(104,39), 0, wxDefaultValidator, _T("ID_BUTTONSALIR"));
-	ButtonSalir->SetForegroundColour(wxColour(255,255,255));
-	ButtonSalir->SetBackgroundColour(wxColour(96,96,96));
+	ButtonSalir = new wxButton(this, ID_BUTTONSALIR, _("Salir"), wxPoint(224,200), wxSize(104,39), 0, wxDefaultValidator, _T("ID_BUTTONSALIR"));
+	ButtonSalir->SetForegroundColour(wxColour(0,0,0));
+	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonSalirFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonSalir->SetFont(ButtonSalirFont);
 

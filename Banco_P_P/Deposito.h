@@ -16,8 +16,8 @@ class Deposito: public wxDialog
 		virtual ~Deposito();
 
 		//(*Declarations(Deposito)
-		wxButton* Button1;
-		wxButton* Button2;
+		wxButton* ButtonConfirmar;
+		wxButton* ButtonSalir;
 		wxStaticText* StaticText1;
 		wxStaticText* StaticText2;
 		wxTextCtrl* TextCtrl1;
@@ -29,8 +29,8 @@ class Deposito: public wxDialog
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL1;
 		static const long ID_STATICTEXT2;
-		static const long ID_BUTTON1;
-		static const long ID_BUTTON2;
+		static const long ID_BUTTONCONFIRMAR;
+		static const long ID_BUTTONSALIR;
 		//*)
 
 	private:
@@ -38,6 +38,7 @@ class Deposito: public wxDialog
 		//(*Handlers(Deposito)
 		void OnInit(wxInitDialogEvent& event);
 		void OnButton2Click(wxCommandEvent& event);
+		void OnButtonSalirClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

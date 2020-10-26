@@ -2,34 +2,44 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="AgregarCliente.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Deposito.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5001" topLine="68" />
+			<Cursor1 position="2974" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="AppPrincipal.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="BajaCuenta.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8206" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="Extraccion.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2983" topLine="49" />
-		</Cursor>
-	</File>
-	<File name="AgregarCuenta.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3818" topLine="22" />
+			<Cursor1 position="3577" topLine="20" />
 		</Cursor>
 	</File>
 	<File name="Banco_P_PMain.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4491" topLine="107" />
+			<Cursor1 position="4491" topLine="95" />
 		</Cursor>
 	</File>
-	<File name="Deposito.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AppPrincipal.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2731" topLine="50" />
+			<Cursor1 position="242" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="BajaCliente.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2508" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="AgregarCliente.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5000" topLine="56" />
+		</Cursor>
+	</File>
+	<File name="Extraccion.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3037" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="AgregarCuenta.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4645" topLine="71" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

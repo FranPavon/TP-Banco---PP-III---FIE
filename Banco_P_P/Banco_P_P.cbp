@@ -90,6 +90,8 @@
 		<Unit filename="AppPrincipal.h" />
 		<Unit filename="BajaCliente.cpp" />
 		<Unit filename="BajaCliente.h" />
+		<Unit filename="BajaCuenta.cpp" />
+		<Unit filename="BajaCuenta.h" />
 		<Unit filename="Banco_P_PApp.cpp" />
 		<Unit filename="Banco_P_PApp.h" />
 		<Unit filename="Banco_P_PMain.cpp" />
@@ -105,6 +107,7 @@
 		<Unit filename="wxsmith/AgregarCuenta.wxs" />
 		<Unit filename="wxsmith/AppPrincipal.wxs" />
 		<Unit filename="wxsmith/BajaCliente.wxs" />
+		<Unit filename="wxsmith/BajaCuenta.wxs" />
 		<Unit filename="wxsmith/Banco_P_Pframe.wxs" />
 		<Unit filename="wxsmith/Deposito.wxs" />
 		<Unit filename="wxsmith/Extraccion.wxs" />
@@ -120,6 +123,7 @@
 					<wxDialog wxs="wxsmith/AgregarCuenta.wxs" src="AgregarCuenta.cpp" hdr="AgregarCuenta.h" fwddecl="0" i18n="1" name="AgregarCuenta" language="CPP" />
 					<wxDialog wxs="wxsmith/Deposito.wxs" src="Deposito.cpp" hdr="Deposito.h" fwddecl="0" i18n="1" name="Deposito" language="CPP" />
 					<wxDialog wxs="wxsmith/Extraccion.wxs" src="Extraccion.cpp" hdr="Extraccion.h" fwddecl="0" i18n="1" name="Extraccion" language="CPP" />
+					<wxDialog wxs="wxsmith/BajaCuenta.wxs" src="BajaCuenta.cpp" hdr="BajaCuenta.h" fwddecl="0" i18n="1" name="BajaCuenta" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

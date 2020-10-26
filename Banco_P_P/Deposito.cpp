@@ -10,8 +10,8 @@
 const long Deposito::ID_STATICTEXT1 = wxNewId();
 const long Deposito::ID_TEXTCTRL1 = wxNewId();
 const long Deposito::ID_STATICTEXT2 = wxNewId();
-const long Deposito::ID_BUTTON1 = wxNewId();
-const long Deposito::ID_BUTTON2 = wxNewId();
+const long Deposito::ID_BUTTONCONFIRMAR = wxNewId();
+const long Deposito::ID_BUTTONSALIR = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(Deposito,wxDialog)
@@ -35,18 +35,18 @@ Deposito::Deposito(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSiz
 	StaticText2 = new wxStaticText(this, ID_STATICTEXT2, _("Debe ser entre 1 y 1.000.000"), wxPoint(208,120), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	wxFont StaticText2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText2->SetFont(StaticText2Font);
-	Button1 = new wxButton(this, ID_BUTTON1, _("CONFIRMAR"), wxPoint(56,168), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
-	Button1->SetForegroundColour(wxColour(255,255,255));
-	Button1->SetBackgroundColour(wxColour(96,96,96));
-	wxFont Button1Font(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
-	Button1->SetFont(Button1Font);
-	Button2 = new wxButton(this, ID_BUTTON2, _("SALIR"), wxPoint(208,168), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
-	Button2->SetForegroundColour(wxColour(255,255,255));
-	Button2->SetBackgroundColour(wxColour(96,96,96));
-	wxFont Button2Font(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
-	Button2->SetFont(Button2Font);
+	ButtonConfirmar = new wxButton(this, ID_BUTTONCONFIRMAR, _("Confirmar"), wxPoint(56,168), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTONCONFIRMAR"));
+	ButtonConfirmar->SetForegroundColour(wxColour(0,0,0));
+	ButtonConfirmar->SetBackgroundColour(wxColour(0,128,128));
+	wxFont ButtonConfirmarFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
+	ButtonConfirmar->SetFont(ButtonConfirmarFont);
+	ButtonSalir = new wxButton(this, ID_BUTTONSALIR, _("Salir"), wxPoint(208,168), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTONSALIR"));
+	ButtonSalir->SetForegroundColour(wxColour(0,0,0));
+	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
+	wxFont ButtonSalirFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
+	ButtonSalir->SetFont(ButtonSalirFont);
 
-	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Deposito::OnButton2Click);
+	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Deposito::OnButtonSalirClick);
 	Connect(wxID_ANY,wxEVT_INIT_DIALOG,(wxObjectEventFunction)&Deposito::OnInit);
 	//*)
 }
@@ -62,7 +62,9 @@ void Deposito::OnInit(wxInitDialogEvent& event)
 {
 }
 
-void Deposito::OnButton2Click(wxCommandEvent& event)
+void Deposito::OnButtonSalirClick(wxCommandEvent& event)
 {
     Close();
 }
+
+
