@@ -24,9 +24,9 @@ class AppPrincipal: public wxFrame
 		wxButton* ButtonDeposito;
 		wxButton* ButtonExtraccion;
 		wxButton* ButtonModificarCliente;
-		wxListCtrl* ListCtrl1;
-		wxListView* ListView1;
-		wxListView* ListView2;
+		wxListCtrl* ListCtrlCliente;
+		wxListCtrl* ListCtrlCuenta;
+		wxListCtrl* ListCtrlMovimiento;
 		wxStaticBox* StaticBox1;
 		wxStaticBox* StaticBox2;
 		wxStaticBox* StaticBox3;
@@ -46,10 +46,10 @@ class AppPrincipal: public wxFrame
 		static const long ID_BUTTONBAJACUENTA;
 		static const long ID_BUTTONEXTRACCION;
 		static const long ID_BUTTONDEPOSITO;
-		static const long ID_LISTVIEW1;
 		static const long ID_LISTCTRL1;
-		static const long ID_LISTVIEW2;
 		static const long ID_STATICTEXT1;
+		static const long ID_LISTCTRLCLIENTE;
+		static const long ID_LISTCTRL3;
 		//*)
 
 	private:
@@ -63,6 +63,7 @@ class AppPrincipal: public wxFrame
 		void OnButtonDepositoClick(wxCommandEvent& event);
 		void OnButtonExtraccionClick(wxCommandEvent& event);
 		void OnButtonBajaCuentaClick(wxCommandEvent& event);
+		void OnListView1BeginDrag(wxListEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

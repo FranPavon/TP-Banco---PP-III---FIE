@@ -24,10 +24,10 @@ const long AppPrincipal::ID_BUTTONAGREGARCUENTA = wxNewId();
 const long AppPrincipal::ID_BUTTONBAJACUENTA = wxNewId();
 const long AppPrincipal::ID_BUTTONEXTRACCION = wxNewId();
 const long AppPrincipal::ID_BUTTONDEPOSITO = wxNewId();
-const long AppPrincipal::ID_LISTVIEW1 = wxNewId();
 const long AppPrincipal::ID_LISTCTRL1 = wxNewId();
-const long AppPrincipal::ID_LISTVIEW2 = wxNewId();
 const long AppPrincipal::ID_STATICTEXT1 = wxNewId();
+const long AppPrincipal::ID_LISTCTRLCLIENTE = wxNewId();
+const long AppPrincipal::ID_LISTCTRL3 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(AppPrincipal,wxFrame)
@@ -93,12 +93,12 @@ AppPrincipal::AppPrincipal(wxWindow* parent,wxWindowID id)
 	ButtonDeposito->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonDepositoFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonDeposito->SetFont(ButtonDepositoFont);
-	ListView1 = new wxListView(this, ID_LISTVIEW1, wxPoint(64,136), wxSize(392,280), wxLC_LIST, wxDefaultValidator, _T("ID_LISTVIEW1"));
-	ListCtrl1 = new wxListCtrl(this, ID_LISTCTRL1, wxPoint(608,112), wxSize(384,96), wxLC_LIST, wxDefaultValidator, _T("ID_LISTCTRL1"));
-	ListView2 = new wxListView(this, ID_LISTVIEW2, wxPoint(608,320), wxSize(384,104), wxLC_LIST, wxDefaultValidator, _T("ID_LISTVIEW2"));
+	ListCtrlCuenta = new wxListCtrl(this, ID_LISTCTRL1, wxPoint(608,112), wxSize(384,96), wxLC_REPORT|wxLC_VIRTUAL, wxDefaultValidator, _T("ID_LISTCTRL1"));
 	StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Sistema de administración de clientes, cuentas y moviemientos - Banco P and P"), wxPoint(304,8), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	wxFont StaticText1Font(16,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText1->SetFont(StaticText1Font);
+	ListCtrlCliente = new wxListCtrl(this, ID_LISTCTRLCLIENTE, wxPoint(64,144), wxSize(384,264), wxLC_REPORT|wxLC_VIRTUAL, wxDefaultValidator, _T("ID_LISTCTRLCLIENTE"));
+	ListCtrlMovimiento = new wxListCtrl(this, ID_LISTCTRL3, wxPoint(616,328), wxSize(368,96), wxLC_REPORT|wxLC_VIRTUAL, wxDefaultValidator, _T("ID_LISTCTRL3"));
 	Center();
 
 	Connect(ID_BUTTONAGREGARCLIENTE,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonAgregarClienteClick);

@@ -165,17 +165,10 @@
 			</font>
 			<handler function="OnButtonDepositoClick" entry="EVT_BUTTON" />
 		</object>
-		<object class="wxListView" name="ID_LISTVIEW1" variable="ListView1" member="yes">
-			<pos>64,136</pos>
-			<size>392,280</size>
-		</object>
-		<object class="wxListCtrl" name="ID_LISTCTRL1" variable="ListCtrl1" member="yes">
+		<object class="wxListCtrl" name="ID_LISTCTRL1" variable="ListCtrlCuenta" member="yes">
 			<pos>608,112</pos>
 			<size>384,96</size>
-		</object>
-		<object class="wxListView" name="ID_LISTVIEW2" variable="ListView2" member="yes">
-			<pos>608,320</pos>
-			<size>384,104</size>
+			<style>wxLC_REPORT|wxLC_VIRTUAL</style>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
 			<label>Sistema de administración de clientes, cuentas y moviemientos - Banco P and P</label>
@@ -188,6 +181,16 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+		</object>
+		<object class="wxListCtrl" name="ID_LISTCTRLCLIENTE" variable="ListCtrlCliente" member="yes">
+			<pos>64,144</pos>
+			<size>384,264</size>
+			<style>wxLC_REPORT|wxLC_VIRTUAL</style>
+		</object>
+		<object class="wxListCtrl" name="ID_LISTCTRL3" variable="ListCtrlMovimiento" member="yes">
+			<pos>616,328</pos>
+			<size>368,96</size>
+			<style>wxLC_REPORT|wxLC_VIRTUAL</style>
 		</object>
 	</object>
 </wxsmith>
