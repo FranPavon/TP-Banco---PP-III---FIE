@@ -101,9 +101,6 @@ void AgregarCuenta::OnInit(wxInitDialogEvent& event)
 {
 }
 
-void AgregarCuenta::OnButton2Click(wxCommandEvent& event)
-{
-}
 
 void AgregarCuenta::OnButtonSalirClick(wxCommandEvent& event)
 {

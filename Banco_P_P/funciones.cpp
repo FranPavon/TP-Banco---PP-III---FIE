@@ -1,7 +1,88 @@
 #include "Cliente.h"
+#include "Cuenta.h"
+
 #include <string.h>
 #include <fstream>
 using namespace std;
+
+Cuenta::Cuenta(int nc, int dt, string t, float s, float i)
+{
+    setNroCuenta(nc);
+    setDniTitular(dt);
+    setTipo(t);
+    setSaldo(s);
+    setInteres(i);
+}
+
+void Cuenta::setNroCuenta(int nc)
+{
+    numero = nc;
+}
+
+int Cuenta::getNroCuenta()
+{
+    return numero;
+}
+
+void Cuenta::setDniTitular(int d)
+{
+    dniTitular = d;
+}
+
+int Cuenta::getDniTitular()
+{
+    return dniTitular;
+}
+
+void Cuenta::setTipo(string t)
+{
+    const char *valorTipo = t.data();
+    int longitud = t.size();
+    longitud = longitud<2 ? longitud:1;
+    if ((strcmp(valorTipo,"CC"))||(strcmp(valorTipo,"CA")))
+        strncpy(tipo,valorTipo,longitud);
+    else
+        strcpy(tipo,"CA");
+    tipo[longitud] = '\0';
+}
+
+string Cuenta::getTipo()
+{
+    return tipo;
+}
+
+void Cuenta::setSaldo(float s)
+{
+    saldo = s;
+}
+
+float Cuenta::getSaldo()
+{
+    return saldo;
+}
+
+void Cuenta::setInteres(float i)
+{
+    interes = i;
+}
+
+float Cuenta::getInteres()
+{
+    return interes;
+}
+
+void Cuenta::setBorrado(int b)
+{
+    if(b!=0 and b!=1)
+        borrado=0;
+    else
+        borrado=1;
+}
+
+int Cuenta::getBorrado()
+{
+    return borrado;
+}
 
 Cliente::Cliente(int d,string nom, string ape, string dir,int tel)
 {
@@ -69,7 +150,7 @@ void Cliente::setTelefono(int tel)
     telefono = tel;
 }
 
-float Cliente::getTelefono()
+int Cliente::getTelefono()
 {
     return telefono;
 }
@@ -98,3 +179,5 @@ void Cliente::buscar(fstream &a)
         a.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
     }
 }
+
+

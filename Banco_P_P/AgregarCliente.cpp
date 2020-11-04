@@ -5,6 +5,7 @@
 #include <wx/string.h>
 #include <wx/font.h>
 #include <wx/intl.h>
+#include <iomanip>
 
 //(*InternalHeaders(AgregarCliente)
 #include <wx/font.h>
@@ -89,16 +90,41 @@ AgregarCliente::~AgregarCliente()
 
 void AgregarCliente::OnButtonSalirClick(wxCommandEvent& event)
 {
+    fstream arch;
+    arch.open("Clientes.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    arch.close();
+    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    ofstream archt;
+    Cliente reg;
+    archt.open("Clientes.txt",ios::out);
+    if(!archt)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    archt<<left<<setw(10)<<"DNI"<<setw(25)<<"Nombre"<<setw(25)<<"Apellido"<<setw(40)<<"Dirección"<<setw(10)<<"Telefono"<<endl;
+
+    arch.seekg(0);
+    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+    while(!arch.eof())
+    {
+        archt<<left<<setw(10)<<reg.getDni()<<setw(25)<<reg.getNombre()<<setw(25)<<reg.getApellido()<<setw(40)<<reg.getDireccion()<<setw(10)<<reg.getTelefono()<<endl;
+        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+    }
+    archt.close();
+    arch.close();
+
     Close ();
-}
-
-
-void AgregarCliente::OnTextCtrl4Text(wxCommandEvent& event)
-{
-}
-
-void AgregarCliente::OnTextCtrl1Text(wxCommandEvent& event)
-{
 }
 
 void AgregarCliente::OnButtonAgregarClick(wxCommandEvent& event)
@@ -153,4 +179,9 @@ void AgregarCliente::OnButtonAgregarClick(wxCommandEvent& event)
         wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
     }
      arch.close();
+     TextCtrlDNI->Clear();
+     TextCtrlNombre->Clear();
+     TextCtrlApellido->Clear();
+     TextCtrlDireccion->Clear();
+     TextCtrlTelefono->Clear();
 }

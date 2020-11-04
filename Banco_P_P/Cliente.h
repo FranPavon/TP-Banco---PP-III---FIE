@@ -17,7 +17,7 @@ class Cliente
         void setDireccion(string);
         string getDireccion();
         void setTelefono(int);
-        float getTelefono();
+        int getTelefono();
         void setBorrado(int);
         int getBorrado();
         void buscar(fstream &);
@@ -27,7 +27,7 @@ class Cliente
         char nombre[25];
         char apellido[25];
         char direccion[40];
-        float telefono;
+        int telefono;
 };
 
 
