@@ -109,6 +109,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonAgregarClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
 			<label>Salir</label>

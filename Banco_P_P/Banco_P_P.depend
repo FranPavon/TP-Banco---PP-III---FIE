@@ -1973,7 +1973,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1604500524 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.h
+1604523718 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/stattext.h>
@@ -2280,7 +2280,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604503151 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
+1604504690 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
 	"ModificarCliente.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -2292,4 +2292,13 @@
 	<wx/dialog.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
+
+1604523514 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
+	"Cliente.h"
+	<string.h>
+	<fstream>
+
+1604522693 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cliente.h
+	<fstream>
+	<string>
 

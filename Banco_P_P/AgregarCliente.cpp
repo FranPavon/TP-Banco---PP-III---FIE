@@ -1,4 +1,10 @@
 #include "AgregarCliente.h"
+#include "Cliente.h"
+#include <fstream>
+#include <wx/msgdlg.h>
+#include <wx/string.h>
+#include <wx/font.h>
+#include <wx/intl.h>
 
 //(*InternalHeaders(AgregarCliente)
 #include <wx/font.h>
@@ -69,6 +75,7 @@ AgregarCliente::AgregarCliente(wxWindow* parent,wxWindowID id,const wxPoint& pos
 	wxFont ButtonSalirFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonSalir->SetFont(ButtonSalirFont);
 
+	Connect(ID_BUTTONAGREGAR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCliente::OnButtonAgregarClick);
 	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCliente::OnButtonSalirClick);
 	//*)
 }
@@ -85,10 +92,65 @@ void AgregarCliente::OnButtonSalirClick(wxCommandEvent& event)
     Close ();
 }
 
+
 void AgregarCliente::OnTextCtrl4Text(wxCommandEvent& event)
 {
 }
 
 void AgregarCliente::OnTextCtrl1Text(wxCommandEvent& event)
 {
+}
+
+void AgregarCliente::OnButtonAgregarClick(wxCommandEvent& event)
+{
+    Cliente reg,cli;
+    fstream arch;
+    int d;
+    int tel;
+    wxString nom;
+    wxString ape;
+    wxString dir;
+
+    arch.open("Clientes.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    arch.close();
+    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    wxString str = TextCtrlDNI->GetValue();
+    d = wxAtoi(str);
+    nom = TextCtrlNombre->GetValue();
+    ape = TextCtrlApellido->GetValue();
+    dir = TextCtrlDireccion->GetValue();
+    str = TextCtrlTelefono->GetValue();
+    tel = wxAtoi(str);
+    cli.setDni(d);
+    cli.buscar(arch);
+    if(!arch.eof())
+    {
+        wxString msg = "Cliente existente, vaya a modificar cliente o revise el ingreso";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    else
+    {
+        arch.clear();
+        reg.setDni(d);
+        reg.setNombre(nom.ToStdString());
+        reg.setApellido(ape.ToStdString());
+        reg.setDireccion(dir.ToStdString());
+        reg.setTelefono(tel);
+        reg.setBorrado(0);
+        arch.seekp(0,ios::end);
+        arch.write(reinterpret_cast<const char *>(&reg),sizeof(Cliente));
+        wxString msg = "Alta exitosa";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+     arch.close();
 }

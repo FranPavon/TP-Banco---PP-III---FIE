@@ -55,6 +55,7 @@ class AgregarCliente: public wxFrame
 		void OnButtonSalirClick(wxCommandEvent& event);
 		void OnTextCtrl4Text(wxCommandEvent& event);
 		void OnTextCtrl1Text(wxCommandEvent& event);
+		void OnButtonAgregarClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

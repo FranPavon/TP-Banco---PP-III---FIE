@@ -96,12 +96,14 @@
 		<Unit filename="Banco_P_PApp.h" />
 		<Unit filename="Banco_P_PMain.cpp" />
 		<Unit filename="Banco_P_PMain.h" />
+		<Unit filename="Cliente.h" />
 		<Unit filename="Deposito.cpp" />
 		<Unit filename="Deposito.h" />
 		<Unit filename="Extraccion.cpp" />
 		<Unit filename="Extraccion.h" />
 		<Unit filename="ModificarCliente.cpp" />
 		<Unit filename="ModificarCliente.h" />
+		<Unit filename="funciones.cpp" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
