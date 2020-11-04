@@ -3,7 +3,7 @@
 	<object class="wxFrame" name="AppPrincipal">
 		<title>Banco P&amp;P</title>
 		<centered>1</centered>
-		<size>1053,468</size>
+		<size>1053,289</size>
 		<hidden>1</hidden>
 		<fg>#008080</fg>
 		<bg>#202020</bg>
@@ -11,7 +11,7 @@
 		<object class="wxStaticBox" name="ID_STATICBOX1" variable="StaticBox1" member="yes">
 			<label>Clientes</label>
 			<pos>32,48</pos>
-			<size>456,400</size>
+			<size>456,208</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -26,7 +26,7 @@
 		<object class="wxStaticBox" name="ID_STATICBOX2" variable="StaticBox2" member="yes">
 			<label>Cuentas</label>
 			<pos>584,48</pos>
-			<size>432,184</size>
+			<size>432,88</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -40,8 +40,8 @@
 		</object>
 		<object class="wxStaticBox" name="ID_STATICBOX3" variable="StaticBox3" member="yes">
 			<label>Movimientos</label>
-			<pos>584,248</pos>
-			<size>432,200</size>
+			<pos>584,168</pos>
+			<size>432,88</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -55,8 +55,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCLIENTE" variable="ButtonAgregarCliente" member="yes">
 			<label>Agregar</label>
-			<pos>64,88</pos>
-			<size>104,32</size>
+			<pos>88,88</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -71,8 +71,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONMODIFICARCLIENTE" variable="ButtonModificarCliente" member="yes">
 			<label>Modificar</label>
-			<pos>208,88</pos>
-			<size>104,32</size>
+			<pos>304,88</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -83,12 +83,12 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
-			<handler function="OnButton2Click" entry="EVT_BUTTON" />
+			<handler function="OnButtonModificarClienteClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACLIENTE" variable="ButtonBajaCliente" member="yes">
 			<label>Baja</label>
-			<pos>344,88</pos>
-			<size>104,32</size>
+			<pos>192,200</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -103,8 +103,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCUENTA" variable="ButtonAgregarCuenta" member="yes">
 			<label>Agregar</label>
-			<pos>616,72</pos>
-			<size>75,32</size>
+			<pos>664,80</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -119,8 +119,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACUENTA" variable="ButtonBajaCuenta" member="yes">
 			<label>Baja</label>
-			<pos>728,72</pos>
-			<size>75,32</size>
+			<pos>840,80</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -135,8 +135,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONEXTRACCION" variable="ButtonExtraccion" member="yes">
 			<label>Extracción</label>
-			<pos>728,272</pos>
-			<size>76,32</size>
+			<pos>848,200</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -151,8 +151,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONDEPOSITO" variable="ButtonDeposito" member="yes">
 			<label>Depósito</label>
-			<pos>616,272</pos>
-			<size>75,32</size>
+			<pos>664,200</pos>
+			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -165,11 +165,6 @@
 			</font>
 			<handler function="OnButtonDepositoClick" entry="EVT_BUTTON" />
 		</object>
-		<object class="wxListCtrl" name="ID_LISTCTRL1" variable="ListCtrlCuenta" member="yes">
-			<pos>608,112</pos>
-			<size>384,96</size>
-			<style>wxLC_REPORT|wxLC_VIRTUAL</style>
-		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
 			<label>Sistema de administración de clientes, cuentas y moviemientos - Banco P and P</label>
 			<pos>304,8</pos>
@@ -181,16 +176,6 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
-		</object>
-		<object class="wxListCtrl" name="ID_LISTCTRLCLIENTE" variable="ListCtrlCliente" member="yes">
-			<pos>64,144</pos>
-			<size>384,264</size>
-			<style>wxLC_REPORT|wxLC_VIRTUAL</style>
-		</object>
-		<object class="wxListCtrl" name="ID_LISTCTRL3" variable="ListCtrlMovimiento" member="yes">
-			<pos>616,328</pos>
-			<size>368,96</size>
-			<style>wxLC_REPORT|wxLC_VIRTUAL</style>
 		</object>
 	</object>
 </wxsmith>

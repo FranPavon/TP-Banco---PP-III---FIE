@@ -24,11 +24,11 @@ class AgregarCliente: public wxFrame
 		wxStaticText* StaticText4;
 		wxStaticText* StaticText5;
 		wxStaticText* StaticText6;
-		wxTextCtrl* TextCtrl1;
-		wxTextCtrl* TextCtrl2;
-		wxTextCtrl* TextCtrl3;
-		wxTextCtrl* TextCtrl4;
-		wxTextCtrl* TextCtrl5;
+		wxTextCtrl* TextCtrlApellido;
+		wxTextCtrl* TextCtrlDNI;
+		wxTextCtrl* TextCtrlDireccion;
+		wxTextCtrl* TextCtrlNombre;
+		wxTextCtrl* TextCtrlTelefono;
 		//*)
 
 	protected:
@@ -53,6 +53,8 @@ class AgregarCliente: public wxFrame
 
 		//(*Handlers(AgregarCliente)
 		void OnButtonSalirClick(wxCommandEvent& event);
+		void OnTextCtrl4Text(wxCommandEvent& event);
+		void OnTextCtrl1Text(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

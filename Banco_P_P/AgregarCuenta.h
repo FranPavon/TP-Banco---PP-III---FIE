@@ -17,6 +17,7 @@ class AgregarCuenta: public wxDialog
 		virtual ~AgregarCuenta();
 
 		//(*Declarations(AgregarCuenta)
+		wxButton* Button1;
 		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
 		wxChoice* Choice1;
@@ -26,7 +27,9 @@ class AgregarCuenta: public wxDialog
 		wxStaticText* StaticText4;
 		wxStaticText* StaticText5;
 		wxStaticText* StaticText6;
+		wxStaticText* StaticText7;
 		wxTextCtrl* TextCtrl1;
+		wxTextCtrl* TextCtrlDNI;
 		//*)
 
 	protected:
@@ -42,6 +45,9 @@ class AgregarCuenta: public wxDialog
 		static const long ID_TEXTCTRL1;
 		static const long ID_BUTTONCONFIRMAR;
 		static const long ID_BUTTONSALIR;
+		static const long ID_STATICTEXT7;
+		static const long ID_TEXTCTRL2;
+		static const long ID_BUTTON1;
 		//*)
 
 	private:

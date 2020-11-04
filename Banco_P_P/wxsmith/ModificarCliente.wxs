@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="ModificarCliente">
+		<title>Modificar Cliente</title>
+		<size>400,312</size>
+		<fg>#008080</fg>
+		<bg>#202020</bg>
+		<font>
+			<size>14</size>
+			<style>normal</style>
+			<weight>bold</weight>
+			<underlined>0</underlined>
+			<family>swiss</family>
+			<face>Agency FB</face>
+		</font>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+			<label>Inserte el DNI del cliente a MODIFICAR:</label>
+			<pos>88,24</pos>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+			<pos>64,64</pos>
+			<size>120,24</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>default</family>
+				<face>Arial</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="ButtonBuscar" member="yes">
+			<label>Buscar</label>
+			<pos>208,64</pos>
+			<size>120,32</size>
+			<bg>#008080</bg>
+		</object>
+		<object class="wxChoice" name="ID_CHOICE1" variable="Choice1" member="yes">
+			<content>
+				<item>DNI</item>
+				<item>Nombre</item>
+				<item>Apellido</item>
+				<item>Dirección</item>
+				<item>Telefono</item>
+			</content>
+			<pos>248,184</pos>
+			<size>144,26</size>
+			<hidden>1</hidden>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>default</family>
+				<face>Arial</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+			<label>Seleccione la información a modificar:</label>
+			<pos>24,184</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrlInfo" member="yes">
+			<pos>48,216</pos>
+			<size>320,25</size>
+			<hidden>1</hidden>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>default</family>
+				<face>Arial</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+			<label>DNI:</label>
+			<pos>48,24</pos>
+			<size>48,25</size>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticTextDNI" member="yes">
+			<label>DNI BUSCADO</label>
+			<pos>152,24</pos>
+			<size>176,25</size>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxButton" name="ID_BUTTON2" variable="ButtonSalir" member="yes">
+			<label>Salir</label>
+			<pos>216,256</pos>
+			<size>136,32</size>
+			<bg>#008080</bg>
+			<handler function="OnButtonSalirClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON3" variable="ButtonConfirmar" member="yes">
+			<label>Confirmar</label>
+			<pos>40,256</pos>
+			<size>136,32</size>
+			<hidden>1</hidden>
+			<bg>#008080</bg>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText4" member="yes">
+			<label>Dirección:</label>
+			<pos>48,120</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticTextDireccion" member="yes">
+			<label>Label</label>
+			<pos>152,120</pos>
+			<size>224,25</size>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText6" member="yes">
+			<label>Apellido:</label>
+			<pos>48,88</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticTextApellido" member="yes">
+			<label>Label</label>
+			<pos>152,88</pos>
+			<size>224,25</size>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT9" variable="StaticText8" member="yes">
+			<label>Teléfono:</label>
+			<pos>48,152</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT10" variable="StaticTextTelefono" member="yes">
+			<label>Label</label>
+			<pos>152,152</pos>
+			<size>104,25</size>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT11" variable="StaticText10" member="yes">
+			<label>Nombre:</label>
+			<pos>48,56</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT12" variable="StaticTextNombre" member="yes">
+			<label>Label</label>
+			<pos>152,56</pos>
+			<size>224,25</size>
+			<hidden>1</hidden>
+		</object>
+	</object>
+</wxsmith>

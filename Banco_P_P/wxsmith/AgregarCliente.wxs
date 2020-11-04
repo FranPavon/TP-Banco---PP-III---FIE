@@ -19,8 +19,7 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
-			<value>xxxxxxxx</value>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrlDNI" member="yes">
 			<pos>160,48</pos>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
@@ -35,7 +34,7 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrl2" member="yes">
+		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrlNombre" member="yes">
 			<pos>160,96</pos>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
@@ -50,7 +49,7 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="TextCtrl3" member="yes">
+		<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="TextCtrlApellido" member="yes">
 			<pos>160,144</pos>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
@@ -65,7 +64,7 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="TextCtrl4" member="yes">
+		<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="TextCtrlDireccion" member="yes">
 			<pos>160,192</pos>
 			<size>288,23</size>
 		</object>
@@ -81,7 +80,7 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="TextCtrl5" member="yes">
+		<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="TextCtrlTelefono" member="yes">
 			<pos>160,240</pos>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText6" member="yes">

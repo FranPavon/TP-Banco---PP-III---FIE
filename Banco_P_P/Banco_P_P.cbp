@@ -100,6 +100,8 @@
 		<Unit filename="Deposito.h" />
 		<Unit filename="Extraccion.cpp" />
 		<Unit filename="Extraccion.h" />
+		<Unit filename="ModificarCliente.cpp" />
+		<Unit filename="ModificarCliente.h" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
@@ -111,6 +113,7 @@
 		<Unit filename="wxsmith/Banco_P_Pframe.wxs" />
 		<Unit filename="wxsmith/Deposito.wxs" />
 		<Unit filename="wxsmith/Extraccion.wxs" />
+		<Unit filename="wxsmith/ModificarCliente.wxs" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">
@@ -124,6 +127,7 @@
 					<wxDialog wxs="wxsmith/Deposito.wxs" src="Deposito.cpp" hdr="Deposito.h" fwddecl="0" i18n="1" name="Deposito" language="CPP" />
 					<wxDialog wxs="wxsmith/Extraccion.wxs" src="Extraccion.cpp" hdr="Extraccion.h" fwddecl="0" i18n="1" name="Extraccion" language="CPP" />
 					<wxDialog wxs="wxsmith/BajaCuenta.wxs" src="BajaCuenta.cpp" hdr="BajaCuenta.h" fwddecl="0" i18n="1" name="BajaCuenta" language="CPP" />
+					<wxDialog wxs="wxsmith/ModificarCliente.wxs" src="ModificarCliente.cpp" hdr="ModificarCliente.h" fwddecl="0" i18n="1" name="ModificarCliente" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

@@ -4,8 +4,8 @@
 //(*Headers(BajaCliente)
 #include <wx/button.h>
 #include <wx/dialog.h>
-#include <wx/listctrl.h>
 #include <wx/stattext.h>
+#include <wx/textctrl.h>
 //*)
 
 class BajaCliente: public wxDialog
@@ -16,10 +16,15 @@ class BajaCliente: public wxDialog
 		virtual ~BajaCliente();
 
 		//(*Declarations(BajaCliente)
+		wxButton* ButtonBuscar;
 		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
-		wxListView* ListView1;
 		wxStaticText* StaticText1;
+		wxStaticText* StaticText2;
+		wxStaticText* StaticTextApellido;
+		wxStaticText* StaticTextDNI;
+		wxStaticText* StaticTextNombre;
+		wxTextCtrl* TextCtrlDNI;
 		//*)
 
 	protected:
@@ -27,8 +32,13 @@ class BajaCliente: public wxDialog
 		//(*Identifiers(BajaCliente)
 		static const long ID_STATICTEXT1;
 		static const long ID_BUTTONCONFIRMAR;
-		static const long ID_LISTVIEW1;
 		static const long ID_BUTTONSALIR;
+		static const long ID_STATICTEXT2;
+		static const long ID_TEXTCTRL1;
+		static const long ID_BUTTON1;
+		static const long ID_STATICTEXT3;
+		static const long ID_STATICTEXT4;
+		static const long ID_STATICTEXT5;
 		//*)
 
 	private:

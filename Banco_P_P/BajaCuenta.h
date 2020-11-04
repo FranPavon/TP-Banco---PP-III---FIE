@@ -5,6 +5,7 @@
 #include <wx/button.h>
 #include <wx/dialog.h>
 #include <wx/stattext.h>
+#include <wx/textctrl.h>
 //*)
 
 class BajaCuenta: public wxDialog
@@ -15,13 +16,18 @@ class BajaCuenta: public wxDialog
 		virtual ~BajaCuenta();
 
 		//(*Declarations(BajaCuenta)
+		wxButton* Button1;
 		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
 		wxStaticText* StaticText1;
 		wxStaticText* StaticText2;
 		wxStaticText* StaticText3;
-		wxStaticText* StaticText4;
-		wxStaticText* StaticText5;
+		wxStaticText* StaticText6;
+		wxStaticText* StaticText8;
+		wxStaticText* StaticTextDNI;
+		wxStaticText* StaticTextNroCuenta;
+		wxStaticText* StaticTextTipoCuenta;
+		wxTextCtrl* TextCtrl1;
 		//*)
 
 	protected:
@@ -34,6 +40,11 @@ class BajaCuenta: public wxDialog
 		static const long ID_STATICTEXT3;
 		static const long ID_STATICTEXT4;
 		static const long ID_STATICTEXT5;
+		static const long ID_STATICTEXT6;
+		static const long ID_STATICTEXT7;
+		static const long ID_STATICTEXT8;
+		static const long ID_TEXTCTRL1;
+		static const long ID_BUTTON1;
 		//*)
 
 	private:

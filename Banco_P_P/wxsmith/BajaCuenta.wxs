@@ -8,6 +8,7 @@
 			<label>Confirmar</label>
 			<pos>48,208</pos>
 			<size>128,40</size>
+			<hidden>1</hidden>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -37,8 +38,9 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
 			<label>Desea dar de baja la siguiente cuenta?</label>
-			<pos>88,48</pos>
-			<size>272,48</size>
+			<pos>80,32</pos>
+			<size>248,40</size>
+			<hidden>1</hidden>
 			<font>
 				<size>14</size>
 				<style>normal</style>
@@ -50,8 +52,9 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
 			<label>DNI titular: </label>
-			<pos>40,104</pos>
+			<pos>40,88</pos>
 			<size>72,16</size>
+			<hidden>1</hidden>
 			<font>
 				<size>12</size>
 				<style>normal</style>
@@ -63,8 +66,9 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
 			<label>Nro cuenta: </label>
-			<pos>40,144</pos>
+			<pos>40,128</pos>
 			<size>40,16</size>
+			<hidden>1</hidden>
 			<font>
 				<size>12</size>
 				<style>normal</style>
@@ -74,10 +78,11 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+		<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticTextDNI" member="yes">
 			<label>xxxxxxxx</label>
-			<pos>136,104</pos>
+			<pos>128,88</pos>
 			<size>120,21</size>
+			<hidden>1</hidden>
 			<font>
 				<size>12</size>
 				<style>normal</style>
@@ -87,9 +92,68 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText5" member="yes">
+		<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticTextNroCuenta" member="yes">
 			<label>xxxxxxxx</label>
-			<pos>136,144</pos>
+			<pos>128,128</pos>
+			<size>120,21</size>
+			<hidden>1</hidden>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText6" member="yes">
+			<label>Tipo de cuenta:</label>
+			<pos>40,168</pos>
+			<hidden>1</hidden>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticTextTipoCuenta" member="yes">
+			<label>xxxxxxxx</label>
+			<pos>128,168</pos>
+			<size>120,16</size>
+			<hidden>1</hidden>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText8" member="yes">
+			<label>Ingrese el numero de cuenta a dar de baja:</label>
+			<pos>80,24</pos>
+			<size>248,21</size>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+			<pos>80,64</pos>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+			<label>Buscar</label>
+			<pos>208,64</pos>
+			<size>112,23</size>
+			<bg>#008080</bg>
 			<font>
 				<size>12</size>
 				<style>normal</style>

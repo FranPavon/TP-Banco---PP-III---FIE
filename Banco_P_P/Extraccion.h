@@ -16,11 +16,20 @@ class Extraccion: public wxDialog
 		virtual ~Extraccion();
 
 		//(*Declarations(Extraccion)
+		wxButton* ButtonBuscar;
 		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
 		wxStaticText* StaticText1;
 		wxStaticText* StaticText2;
+		wxStaticText* StaticText3;
+		wxStaticText* StaticText4;
+		wxStaticText* StaticText5;
+		wxStaticText* StaticText6;
+		wxStaticText* StaticText7;
+		wxStaticText* StaticText8;
+		wxStaticText* StaticTextNroCuenta;
 		wxTextCtrl* TextCtrl1;
+		wxTextCtrl* TextCtrl2;
 		//*)
 
 	protected:
@@ -31,6 +40,15 @@ class Extraccion: public wxDialog
 		static const long ID_STATICTEXT2;
 		static const long ID_BUTTONCONFIRMAR;
 		static const long ID_BUTTONSALIR;
+		static const long ID_STATICTEXT3;
+		static const long ID_STATICTEXT4;
+		static const long ID_STATICTEXT5;
+		static const long ID_STATICTEXT6;
+		static const long ID_STATICTEXT7;
+		static const long ID_STATICTEXT8;
+		static const long ID_STATICTEXT9;
+		static const long ID_TEXTCTRL2;
+		static const long ID_BUTTON1;
 		//*)
 
 	private:

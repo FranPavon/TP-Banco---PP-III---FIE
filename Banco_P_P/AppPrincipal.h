@@ -4,7 +4,6 @@
 //(*Headers(AppPrincipal)
 #include <wx/button.h>
 #include <wx/frame.h>
-#include <wx/listctrl.h>
 #include <wx/statbox.h>
 #include <wx/stattext.h>
 //*)
@@ -24,9 +23,6 @@ class AppPrincipal: public wxFrame
 		wxButton* ButtonDeposito;
 		wxButton* ButtonExtraccion;
 		wxButton* ButtonModificarCliente;
-		wxListCtrl* ListCtrlCliente;
-		wxListCtrl* ListCtrlCuenta;
-		wxListCtrl* ListCtrlMovimiento;
 		wxStaticBox* StaticBox1;
 		wxStaticBox* StaticBox2;
 		wxStaticBox* StaticBox3;
@@ -46,10 +42,7 @@ class AppPrincipal: public wxFrame
 		static const long ID_BUTTONBAJACUENTA;
 		static const long ID_BUTTONEXTRACCION;
 		static const long ID_BUTTONDEPOSITO;
-		static const long ID_LISTCTRL1;
 		static const long ID_STATICTEXT1;
-		static const long ID_LISTCTRLCLIENTE;
-		static const long ID_LISTCTRL3;
 		//*)
 
 	private:
@@ -63,7 +56,7 @@ class AppPrincipal: public wxFrame
 		void OnButtonDepositoClick(wxCommandEvent& event);
 		void OnButtonExtraccionClick(wxCommandEvent& event);
 		void OnButtonBajaCuentaClick(wxCommandEvent& event);
-		void OnListView1BeginDrag(wxListEvent& event);
+		void OnButtonModificarClienteClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
