@@ -17,7 +17,7 @@ class AgregarCuenta: public wxDialog
 		virtual ~AgregarCuenta();
 
 		//(*Declarations(AgregarCuenta)
-		wxButton* Button1;
+		wxButton* ButtonBuscar;
 		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
 		wxChoice* Choice1;
@@ -56,6 +56,9 @@ class AgregarCuenta: public wxDialog
 		void OnInit(wxInitDialogEvent& event);
 		void OnButton2Click(wxCommandEvent& event);
 		void OnButtonSalirClick(wxCommandEvent& event);
+		void OnButton1Click(wxCommandEvent& event);
+		void OnButtonBuscarClick(wxCommandEvent& event);
+		void OnButtonConfirmarClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

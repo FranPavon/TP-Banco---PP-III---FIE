@@ -1,4 +1,11 @@
 #include "AgregarCuenta.h"
+#include "Cuenta.h"
+#include <fstream>
+#include <wx/msgdlg.h>
+#include <wx/string.h>
+#include <wx/font.h>
+#include <wx/intl.h>
+#include <iomanip>
 
 //(*InternalHeaders(AgregarCuenta)
 #include <wx/font.h>
@@ -79,14 +86,15 @@ AgregarCuenta::AgregarCuenta(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	wxFont StaticText7Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText7->SetFont(StaticText7Font);
 	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(80,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-	Button1 = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(208,56), wxSize(112,23), 0, wxDefaultValidator, _T("ID_BUTTON1"));
-	Button1->SetBackgroundColour(wxColour(0,128,128));
-	wxFont Button1Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
-	Button1->SetFont(Button1Font);
+	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(208,56), wxSize(112,23), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
+	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
+	ButtonBuscar->SetFont(ButtonBuscarFont);
 	Center();
 
+	Connect(ID_BUTTONCONFIRMAR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCuenta::OnButtonConfirmarClick);
 	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCuenta::OnButtonSalirClick);
-	Connect(wxID_ANY,wxEVT_INIT_DIALOG,(wxObjectEventFunction)&AgregarCuenta::OnInit);
+	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCuenta::OnButtonBuscarClick);
 	//*)
 }
 
@@ -96,13 +104,51 @@ AgregarCuenta::~AgregarCuenta()
 	//*)
 }
 
-
-void AgregarCuenta::OnInit(wxInitDialogEvent& event)
+void AgregarCuenta::OnButtonSalirClick(wxCommandEvent& event)
 {
+    fstream arch;
+    arch.open("Cuentas.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+    }
+    arch.close();
+    arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de Cuentas- Banco P&P"));
+    }
+    ofstream archt;
+    Cuenta reg;
+    archt.open("Cuentas.txt",ios::out);
+    if(!archt)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+    }
+    archt<<left<<setw(15)<<"Nro de Cuenta"<<setw(10)<<"DNI Titular"<<setw(5)<<"Tipo"<<setw(15)<<"Saldo"<<setw(5)<<"Interes"<<endl;
+
+    arch.seekg(0);
+    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    while(!arch.eof())
+    {
+        archt<<left<<setw(15)<<reg.getNroCuenta()<<setw(10)<<reg.getDniTitular()<<setw(5)<<reg.getTipo()<<setw(15)<<reg.getSaldo()<<setw(5)<<reg.getInteres()<<endl;
+        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    }
+    archt.close();
+    arch.close();
+    Close();
 }
 
 
-void AgregarCuenta::OnButtonSalirClick(wxCommandEvent& event)
+void AgregarCuenta::OnButtonBuscarClick(wxCommandEvent& event)
 {
-    Close();
+  //  Cliente titular; Tengo que seguir aca!
+  //  Cuenta
+}
+
+void AgregarCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
+{
 }

@@ -1998,7 +1998,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604501234 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.h
+1604531855 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/dialog.h>
@@ -2127,7 +2127,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\choice.h
 
-1604501270 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+1604531315 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
 	"AgregarCuenta.h"
 	<wx/font.h>
 	<wx/intl.h>
@@ -2300,7 +2300,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604531276 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
+1604531741 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
 	"Cliente.h"
 	"Cuenta.h"
 	<string.h>
@@ -2310,7 +2310,7 @@
 	<fstream>
 	<string>
 
-1604530815 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cuenta.h
+1604531627 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cuenta.h
 	<fstream>
 	<string>
 

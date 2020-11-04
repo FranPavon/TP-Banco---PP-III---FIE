@@ -118,6 +118,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonConfirmarClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
 			<label>Salir</label>
@@ -150,7 +151,7 @@
 		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrlDNI" member="yes">
 			<pos>80,56</pos>
 		</object>
-		<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+		<object class="wxButton" name="ID_BUTTON1" variable="ButtonBuscar" member="yes">
 			<label>Buscar</label>
 			<pos>208,56</pos>
 			<size>112,23</size>
@@ -163,6 +164,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonBuscarClick" entry="EVT_BUTTON" />
 		</object>
 	</object>
 </wxsmith>

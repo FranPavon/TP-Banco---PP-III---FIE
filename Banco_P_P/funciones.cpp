@@ -84,6 +84,19 @@ int Cuenta::getBorrado()
     return borrado;
 }
 
+void Cuenta::buscar(fstream &a)
+{
+    Cuenta reg;
+    a.clear();
+    a.seekg(0,ios::beg);
+    a.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    while(!a.eof()&&reg.getNroCuenta()!=numero)
+    {
+        a.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    }
+}
+
+
 Cliente::Cliente(int d,string nom, string ape, string dir,int tel)
 {
     setDni(d);

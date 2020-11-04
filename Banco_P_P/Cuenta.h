@@ -20,6 +20,7 @@ class Cuenta
         float getInteres();
         void setBorrado(int);
         int getBorrado();
+        void buscar(fstream &);
 
     private:
         int numero, dniTitular, borrado;
