@@ -86,11 +86,11 @@ AgregarCuenta::AgregarCuenta(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonSalirFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonSalir->SetFont(ButtonSalirFont);
-	StaticText7 = new wxStaticText(this, ID_STATICTEXT7, _("Ingrese el DNI del titular de la cuenta:"), wxPoint(112,88), wxSize(200,21), 0, _T("ID_STATICTEXT7"));
+	StaticText7 = new wxStaticText(this, ID_STATICTEXT7, _("Ingrese el DNI del titular de la cuenta:"), wxPoint(112,64), wxSize(200,21), 0, _T("ID_STATICTEXT7"));
 	wxFont StaticText7Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText7->SetFont(StaticText7Font);
-	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(80,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(240,56), wxSize(112,23), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(80,104), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(232,104), wxSize(112,23), 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonBuscar->SetFont(ButtonBuscarFont);
@@ -168,12 +168,38 @@ void AgregarCuenta::OnButtonBuscarClick(wxCommandEvent& event)
     fstream arch;
     int d;
 
+    arch.open("Cuentas.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+    }
+    arch.close();
     arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
     if(!arch)
     {
         wxString msg = "Error de apertura de archivo";
         wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
     }
+
+    ofstream archca;
+    archca.open("Cajas_de_Ahorro.txt",ios::out);
+    if(!archca)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+    }
+    archca<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+    ofstream archcc;
+    archcc.open("Cuentas_Corrientes.txt",ios::out);
+    if(!archca)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+    }
+    archcc<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
     wxString str = TextCtrlDNI->GetValue();
     d = wxAtoi(str);
     cli.setDni(d);
@@ -226,7 +252,7 @@ void AgregarCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
 
     wxString str = TextCtrlSaldo->GetValue();
     s = wxAtof(str);
-    t = (Choice1->GetSelection()==1)?true:false;
+    t = (Choice1->GetSelection()==0)?true:false;
     str = StaticText5->GetLabel();
     d = wxAtoi (str);
     str = StaticText2->GetLabel();
@@ -257,7 +283,6 @@ void AgregarCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
     StaticText4->Hide();
     StaticText5->Hide(); //dni
     StaticText6->Hide();
-    Choice1->Clear();
     Choice1->Hide();
     TextCtrlSaldo->Clear();
     TextCtrlSaldo->Hide();

@@ -137,7 +137,7 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText7" member="yes">
 			<label>Ingrese el DNI del titular de la cuenta:</label>
-			<pos>112,88</pos>
+			<pos>112,64</pos>
 			<size>200,21</size>
 			<font>
 				<size>12</size>
@@ -149,11 +149,11 @@
 			</font>
 		</object>
 		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrlDNI" member="yes">
-			<pos>80,56</pos>
+			<pos>80,104</pos>
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="ButtonBuscar" member="yes">
 			<label>Buscar</label>
-			<pos>240,56</pos>
+			<pos>232,104</pos>
 			<size>112,23</size>
 			<bg>#008080</bg>
 			<font>

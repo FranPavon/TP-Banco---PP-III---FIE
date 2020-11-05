@@ -1,2 +1,0 @@
-DNI       Nombre                   Apellido                 Dirección                               Telefono  
-30333222                                                                                            0         

@@ -1,3 +1,0 @@
-Nro de Cuenta  DNI Titular    Saldo          Interes        
-67             30333222       200            0              
-420            30333222       999            0              

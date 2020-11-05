@@ -1664,7 +1664,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\stattext.h
 
-1603725327 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.cpp
+1604600729 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_pmain.cpp
 	"Banco_P_PMain.h"
 	"AppPrincipal.h"
 	<wx/msgdlg.h>
@@ -2127,7 +2127,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\choice.h
 
-1604591296 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+1604600037 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
 	"AgregarCuenta.h"
 	"Cliente.h"
 	"Cuenta.h"

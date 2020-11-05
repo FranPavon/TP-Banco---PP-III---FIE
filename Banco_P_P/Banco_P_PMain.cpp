@@ -75,7 +75,7 @@ Banco_P_PFrame::Banco_P_PFrame(wxWindow* parent,wxWindowID id)
     StaticText1->SetForegroundColour(wxColour(0,128,128));
     wxFont StaticText1Font(18,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
     StaticText1->SetFont(StaticText1Font);
-    StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\Pancho\\Desktop\\PP III\\TP-Banco---PP-III---FIE\\Banco_P_P\\banco_P_P.jpg"))), wxPoint(40,48), wxDefaultSize, 0, _T("ID_STATICBITMAP1"));
+    StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, wxBitmap(wxImage(_T("../Banco_P_P/banco_P_P.jpg"))), wxPoint(40,48), wxDefaultSize, 0, _T("ID_STATICBITMAP1"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuIngresar = new wxMenuItem(Menu1, ID_MENUINGRESAR, _("Ingresar"), _("Ingresar a la aplicación"), wxITEM_NORMAL);
