@@ -98,7 +98,7 @@
 				<face>Agency FB</face>
 			</font>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrlSaldo" member="yes">
 			<pos>200,168</pos>
 			<size>136,23</size>
 			<hidden>1</hidden>
@@ -137,7 +137,7 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText7" member="yes">
 			<label>Ingrese el DNI del titular de la cuenta:</label>
-			<pos>112,24</pos>
+			<pos>112,88</pos>
 			<size>200,21</size>
 			<font>
 				<size>12</size>
@@ -153,7 +153,7 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="ButtonBuscar" member="yes">
 			<label>Buscar</label>
-			<pos>208,56</pos>
+			<pos>240,56</pos>
 			<size>112,23</size>
 			<bg>#008080</bg>
 			<font>

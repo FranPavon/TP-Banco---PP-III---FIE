@@ -7,15 +7,15 @@ using namespace std;
 class Cuenta
 {
     public:
-        Cuenta(int =0, int=0, string ="", float = 0.0,float = 0.0);
+        Cuenta(int =0, int=0, bool = true, double = 0.0,float = 0.0);
         void setNroCuenta(int);
         int getNroCuenta();
         void setDniTitular(int);
         int getDniTitular();
-        void setTipo(string);
-        string getTipo();
-        void setSaldo(float);
-        float getSaldo();
+        void setTipo(bool);
+        bool getTipo();
+        void setSaldo(double);
+        double getSaldo();
         void setInteres(float);
         float getInteres();
         void setBorrado(int);
@@ -24,8 +24,9 @@ class Cuenta
 
     private:
         int numero, dniTitular, borrado;
-        char tipo[2];
-        float saldo, interes;
+        bool tipo; //CA True CC False
+        double saldo;
+        float interes;
 };
 
 

@@ -28,8 +28,8 @@ class AgregarCuenta: public wxDialog
 		wxStaticText* StaticText5;
 		wxStaticText* StaticText6;
 		wxStaticText* StaticText7;
-		wxTextCtrl* TextCtrl1;
 		wxTextCtrl* TextCtrlDNI;
+		wxTextCtrl* TextCtrlSaldo;
 		//*)
 
 	protected:

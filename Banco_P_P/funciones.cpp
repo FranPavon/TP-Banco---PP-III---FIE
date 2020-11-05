@@ -5,11 +5,11 @@
 #include <fstream>
 using namespace std;
 
-Cuenta::Cuenta(int nc, int dt, string t, float s, float i)
+Cuenta::Cuenta(int nc, int dt, bool b, double s, float i)
 {
     setNroCuenta(nc);
     setDniTitular(dt);
-    setTipo(t);
+    setTipo(b);
     setSaldo(s);
     setInteres(i);
 }
@@ -34,29 +34,22 @@ int Cuenta::getDniTitular()
     return dniTitular;
 }
 
-void Cuenta::setTipo(string t)
+void Cuenta::setTipo(bool b)
 {
-    const char *valorTipo = t.data();
-    int longitud = t.size();
-    longitud = longitud<2 ? longitud:1;
-    if ((strcmp(valorTipo,"CC"))||(strcmp(valorTipo,"CA")))
-        strncpy(tipo,valorTipo,longitud);
-    else
-        strcpy(tipo,"CA");
-    tipo[longitud] = '\0';
+    tipo = b;
 }
 
-string Cuenta::getTipo()
+bool Cuenta::getTipo()
 {
     return tipo;
 }
 
-void Cuenta::setSaldo(float s)
+void Cuenta::setSaldo(double s)
 {
     saldo = s;
 }
 
-float Cuenta::getSaldo()
+double Cuenta::getSaldo()
 {
     return saldo;
 }

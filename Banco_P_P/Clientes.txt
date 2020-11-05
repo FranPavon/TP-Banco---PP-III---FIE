@@ -1,2 +1,2 @@
 DNI       Nombre                   Apellido                 Dirección                               Telefono  
-32333222  pepe                     le                       pu                                      888999888 
+30333222                                                                                            0         
