@@ -1983,13 +1983,19 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604501038 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+1604630215 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
 	"BajaCliente.h"
+	"Cliente.h"
+	<fstream>
+	<wx/msgdlg.h>
+	<iomanip>
+	<stdio.h>
+	<stdlib.h>
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1604500922 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.h
+1604630592 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.h
 	<wx/button.h>
 	<wx/dialog.h>
 	<wx/stattext.h>
@@ -2124,7 +2130,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\choice.h
 
-1604600037 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+1604627272 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
 	"AgregarCuenta.h"
 	"Cliente.h"
 	"Cuenta.h"
@@ -2295,26 +2301,32 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604504690 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
+1604628708 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
 	"ModificarCliente.h"
+	"Cliente.h"
+	<fstream>
+	<wx/msgdlg.h>
+	<iomanip>
+	<stdio.h>
+	<stdlib.h>
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1604620088 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.h
+1604626299 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/dialog.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604592917 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
+1604629968 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
 	"Cliente.h"
 	"Cuenta.h"
 	<string.h>
 	<fstream>
 
-1604528428 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cliente.h
+1604629334 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cliente.h
 	<fstream>
 	<string>
 

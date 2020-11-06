@@ -66,6 +66,7 @@ class ModificarCliente: public wxDialog
 		void OnButton1Click(wxCommandEvent& event);
 		void OnButtonSalirClick(wxCommandEvent& event);
 		void OnButtonBuscarClick(wxCommandEvent& event);
+		void OnButtonConfirmarClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

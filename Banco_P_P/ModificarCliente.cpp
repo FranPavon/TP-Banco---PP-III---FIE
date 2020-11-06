@@ -94,6 +94,7 @@ ModificarCliente::ModificarCliente(wxWindow* parent,wxWindowID id,const wxPoint&
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonBuscarClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonSalirClick);
+	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonConfirmarClick);
 	//*)
 }
 
@@ -108,7 +109,41 @@ ModificarCliente::~ModificarCliente()
 
 void ModificarCliente::OnButtonSalirClick(wxCommandEvent& event)
 {
-    Close();
+    fstream arch;
+    arch.open("Clientes.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Modificación de cliente - Banco P&P"));
+    }
+    arch.close();
+    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Modificación de cliente - Banco P&P"));
+    }
+    ofstream archt;
+    Cliente reg;
+    archt.open("Clientes.txt",ios::out);
+    if(!archt)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Modificación de cliente - Banco P&P"));
+    }
+    archt<<left<<setw(10)<<"DNI"<<setw(25)<<"Nombre"<<setw(25)<<"Apellido"<<setw(40)<<"Dirección"<<setw(10)<<"Telefono"<<endl;
+
+    arch.seekg(0);
+    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+    while(!arch.eof())
+    {
+        archt<<left<<setw(10)<<reg.getDni()<<setw(25)<<reg.getNombre()<<setw(25)<<reg.getApellido()<<setw(40)<<reg.getDireccion()<<setw(10)<<reg.getTelefono()<<endl;
+        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+    }
+    archt.close();
+    arch.close();
+
+    Close ();
 }
 
 void ModificarCliente::OnButtonBuscarClick(wxCommandEvent& event)
@@ -171,4 +206,58 @@ void ModificarCliente::OnButtonBuscarClick(wxCommandEvent& event)
         TextCtrlDNI->Clear();
     }
     arch.close();
+}
+
+void ModificarCliente::OnButtonConfirmarClick(wxCommandEvent& event)
+{
+    Cliente reg,cli;
+    fstream arch;
+    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    wxString str = StaticTextDNI->GetLabel();
+    int d = wxAtoi(str);
+    cli.setDni(d);
+    cli.buscar(arch);
+    arch.seekg(-sizeof(Cliente),ios::cur);
+    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+    str = TextCtrlInfo->GetValue();
+    if (Choice1->GetSelection()==0)
+        reg.setDireccion(str.ToStdString());
+    else
+    {
+        int t;
+        t = wxAtoi(str);
+        reg.setTelefono(t);
+    }
+    arch.seekg(-sizeof(Cliente),ios::cur);
+    arch.write(reinterpret_cast<const char *>(&reg),sizeof(Cliente));
+    arch.close();
+
+    wxString msg = "Modificación exitosa";
+    wxMessageBox(msg, _("Modificación de cliente - Banco P&P"));
+
+    TextCtrlDNI->Show();
+    TextCtrlDNI->Clear();
+    StaticText1->Show();
+    ButtonBuscar->Show();
+
+    ButtonConfirmar->Hide();
+    StaticText2->Hide();
+    StaticText3->Hide();
+    StaticText4->Hide();
+    StaticText6->Hide();
+    StaticText8->Hide();
+    StaticText10->Hide();
+    StaticTextDNI->Hide();
+    StaticTextNombre->Hide();
+    StaticTextApellido->Hide();
+    StaticTextDireccion->Hide();
+    StaticTextTelefono->Hide();
+    Choice1->Hide();
+    TextCtrlInfo->Hide();
+    TextCtrlInfo->Clear();
 }

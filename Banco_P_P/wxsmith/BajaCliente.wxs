@@ -5,6 +5,14 @@
 		<size>400,256</size>
 		<fg>#008080</fg>
 		<bg>#303030</bg>
+		<font>
+			<size>12</size>
+			<style>normal</style>
+			<weight>bold</weight>
+			<underlined>0</underlined>
+			<family>swiss</family>
+			<face>Agency FB</face>
+		</font>
 		<pos_arg>1</pos_arg>
 		<size_arg>1</size_arg>
 		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
@@ -35,6 +43,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonConfirmarClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTONSALIR" variable="ButtonSalir" member="yes">
 			<label>Salir</label>
@@ -80,11 +89,12 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonBuscarClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticTextDNI" member="yes">
 			<label>DNI</label>
-			<pos>88,88</pos>
-			<size>232,21</size>
+			<pos>184,88</pos>
+			<size>136,21</size>
 			<hidden>1</hidden>
 			<font>
 				<size>12</size>
@@ -97,8 +107,8 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticTextNombre" member="yes">
 			<label>Nombre</label>
-			<pos>88,120</pos>
-			<size>232,21</size>
+			<pos>184,120</pos>
+			<size>136,21</size>
 			<hidden>1</hidden>
 			<font>
 				<size>12</size>
@@ -111,8 +121,8 @@
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticTextApellido" member="yes">
 			<label>Apellido</label>
-			<pos>88,152</pos>
-			<size>232,21</size>
+			<pos>184,152</pos>
+			<size>136,21</size>
 			<hidden>1</hidden>
 			<font>
 				<size>12</size>
@@ -122,6 +132,21 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText3" member="yes">
+			<label>DNI:</label>
+			<pos>72,88</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText4" member="yes">
+			<label>Nombre:</label>
+			<pos>72,120</pos>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText5" member="yes">
+			<label>Apellido:</label>
+			<pos>72,152</pos>
+			<hidden>1</hidden>
 		</object>
 	</object>
 </wxsmith>

@@ -291,5 +291,4 @@ void AgregarCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
     TextCtrlDNI->Show();
     StaticText7->Show();
     arch.close();
-
 }

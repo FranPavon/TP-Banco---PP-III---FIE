@@ -98,6 +98,7 @@
 			<size>136,32</size>
 			<hidden>1</hidden>
 			<bg>#008080</bg>
+			<handler function="OnButtonConfirmarClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT5" variable="StaticText4" member="yes">
 			<label>Dirección:</label>

@@ -18,12 +18,13 @@ class Cliente
         string getDireccion();
         void setTelefono(int);
         int getTelefono();
-        void setBorrado(int);
-        int getBorrado();
+        void setBorrado(bool);
+        bool getBorrado();
         void buscar(fstream &);
 
     private:
-        int dni,borrado;
+        int dni;
+        bool borrado;
         char nombre[25];
         char apellido[25];
         char direccion[40];
