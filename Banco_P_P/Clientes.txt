@@ -1,2 +1,0 @@
-DNI       Nombre                   Apellido                 Dirección                               Telefono  
-31333222  juan                     Salvado                  ahora tiene                             899988997 

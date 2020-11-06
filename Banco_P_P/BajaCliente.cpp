@@ -154,8 +154,8 @@ void BajaCliente::OnButtonSalirClick(wxCommandEvent& event)
     archCopia.close();
     char nombreViejo[]="ClientesCopia.dat";
     char nombreNuevo[]="Clientes.dat";
-    rename(nombreViejo,nombreNuevo);//ver esto
-    remove(nombreViejo);
+    remove(nombreNuevo);
+    rename(nombreViejo,nombreNuevo);
     Close ();
 }
 

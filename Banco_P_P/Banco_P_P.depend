@@ -1983,7 +1983,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604630215 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+1604667285 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
 	"BajaCliente.h"
 	"Cliente.h"
 	<fstream>
