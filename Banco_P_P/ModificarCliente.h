@@ -33,7 +33,7 @@ class ModificarCliente: public wxDialog
 		wxStaticText* StaticTextDireccion;
 		wxStaticText* StaticTextNombre;
 		wxStaticText* StaticTextTelefono;
-		wxTextCtrl* TextCtrl1;
+		wxTextCtrl* TextCtrlDNI;
 		wxTextCtrl* TextCtrlInfo;
 		//*)
 
@@ -65,6 +65,7 @@ class ModificarCliente: public wxDialog
 		//(*Handlers(ModificarCliente)
 		void OnButton1Click(wxCommandEvent& event);
 		void OnButtonSalirClick(wxCommandEvent& event);
+		void OnButtonBuscarClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

@@ -1,4 +1,10 @@
 #include "ModificarCliente.h"
+#include "Cliente.h"
+#include <fstream>
+#include <wx/msgdlg.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
 
 //(*InternalHeaders(ModificarCliente)
 #include <wx/font.h>
@@ -43,15 +49,12 @@ ModificarCliente::ModificarCliente(wxWindow* parent,wxWindowID id,const wxPoint&
 	wxFont thisFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	SetFont(thisFont);
 	StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Inserte el DNI del cliente a MODIFICAR:"), wxPoint(88,24), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-	TextCtrl1 = new wxTextCtrl(this, ID_TEXTCTRL1, wxEmptyString, wxPoint(64,64), wxSize(120,24), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-	wxFont TextCtrl1Font(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
-	TextCtrl1->SetFont(TextCtrl1Font);
+	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL1, wxEmptyString, wxPoint(64,64), wxSize(120,24), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+	wxFont TextCtrlDNIFont(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	TextCtrlDNI->SetFont(TextCtrlDNIFont);
 	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(208,64), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
 	Choice1 = new wxChoice(this, ID_CHOICE1, wxPoint(248,184), wxSize(144,26), 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
-	Choice1->Append(_("DNI"));
-	Choice1->Append(_("Nombre"));
-	Choice1->Append(_("Apellido"));
 	Choice1->Append(_("Dirección"));
 	Choice1->Append(_("Telefono"));
 	Choice1->Hide();
@@ -89,6 +92,7 @@ ModificarCliente::ModificarCliente(wxWindow* parent,wxWindowID id,const wxPoint&
 	StaticTextNombre = new wxStaticText(this, ID_STATICTEXT12, _("Label"), wxPoint(152,56), wxSize(224,25), 0, _T("ID_STATICTEXT12"));
 	StaticTextNombre->Hide();
 
+	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonBuscarClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonSalirClick);
 	//*)
 }
@@ -105,4 +109,66 @@ ModificarCliente::~ModificarCliente()
 void ModificarCliente::OnButtonSalirClick(wxCommandEvent& event)
 {
     Close();
+}
+
+void ModificarCliente::OnButtonBuscarClick(wxCommandEvent& event)
+{
+    Cliente reg,cli;
+    fstream arch;
+    int d;
+    arch.open("Clientes.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    arch.close();
+    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+    }
+    wxString str = TextCtrlDNI->GetValue();
+    d = wxAtoi(str);
+    cli.setDni(d);
+    cli.buscar(arch);
+    if(!arch.eof())//SI EXISTE PUEDO MODIFICAR
+    {
+        arch.seekg(-sizeof(Cliente),ios::cur);
+        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+
+        TextCtrlDNI->Hide();
+        StaticText1->Hide();
+        ButtonBuscar->Hide();
+
+        ButtonConfirmar->Show();
+        StaticText2->Show();
+        StaticText3->Show();
+        StaticText4->Show();
+        StaticText6->Show();
+        StaticText8->Show();
+        StaticText10->Show();
+        StaticTextDNI->Show();
+        StaticTextDNI->SetLabel(str);
+        StaticTextNombre->Show();
+        StaticTextNombre->SetLabel(reg.getNombre());
+        StaticTextApellido->Show();
+        StaticTextApellido->SetLabel(reg.getApellido());
+        StaticTextDireccion->Show();
+        StaticTextDireccion->SetLabel(reg.getDireccion());
+        StaticTextTelefono->Show();
+        int t =reg.getTelefono();
+        string ts = to_string(t);
+        StaticTextTelefono->SetLabel(ts);
+        Choice1->Show();
+        TextCtrlInfo->Show();
+    }
+    else //si no existe reintento
+    {
+        wxString msg = "Cliente inexistente, reintente o de la alta del mismo.";
+        wxMessageBox(msg, _("Modidicación de cliente - Banco P&P"));
+        TextCtrlDNI->Clear();
+    }
+    arch.close();
 }

@@ -19,7 +19,7 @@
 			<label>Inserte el DNI del cliente a MODIFICAR:</label>
 			<pos>88,24</pos>
 		</object>
-		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrlDNI" member="yes">
 			<pos>64,64</pos>
 			<size>120,24</size>
 			<font>
@@ -36,12 +36,10 @@
 			<pos>208,64</pos>
 			<size>120,32</size>
 			<bg>#008080</bg>
+			<handler function="OnButtonBuscarClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxChoice" name="ID_CHOICE1" variable="Choice1" member="yes">
 			<content>
-				<item>DNI</item>
-				<item>Nombre</item>
-				<item>Apellido</item>
 				<item>Dirección</item>
 				<item>Telefono</item>
 			</content>

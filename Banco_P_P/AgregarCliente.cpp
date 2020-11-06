@@ -2,9 +2,6 @@
 #include "Cliente.h"
 #include <fstream>
 #include <wx/msgdlg.h>
-#include <wx/string.h>
-#include <wx/font.h>
-#include <wx/intl.h>
 #include <iomanip>
 
 //(*InternalHeaders(AgregarCliente)

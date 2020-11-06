@@ -1967,14 +1967,11 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\statbox.h
 
-1604529033 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.cpp
+1604620352 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.cpp
 	"AgregarCliente.h"
 	"Cliente.h"
 	<fstream>
 	<wx/msgdlg.h>
-	<wx/string.h>
-	<wx/font.h>
-	<wx/intl.h>
 	<iomanip>
 	<wx/font.h>
 	<wx/intl.h>
@@ -2304,7 +2301,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1604504560 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.h
+1604620088 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/dialog.h>
