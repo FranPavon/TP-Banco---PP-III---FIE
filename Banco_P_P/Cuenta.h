@@ -18,13 +18,13 @@ class Cuenta
         double getSaldo();
         void setInteres(float);
         float getInteres();
-        void setBorrado(int);
-        int getBorrado();
+        void setBorrado(bool);
+        bool getBorrado();
         void buscar(fstream &);
 
     private:
-        int numero, dniTitular, borrado;
-        bool tipo; //CA True CC False
+        int numero, dniTitular;
+        bool tipo, borrado; //CA True CC False
         double saldo;
         float interes;
 };

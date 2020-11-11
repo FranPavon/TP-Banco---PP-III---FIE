@@ -64,15 +64,15 @@ float Cuenta::getInteres()
     return interes;
 }
 
-void Cuenta::setBorrado(int b)
+void Cuenta::setBorrado(bool b)
 {
-    if(b!=0 and b!=1)
-        borrado=0;
+    if(b)
+        borrado=true;
     else
-        borrado=1;
+        borrado=false;
 }
 
-int Cuenta::getBorrado()
+bool Cuenta::getBorrado()
 {
     return borrado;
 }

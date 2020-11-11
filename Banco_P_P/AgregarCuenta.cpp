@@ -3,9 +3,6 @@
 #include "Cuenta.h"
 #include <fstream>
 #include <wx/msgdlg.h>
-#include <wx/string.h>
-#include <wx/font.h>
-#include <wx/intl.h>
 #include <iomanip>
 #include <stdio.h>
 #include <stdlib.h>
@@ -271,7 +268,7 @@ void AgregarCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
         c.setNroCuenta(nc);
         c.buscar(arch);
     }
-    c.setBorrado(0);
+    c.setBorrado(false);
     arch.clear();
     arch.seekp(0,ios::end);
     arch.write(reinterpret_cast<const char *>(&c),sizeof(Cuenta));

@@ -202,7 +202,7 @@ void ModificarCliente::OnButtonBuscarClick(wxCommandEvent& event)
     else //si no existe reintento
     {
         wxString msg = "Cliente inexistente, reintente o de la alta del mismo.";
-        wxMessageBox(msg, _("Modidicación de cliente - Banco P&P"));
+        wxMessageBox(msg, _("Modificación de cliente - Banco P&P"));
         TextCtrlDNI->Clear();
     }
     arch.close();

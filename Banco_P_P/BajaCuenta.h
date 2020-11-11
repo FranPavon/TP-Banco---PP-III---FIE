@@ -16,16 +16,16 @@ class BajaCuenta: public wxDialog
 		virtual ~BajaCuenta();
 
 		//(*Declarations(BajaCuenta)
-		wxButton* Button1;
+		wxButton* ButtonBuscar;
 		wxButton* ButtonConfirmar;
 		wxButton* ButtonSalir;
-		wxStaticText* StaticText1;
-		wxStaticText* StaticText2;
-		wxStaticText* StaticText3;
-		wxStaticText* StaticText6;
-		wxStaticText* StaticText8;
+		wxStaticText* StaticTextD;
 		wxStaticText* StaticTextDNI;
+		wxStaticText* StaticTextNC;
 		wxStaticText* StaticTextNroCuenta;
+		wxStaticText* StaticTextT1;
+		wxStaticText* StaticTextT2;
+		wxStaticText* StaticTextTC;
 		wxStaticText* StaticTextTipoCuenta;
 		wxTextCtrl* TextCtrl1;
 		//*)
@@ -51,6 +51,7 @@ class BajaCuenta: public wxDialog
 
 		//(*Handlers(BajaCuenta)
 		void OnButtonSalirClick(wxCommandEvent& event);
+		void OnButtonBuscarClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

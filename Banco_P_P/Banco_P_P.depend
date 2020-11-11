@@ -1983,7 +1983,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604667285 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+1604927997 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
 	"BajaCliente.h"
 	"Cliente.h"
 	<fstream>
@@ -2130,15 +2130,12 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\choice.h
 
-1604627272 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+1605097702 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
 	"AgregarCuenta.h"
 	"Cliente.h"
 	"Cuenta.h"
 	<fstream>
 	<wx/msgdlg.h>
-	<wx/string.h>
-	<wx/font.h>
-	<wx/intl.h>
 	<iomanip>
 	<stdio.h>
 	<stdlib.h>
@@ -2289,19 +2286,25 @@
 	<wx/dialog.h>
 	<wx/stattext.h>
 
-1604501757 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.cpp
+1605096845 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.cpp
 	"BajaCuenta.h"
+	"Cuenta.h"
+	<fstream>
+	<wx/msgdlg.h>
+	<iomanip>
+	<stdio.h>
+	<stdlib.h>
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1604501675 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.h
+1605095563 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.h
 	<wx/button.h>
 	<wx/dialog.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604628708 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
+1605095011 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
 	"ModificarCliente.h"
 	"Cliente.h"
 	<fstream>
@@ -2320,7 +2323,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1604629968 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
+1605095188 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
 	"Cliente.h"
 	"Cuenta.h"
 	<string.h>
@@ -2330,7 +2333,7 @@
 	<fstream>
 	<string>
 
-1604592917 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cuenta.h
+1605095188 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cuenta.h
 	<fstream>
 	<string>
 
