@@ -116,6 +116,14 @@ void BajaCuenta::OnButtonBuscarClick(wxCommandEvent& event)
         wxString msg = "Error de apertura de archivo";
         wxMessageBox(msg, _("Baja de Cuentas - Banco P&P"));
     }
+    arch.close();
+    arch.open("Cuentas.dat",ios::in|ios::out|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de Cuentas - Banco P&P"));
+    }
+
     wxString ncs = TextCtrl1->GetValue();
     nc = wxAtoi(ncs);
     cuenta.setNroCuenta(nc);

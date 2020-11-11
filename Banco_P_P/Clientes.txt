@@ -1,4 +1,4 @@
 DNI       Nombre                   Apellido                 Dirección                               Telefono  
-30333222  1                        1                        1                                       1         
+30333222  1                        1                        en un edificio                          1         
 31333222  2                        2                        ahora tiene direccion                   2         
-33333222  4                        4                        4                                       4         
+36333222  Francisco                Pavon                    Bajo el puente                          78978987  
