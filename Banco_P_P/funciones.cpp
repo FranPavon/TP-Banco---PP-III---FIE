@@ -1,9 +1,112 @@
 #include "Cliente.h"
 #include "Cuenta.h"
+#include "Movimiento.h"
 
 #include <string.h>
 #include <fstream>
+#include <ctime>
+
 using namespace std;
+
+Movimiento::Movimiento(int nc, int dt, string ape, string nom, bool tc, bool tm, double m)
+{
+    setNroCuenta(nc);
+    setDniTitular(dt);
+    setTipoCuenta(tc);
+    setTipoMovimiento(tm);
+    setApellido(ape);
+    setNombre(nom);
+    setMonto (m);
+}
+
+void Movimiento::setNroCuenta(int nc)
+{
+    numeroCuenta = nc;
+}
+
+int Movimiento::getNroCuenta()
+{
+    return numeroCuenta;
+}
+
+void Movimiento::setDniTitular(int d)
+{
+    dniTitular = d;
+}
+
+int Movimiento::getDniTitular()
+{
+    return dniTitular;
+}
+
+void Movimiento::setTipoCuenta(bool tc)
+{
+    tipoCuenta = tc;
+}
+
+bool Movimiento::getTipoCuenta()
+{
+    return tipoCuenta;
+}
+
+void Movimiento::setTipoMovimiento(bool tm)
+{
+    tipoMovimiento = tm;
+}
+
+bool Movimiento::getTipoMovimiento()
+{
+    return tipoMovimiento;
+}
+
+void Movimiento::setMonto(double m)
+{
+    monto = m;
+}
+
+double Movimiento::getMonto()
+{
+    return monto;
+}
+
+void Movimiento::setNombre(string nom)
+{
+    const char *valorNombre = nom.data();
+    int longitud = nom.size();
+    longitud = longitud<25 ? longitud:24;
+    strncpy(nombre,valorNombre,longitud);
+    nombre[longitud] = '\0';
+}
+
+string Movimiento::getNombre()
+{
+    return nombre;
+}
+
+void Movimiento::setApellido(string ape)
+{
+    const char *valorApellido = ape.data();
+    int longitud = ape.size();
+    longitud = longitud<25 ? longitud:24;
+    strncpy(apellido,valorApellido,longitud);
+    apellido[longitud] = '\0';
+}
+
+string Movimiento::getApellido()
+{
+    return apellido;
+}
+
+void Movimiento::setFecha()
+{
+    time_t now = time(0);
+    fecha = localtime(&now);
+}
+
+tm* Movimiento::getFecha()
+{
+    return fecha;
+}
 
 Cuenta::Cuenta(int nc, int dt, bool b, double s, float i)
 {

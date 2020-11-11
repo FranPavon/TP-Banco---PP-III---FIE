@@ -20,12 +20,15 @@ class AppPrincipal: public wxFrame
 		wxButton* ButtonAgregarCuenta;
 		wxButton* ButtonBajaCliente;
 		wxButton* ButtonBajaCuenta;
-		wxButton* ButtonDeposito;
-		wxButton* ButtonExtraccion;
+		wxButton* ButtonCA;
+		wxButton* ButtonCC;
+		wxButton* ButtonClientes;
 		wxButton* ButtonModificarCliente;
+		wxButton* ButtonMov;
+		wxButton* ButtonMovimientos;
 		wxStaticBox* StaticBox1;
 		wxStaticBox* StaticBox2;
-		wxStaticBox* StaticBox3;
+		wxStaticBox* StaticBoxListados;
 		wxStaticText* StaticText1;
 		//*)
 
@@ -34,15 +37,18 @@ class AppPrincipal: public wxFrame
 		//(*Identifiers(AppPrincipal)
 		static const long ID_STATICBOX1;
 		static const long ID_STATICBOX2;
-		static const long ID_STATICBOX3;
 		static const long ID_BUTTONAGREGARCLIENTE;
 		static const long ID_BUTTONMODIFICARCLIENTE;
 		static const long ID_BUTTONBAJACLIENTE;
 		static const long ID_BUTTONAGREGARCUENTA;
 		static const long ID_BUTTONBAJACUENTA;
-		static const long ID_BUTTONEXTRACCION;
-		static const long ID_BUTTONDEPOSITO;
+		static const long ID_BUTTONMOV;
 		static const long ID_STATICTEXT1;
+		static const long ID_STATICBOX3;
+		static const long ID_BUTTON1;
+		static const long ID_BUTTON2;
+		static const long ID_BUTTON3;
+		static const long ID_BUTTON4;
 		//*)
 
 	private:
@@ -57,6 +63,10 @@ class AppPrincipal: public wxFrame
 		void OnButtonExtraccionClick(wxCommandEvent& event);
 		void OnButtonBajaCuentaClick(wxCommandEvent& event);
 		void OnButtonModificarClienteClick(wxCommandEvent& event);
+		void OnButtonMovimientosClick(wxCommandEvent& event);
+		void OnButtonClientesClick(wxCommandEvent& event);
+		void OnButtonCAClick(wxCommandEvent& event);
+		void OnButtonCCClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

@@ -52,6 +52,7 @@ class BajaCuenta: public wxDialog
 		//(*Handlers(BajaCuenta)
 		void OnButtonSalirClick(wxCommandEvent& event);
 		void OnButtonBuscarClick(wxCommandEvent& event);
+		void OnButtonConfirmarClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

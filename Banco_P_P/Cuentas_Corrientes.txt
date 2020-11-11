@@ -1,2 +1,3 @@
-Nro de Cuenta  DNI Titular    Saldo          Interes        
-3424           36333222       600            0              
+Baja de Cuenta DNI Titular    Saldo          Interes        
+8515           1              1              0              
+8554           1              2              0              

@@ -98,12 +98,11 @@
 		<Unit filename="Banco_P_PMain.h" />
 		<Unit filename="Cliente.h" />
 		<Unit filename="Cuenta.h" />
-		<Unit filename="Deposito.cpp" />
-		<Unit filename="Deposito.h" />
-		<Unit filename="Extraccion.cpp" />
-		<Unit filename="Extraccion.h" />
 		<Unit filename="ModificarCliente.cpp" />
 		<Unit filename="ModificarCliente.h" />
+		<Unit filename="Movimiento.h" />
+		<Unit filename="Movimientos.cpp" />
+		<Unit filename="Movimientos.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
@@ -114,9 +113,8 @@
 		<Unit filename="wxsmith/BajaCliente.wxs" />
 		<Unit filename="wxsmith/BajaCuenta.wxs" />
 		<Unit filename="wxsmith/Banco_P_Pframe.wxs" />
-		<Unit filename="wxsmith/Deposito.wxs" />
-		<Unit filename="wxsmith/Extraccion.wxs" />
 		<Unit filename="wxsmith/ModificarCliente.wxs" />
+		<Unit filename="wxsmith/Movimientos.wxs" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 			<wxsmith version="1">
@@ -127,10 +125,9 @@
 					<wxFrame wxs="wxsmith/AgregarCliente.wxs" src="AgregarCliente.cpp" hdr="AgregarCliente.h" fwddecl="0" i18n="1" name="AgregarCliente" language="CPP" />
 					<wxDialog wxs="wxsmith/BajaCliente.wxs" src="BajaCliente.cpp" hdr="BajaCliente.h" fwddecl="0" i18n="1" name="BajaCliente" language="CPP" />
 					<wxDialog wxs="wxsmith/AgregarCuenta.wxs" src="AgregarCuenta.cpp" hdr="AgregarCuenta.h" fwddecl="0" i18n="1" name="AgregarCuenta" language="CPP" />
-					<wxDialog wxs="wxsmith/Deposito.wxs" src="Deposito.cpp" hdr="Deposito.h" fwddecl="0" i18n="1" name="Deposito" language="CPP" />
-					<wxDialog wxs="wxsmith/Extraccion.wxs" src="Extraccion.cpp" hdr="Extraccion.h" fwddecl="0" i18n="1" name="Extraccion" language="CPP" />
 					<wxDialog wxs="wxsmith/BajaCuenta.wxs" src="BajaCuenta.cpp" hdr="BajaCuenta.h" fwddecl="0" i18n="1" name="BajaCuenta" language="CPP" />
 					<wxDialog wxs="wxsmith/ModificarCliente.wxs" src="ModificarCliente.cpp" hdr="ModificarCliente.h" fwddecl="0" i18n="1" name="ModificarCliente" language="CPP" />
+					<wxDialog wxs="wxsmith/Movimientos.wxs" src="Movimientos.cpp" hdr="Movimientos.h" fwddecl="0" i18n="1" name="Movimientos" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

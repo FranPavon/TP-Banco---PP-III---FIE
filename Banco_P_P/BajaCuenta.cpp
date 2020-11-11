@@ -5,7 +5,6 @@
 #include <iomanip>
 #include <stdio.h>
 #include <stdlib.h>
-
 //(*InternalHeaders(BajaCuenta)
 #include <wx/font.h>
 #include <wx/intl.h>
@@ -35,7 +34,7 @@ END_EVENT_TABLE()
 BajaCuenta::BajaCuenta(wxWindow* parent,wxWindowID id)
 {
 	//(*Initialize(BajaCuenta)
-	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
+	Create(parent, id, _("Baja de cuenta"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
 	SetClientSize(wxSize(404,288));
 	SetForegroundColour(wxColour(0,128,128));
 	SetBackgroundColour(wxColour(48,48,48));
@@ -87,6 +86,7 @@ BajaCuenta::BajaCuenta(wxWindow* parent,wxWindowID id)
 	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonBuscar->SetFont(ButtonBuscarFont);
 
+	Connect(ID_BUTTONCONFIRMAR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCuenta::OnButtonConfirmarClick);
 	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCuenta::OnButtonSalirClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCuenta::OnButtonBuscarClick);
 	//*)
@@ -101,6 +101,78 @@ BajaCuenta::~BajaCuenta()
 
 void BajaCuenta::OnButtonSalirClick(wxCommandEvent& event)
 {
+    Cuenta reg;
+    fstream arch;
+    arch.open("Cuentas.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de cuenta - Banco P&P"));
+    }
+    arch.close();
+    arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de cuenta- Banco P&P"));
+    }
+
+    fstream archCopia;
+    archCopia.open("CuentasCopia.dat",ios::app|ios::binary);
+    if(!archCopia)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de cuenta - Banco P&P"));
+    }
+    archCopia.close();
+    archCopia.open("CuentasCopia.dat",ios::in|ios::out |ios::binary);
+    if(!archCopia)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de cliente - Banco P&P"));
+    }
+
+    ofstream archca;
+    archca.open("Cajas_de_Ahorro.txt",ios::out);
+    if(!archca)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de Cuentas - Banco P&P"));
+    }
+    archca<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+    ofstream archcc;
+    archcc.open("Cuentas_Corrientes.txt",ios::out);
+    if(!archca)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de Cuentas - Banco P&P"));
+    }
+    archcc<<left<<setw(15)<<"Baja de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+    arch.seekg(0);
+    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+
+    while(!arch.eof())
+    {
+        if(!reg.getBorrado())
+        {
+        archCopia.write(reinterpret_cast<const char *>(&reg),sizeof(Cuenta));
+        if (reg.getTipo())
+            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+        else
+            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+        }
+        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    }
+    archca.close();
+    archcc.close();
+    arch.close();
+    archCopia.close();
+    char nombreViejo[]="CuentasCopia.dat";
+    char nombreNuevo[]="Cuentas.dat";
+    remove(nombreNuevo);
+    rename(nombreViejo,nombreNuevo);
     Close();
 }
 
@@ -137,6 +209,7 @@ void BajaCuenta::OnButtonBuscarClick(wxCommandEvent& event)
         ButtonBuscar->Hide();
         StaticTextT1->Hide();
 
+        ButtonConfirmar->Show();
         StaticTextT2->Show();
         StaticTextD->Show();
         StaticTextDNI->Show();
@@ -162,3 +235,53 @@ void BajaCuenta::OnButtonBuscarClick(wxCommandEvent& event)
 }
 
 
+
+void BajaCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
+{
+    Cuenta cuenta;
+    fstream arch;
+    arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de Cuenta - Banco P&P"));
+    }
+    wxString str = StaticTextNroCuenta->GetLabel();
+    int nc = wxAtoi(str);
+    cuenta.setNroCuenta(nc);
+    cuenta.buscar(arch);
+    arch.seekg(-sizeof(Cuenta),ios::cur);
+    arch.read(reinterpret_cast<char *>(&cuenta),sizeof(Cuenta));
+    cuenta.setBorrado(true);
+    arch.seekg(-sizeof(Cuenta),ios::cur);
+    arch.write(reinterpret_cast<const char *>(&cuenta),sizeof(Cuenta));
+    arch.close();
+    if (cuenta.getSaldo()>0)
+    {
+        //todo: registrar el movimiento!
+        string s;
+        ostringstream temp;  // 'temp' as in temporary
+        temp << cuenta.getSaldo();
+        s = temp.str();
+        wxString msg = ("Baja exitosa. Retire su saldo de $ "+s);
+        wxMessageBox(msg, _("Baja de cliente - Banco P&P"));
+    }
+    else
+    {
+        wxString msg = "Baja exitosa";
+        wxMessageBox(msg, _("Baja de cuenta - Banco P&P"));
+    }
+
+    TextCtrl1->Show();
+    ButtonBuscar->Show();
+    StaticTextT1->Show();
+
+    ButtonConfirmar->Hide();
+    StaticTextT2->Hide();
+    StaticTextD->Hide();
+    StaticTextDNI->Hide();
+    StaticTextNC->Hide();
+    StaticTextNroCuenta->Hide();
+    StaticTextTC->Hide();
+    StaticTextTipoCuenta->Hide();
+}

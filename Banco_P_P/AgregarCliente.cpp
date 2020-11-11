@@ -120,7 +120,6 @@ void AgregarCliente::OnButtonSalirClick(wxCommandEvent& event)
     }
     archt.close();
     arch.close();
-
     Close ();
 }
 

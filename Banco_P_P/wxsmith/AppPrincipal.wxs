@@ -3,7 +3,7 @@
 	<object class="wxFrame" name="AppPrincipal">
 		<title>Banco P&amp;P</title>
 		<centered>1</centered>
-		<size>1053,289</size>
+		<size>1053,340</size>
 		<hidden>1</hidden>
 		<fg>#008080</fg>
 		<bg>#202020</bg>
@@ -11,7 +11,7 @@
 		<object class="wxStaticBox" name="ID_STATICBOX1" variable="StaticBox1" member="yes">
 			<label>Clientes</label>
 			<pos>32,48</pos>
-			<size>456,208</size>
+			<size>456,144</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -25,23 +25,8 @@
 		</object>
 		<object class="wxStaticBox" name="ID_STATICBOX2" variable="StaticBox2" member="yes">
 			<label>Cuentas</label>
-			<pos>584,48</pos>
-			<size>432,88</size>
-			<fg>#FFFFFF</fg>
-			<bg>#606060</bg>
-			<font>
-				<size>12</size>
-				<style>normal</style>
-				<weight>bold</weight>
-				<underlined>0</underlined>
-				<family>swiss</family>
-				<face>Agency FB</face>
-			</font>
-		</object>
-		<object class="wxStaticBox" name="ID_STATICBOX3" variable="StaticBox3" member="yes">
-			<label>Movimientos</label>
-			<pos>584,168</pos>
-			<size>432,88</size>
+			<pos>576,48</pos>
+			<size>448,144</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -55,7 +40,7 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCLIENTE" variable="ButtonAgregarCliente" member="yes">
 			<label>Agregar</label>
-			<pos>88,88</pos>
+			<pos>80,80</pos>
 			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
@@ -71,7 +56,7 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONMODIFICARCLIENTE" variable="ButtonModificarCliente" member="yes">
 			<label>Modificar</label>
-			<pos>304,88</pos>
+			<pos>304,80</pos>
 			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
@@ -87,7 +72,7 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACLIENTE" variable="ButtonBajaCliente" member="yes">
 			<label>Baja</label>
-			<pos>192,200</pos>
+			<pos>192,136</pos>
 			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
@@ -103,7 +88,7 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCUENTA" variable="ButtonAgregarCuenta" member="yes">
 			<label>Agregar</label>
-			<pos>664,80</pos>
+			<pos>624,80</pos>
 			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
@@ -119,7 +104,7 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACUENTA" variable="ButtonBajaCuenta" member="yes">
 			<label>Baja</label>
-			<pos>840,80</pos>
+			<pos>736,136</pos>
 			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
@@ -133,9 +118,9 @@
 			</font>
 			<handler function="OnButtonBajaCuentaClick" entry="EVT_BUTTON" />
 		</object>
-		<object class="wxButton" name="ID_BUTTONEXTRACCION" variable="ButtonExtraccion" member="yes">
-			<label>Extracción</label>
-			<pos>848,200</pos>
+		<object class="wxButton" name="ID_BUTTONMOV" variable="ButtonMovimientos" member="yes">
+			<label>Movimientos</label>
+			<pos>848,80</pos>
 			<size>128,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
@@ -147,29 +132,87 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
-			<handler function="OnButtonExtraccionClick" entry="EVT_BUTTON" />
-		</object>
-		<object class="wxButton" name="ID_BUTTONDEPOSITO" variable="ButtonDeposito" member="yes">
-			<label>Depósito</label>
-			<pos>664,200</pos>
-			<size>128,32</size>
-			<fg>#000000</fg>
-			<bg>#008080</bg>
-			<font>
-				<size>10</size>
-				<style>normal</style>
-				<weight>bold</weight>
-				<underlined>0</underlined>
-				<family>swiss</family>
-				<face>Agency FB</face>
-			</font>
-			<handler function="OnButtonDepositoClick" entry="EVT_BUTTON" />
+			<handler function="OnButtonMovimientosClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
 			<label>Sistema de administración de clientes, cuentas y moviemientos - Banco P and P</label>
 			<pos>304,8</pos>
 			<font>
 				<size>16</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxStaticBox" name="ID_STATICBOX3" variable="StaticBoxListados" member="yes">
+			<label>Listados</label>
+			<pos>32,216</pos>
+			<size>992,88</size>
+			<fg>#FFFFFF</fg>
+			<bg>#606060</bg>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+		</object>
+		<object class="wxButton" name="ID_BUTTON1" variable="ButtonClientes" member="yes">
+			<label>Clientes</label>
+			<pos>96,248</pos>
+			<size>128,31</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonClientesClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON2" variable="ButtonCA" member="yes">
+			<label>Cajas de Ahorro</label>
+			<pos>344,248</pos>
+			<size>128,32</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonCAClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON3" variable="ButtonCC" member="yes">
+			<label>Cuentas Corriente</label>
+			<pos>592,248</pos>
+			<size>128,32</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonCCClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON4" variable="ButtonMov" member="yes">
+			<label>Movimientos</label>
+			<pos>840,248</pos>
+			<size>128,32</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
 				<style>normal</style>
 				<weight>bold</weight>
 				<underlined>0</underlined>
