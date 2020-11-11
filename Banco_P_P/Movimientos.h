@@ -23,6 +23,7 @@ class Movimientos: public wxDialog
 		wxChoice* ChoiceMov;
 		wxStaticText* StaticText1D;
 		wxStaticText* StaticTextDNI;
+		wxStaticText* StaticTextM;
 		wxStaticText* StaticTextNC;
 		wxStaticText* StaticTextNroCuenta;
 		wxStaticText* StaticTextTC;
@@ -50,6 +51,7 @@ class Movimientos: public wxDialog
 		static const long ID_STATICTEXT6;
 		static const long ID_STATICTEXT7;
 		static const long ID_STATICTEXT8;
+		static const long ID_STATICTEXT9;
 		//*)
 
 	private:
@@ -57,6 +59,7 @@ class Movimientos: public wxDialog
 		//(*Handlers(Movimientos)
 		void OnButtonBuscarClick(wxCommandEvent& event);
 		void OnButtonConfimarClick(wxCommandEvent& event);
+		void OnButtonSalirClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

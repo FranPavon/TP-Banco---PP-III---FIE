@@ -118,6 +118,7 @@ AppPrincipal::AppPrincipal(wxWindow* parent,wxWindowID id)
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonClientesClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonCAClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonCCClick);
+	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AppPrincipal::OnButtonMovClick);
 	//*)
 }
 
@@ -183,4 +184,11 @@ void AppPrincipal::OnButtonCCClick(wxCommandEvent& event)
     wxString msg = "Abriendo lista de cuentas corrientes...";
     wxMessageBox(msg, _("Listados de Banco P&P"));
     system("Cuentas_Corrientes.txt");
+}
+
+void AppPrincipal::OnButtonMovClick(wxCommandEvent& event)
+{
+    wxString msg = "Abriendo lista de movimientos...";
+    wxMessageBox(msg, _("Listados de Banco P&P"));
+    system("Movimientos.txt");
 }

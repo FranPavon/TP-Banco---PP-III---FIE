@@ -58,9 +58,9 @@
 			<pos>224,344</pos>
 			<size>120,32</size>
 			<bg>#008080</bg>
+			<handler function="OnButtonSalirClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrlMonto" member="yes">
-			<value>Ingrese el monto (entre 1 y 1000000)</value>
 			<pos>56,296</pos>
 			<size>296,33</size>
 			<hidden>1</hidden>
@@ -126,6 +126,11 @@
 			<label>Label</label>
 			<pos>192,160</pos>
 			<size>160,25</size>
+			<hidden>1</hidden>
+		</object>
+		<object class="wxStaticText" name="ID_STATICTEXT9" variable="StaticTextM" member="yes">
+			<label>Ingrese el monto (entre 1 y 1000000):</label>
+			<pos>56,264</pos>
 			<hidden>1</hidden>
 		</object>
 	</object>

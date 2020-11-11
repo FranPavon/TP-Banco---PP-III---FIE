@@ -219,6 +219,7 @@
 				<family>swiss</family>
 				<face>Agency FB</face>
 			</font>
+			<handler function="OnButtonMovClick" entry="EVT_BUTTON" />
 		</object>
 	</object>
 </wxsmith>

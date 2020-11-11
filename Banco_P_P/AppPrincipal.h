@@ -67,6 +67,7 @@ class AppPrincipal: public wxFrame
 		void OnButtonClientesClick(wxCommandEvent& event);
 		void OnButtonCAClick(wxCommandEvent& event);
 		void OnButtonCCClick(wxCommandEvent& event);
+		void OnButtonMovClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

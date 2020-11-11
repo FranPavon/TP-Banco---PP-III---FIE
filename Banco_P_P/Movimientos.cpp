@@ -30,6 +30,7 @@ const long Movimientos::ID_STATICTEXT5 = wxNewId();
 const long Movimientos::ID_STATICTEXT6 = wxNewId();
 const long Movimientos::ID_STATICTEXT7 = wxNewId();
 const long Movimientos::ID_STATICTEXT8 = wxNewId();
+const long Movimientos::ID_STATICTEXT9 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(Movimientos,wxDialog)
@@ -60,7 +61,7 @@ Movimientos::Movimientos(wxWindow* parent,wxWindowID id,const wxPoint& pos,const
 	ButtonConfimar->SetBackgroundColour(wxColour(0,128,128));
 	ButtonSalir = new wxButton(this, ID_BUTTON3, _("Salir"), wxPoint(224,344), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
 	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
-	TextCtrlMonto = new wxTextCtrl(this, ID_TEXTCTRL2, _("Ingrese el monto (entre 1 y 1000000)"), wxPoint(56,296), wxSize(296,33), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	TextCtrlMonto = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(56,296), wxSize(296,33), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
 	TextCtrlMonto->Hide();
 	wxFont TextCtrlMontoFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	TextCtrlMonto->SetFont(TextCtrlMontoFont);
@@ -84,9 +85,12 @@ Movimientos::Movimientos(wxWindow* parent,wxWindowID id,const wxPoint& pos,const
 	StaticTextNroCuenta->Hide();
 	StaticTextTipoCuenta = new wxStaticText(this, ID_STATICTEXT8, _("Label"), wxPoint(192,160), wxSize(160,25), 0, _T("ID_STATICTEXT8"));
 	StaticTextTipoCuenta->Hide();
+	StaticTextM = new wxStaticText(this, ID_STATICTEXT9, _("Ingrese el monto (entre 1 y 1000000):"), wxPoint(56,264), wxDefaultSize, 0, _T("ID_STATICTEXT9"));
+	StaticTextM->Hide();
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Movimientos::OnButtonBuscarClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Movimientos::OnButtonConfimarClick);
+	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Movimientos::OnButtonSalirClick);
 	//*)
 }
 
@@ -147,6 +151,7 @@ void Movimientos::OnButtonBuscarClick(wxCommandEvent& event)
         StaticTextTM->Show();
         ChoiceMov->Show();
         TextCtrlMonto->Show();
+        StaticTextM->Show();
     }
     else
     {
@@ -211,34 +216,188 @@ void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
     wxString strM = TextCtrlMonto->GetValue();
     double m;
     strM.ToDouble(&m);
-    while (m<1 || m>999999)
+    if (m<1 || m>999999)
     {
-        wxString msg = "Ingreso inválido, reintente";
+        wxString msg = "Ingreso inválido, debe ser entre 1 y 10000000. Reintente";
         wxMessageBox(msg, _("Movimientos - Banco P&P"));
-        TextCtrlMonto->Clear();
-        strM = TextCtrlMonto->GetValue();
-        double m;
-        strM.ToDouble(&m);
-
+        archMov.close();
+        archCuenta.close();
+        archClientes.close();
+        Close();
     }
 
-    //wxString str = TextCtrlDNI->GetValue();
-    //int d = wxAtoi(str);
-    //cliente.setDni(d);
-    //cliente.buscar(arch);
-    //arch.seekg(-sizeof(Cliente),ios::cur);
-    //arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+    wxString strD = StaticTextDNI->GetLabel();
+    int d = wxAtoi(strD);
+    cliente.setDni(d);
+    cliente.buscar(archClientes);
+    archClientes.seekg(-sizeof(Cliente),ios::cur);
+    archClientes.read(reinterpret_cast<char *>(&cliente),sizeof(Cliente));
 
+    wxString strNC = StaticTextNroCuenta->GetLabel();
+    int nc = wxAtoi(strNC);
+    cuenta.setNroCuenta(nc);
+    cuenta.buscar(archCuenta);
+    archCuenta.seekg(-sizeof(Cuenta),ios::cur);
+    archCuenta.read(reinterpret_cast<char *>(&cuenta),sizeof(Cuenta));
 
+    mov.setNroCuenta(nc);
+    mov.setDniTitular(d);
+    mov.setTipoCuenta(cuenta.getTipo());
+    mov.setApellido(cliente.getApellido());
+    mov.setNombre(cliente.getNombre());
+    mov.setMonto(m);
+    mov.setFecha();
+    bool tipoMov = (ChoiceMov->GetSelection()==0)?true:false;
+    mov.setTipoMovimiento(tipoMov);
 
+    if (tipoMov) //esta realizando una extraccion
+    {
+        double st = cuenta.getSaldo()- m;
+        if (cuenta.getTipo())
+        {
+            if (st>0) //es CA, no puede ser negativo
+                cuenta.setSaldo(st);
+            else
+            {
+                wxString msg = "No puede retirar tanto dinero de su CA. Reintente";
+                wxMessageBox(msg, _("Movimientos - Banco P&P"));
+                archMov.close();
+                archCuenta.close();
+                archClientes.close();
+                Close();
+            }
+        }
+        else //es CC
+        {
+            if (st>-5000) //saldo en descubierto de la CC
+                cuenta.setSaldo(st);
+            else
+            {
+                wxString msg = "No puede retirar tanto dinero de su CC. Reintente";
+                wxMessageBox(msg, _("Movimientos - Banco P&P"));
+                archMov.close();
+                archCuenta.close();
+                archClientes.close();
+                Close();
+            }
+        }
+    }
+    else //realiza un deposito
+    {
+        cuenta.setSaldo(cuenta.getSaldo()+ m);
+    }
 
-
-
-
-
-
-
+    archCuenta.seekg(-sizeof(Cuenta),ios::cur);
+    archCuenta.write(reinterpret_cast<const char *>(&cuenta),sizeof(Cuenta));
     archMov.close();
     archCuenta.close();
     archClientes.close();
+
+    TextCtrlCuenta->Show();
+    ButtonBuscar->Show();
+    StaticTextTitulo->Show();
+
+    ButtonConfimar->Hide();
+    StaticText1D->Hide();
+    StaticTextDNI->Hide();
+    StaticTextNC->Hide();
+    StaticTextNroCuenta->Hide();
+    StaticTextTC->Hide();
+    StaticTextTipoCuenta->Hide();
+    StaticTextTM->Hide();
+    ChoiceMov->Hide();
+    TextCtrlMonto->Hide();
+    StaticTextM->Hide();
+}
+
+void Movimientos::OnButtonSalirClick(wxCommandEvent& event)
+{
+    Movimiento mov;
+    fstream archMov;
+    archMov.open("Movimientos.dat",ios::app|ios::binary);
+    if(!archMov)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Movimientos - Banco P&P"));
+    }
+    archMov.close();
+    archMov.open("Movimientos.dat",ios::in|ios::out |ios::binary);
+    if(!archMov)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Movimientos - Banco P&P"));
+    }
+
+    ofstream archTM;
+    archTM.open("Movimientos.txt",ios::out);
+    if(!archTM)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Moviemientos - Banco P&P"));
+    }
+    archTM<<left<<setw(5)<<"Día"<<setw(5)<<"Mes"<<setw(5)<<"Año"<<setw(15)<<"Hora"<<setw(15)<<"Nro Cuenta"<<setw(15)<<"DNI"<<setw(15)<<"Apellido"<<setw(15)<<"Nombre"<<setw(5)<<"T Cta"<<setw(5)<<"T Op"<<setw(5)<<"Monto"<<endl;
+
+    archMov.seekg(0);
+    archMov.read(reinterpret_cast<char *>(&mov),sizeof(Movimiento));
+    while(!archTM.eof())
+    {
+        const char* TC = (mov.getTipoCuenta())?"CA":"CC";
+        const char* TM = (mov.getTipoMovimiento())?"E":"D";
+        tm * fecha = mov.getFecha();
+        archTM<<left<<setw(5)<<fecha->tm_mday<<setw(5)<<fecha->tm_mon<<setw(5)<<fecha->tm_year<<setw(15)<<fecha->tm_hour<<setw(15)<<mov.getNroCuenta()<<setw(15)<<mov.getDniTitular()<<setw(15)<<mov.getApellido()<<setw(15)<<mov.getNombre()<<setw(5)<<TC<<setw(5)<<TM<<setw(5)<<mov.getMonto()<<endl;
+        archMov.read(reinterpret_cast<char *>(&mov),sizeof(Movimiento));
+    }
+    archTM.close();
+    archMov.close();
+
+    Cuenta reg;
+    fstream arch;
+    arch.open("Cuentas.dat",ios::app|ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Movimientos- Banco P&P"));
+    }
+    arch.close();
+    arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
+    if(!arch)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Movimientos - Banco P&P"));
+    }
+
+    ofstream archca;
+    archca.open("Cajas_de_Ahorro.txt",ios::out);
+    if(!archca)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Movimientos - Banco P&P"));
+    }
+    archca<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+    ofstream archcc;
+    archcc.open("Cuentas_Corrientes.txt",ios::out);
+    if(!archca)
+    {
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Movimientos - Banco P&P"));
+    }
+    archcc<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+
+    arch.seekg(0);
+    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    while(!arch.eof())
+    {
+        if (reg.getTipo())
+            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+        else
+            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
+    }
+    archca.close();
+    archcc.close();
+    arch.close();
+    Close();
+
 }
