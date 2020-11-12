@@ -94,6 +94,7 @@ Banco_P_PFrame::Banco_P_PFrame(wxWindow* parent,wxWindowID id)
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
+    Center();
 
     Connect(ID_MENUINGRESAR,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&Banco_P_PFrame::OnMenuIngresarSelected);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&Banco_P_PFrame::OnQuit);

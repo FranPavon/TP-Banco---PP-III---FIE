@@ -97,16 +97,6 @@ string Movimiento::getApellido()
     return apellido;
 }
 
-void Movimiento::setFecha()
-{
-    time_t now = time(0);
-    fecha = localtime(&now);
-}
-
-tm* Movimiento::getFecha()
-{
-    return fecha;
-}
 
 Cuenta::Cuenta(int nc, int dt, bool b, double s, float i)
 {

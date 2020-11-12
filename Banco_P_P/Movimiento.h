@@ -24,13 +24,9 @@ class Movimiento
         string getNombre();
         void setMonto(double);
         double getMonto();
-        void setFecha ();
-        tm * getFecha ();
-
         void buscar(fstream &);
 
     private:
-        tm * fecha;
         int numeroCuenta, dniTitular;
         bool tipoCuenta, tipoMovimiento; //CA True CC False - E true D False
         char apellido[25];

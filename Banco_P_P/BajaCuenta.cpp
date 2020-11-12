@@ -85,6 +85,7 @@ BajaCuenta::BajaCuenta(wxWindow* parent,wxWindowID id)
 	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonBuscar->SetFont(ButtonBuscarFont);
+	Center();
 
 	Connect(ID_BUTTONCONFIRMAR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCuenta::OnButtonConfirmarClick);
 	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCuenta::OnButtonSalirClick);

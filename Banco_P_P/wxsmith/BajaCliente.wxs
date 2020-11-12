@@ -2,6 +2,7 @@
 <wxsmith>
 	<object class="wxDialog" name="BajaCliente">
 		<title>Baja de Cliente</title>
+		<centered>1</centered>
 		<size>400,256</size>
 		<fg>#008080</fg>
 		<bg>#303030</bg>

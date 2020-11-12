@@ -3,7 +3,7 @@
 	<object class="wxFrame" name="AppPrincipal">
 		<title>Banco P&amp;P</title>
 		<centered>1</centered>
-		<size>1053,340</size>
+		<size>1053,380</size>
 		<hidden>1</hidden>
 		<fg>#008080</fg>
 		<bg>#202020</bg>
@@ -25,8 +25,8 @@
 		</object>
 		<object class="wxStaticBox" name="ID_STATICBOX2" variable="StaticBox2" member="yes">
 			<label>Cuentas</label>
-			<pos>576,48</pos>
-			<size>448,144</size>
+			<pos>568,48</pos>
+			<size>456,144</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -40,8 +40,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCLIENTE" variable="ButtonAgregarCliente" member="yes">
 			<label>Agregar</label>
-			<pos>80,80</pos>
-			<size>128,32</size>
+			<pos>56,80</pos>
+			<size>136,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -56,8 +56,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONMODIFICARCLIENTE" variable="ButtonModificarCliente" member="yes">
 			<label>Modificar</label>
-			<pos>304,80</pos>
-			<size>128,32</size>
+			<pos>328,80</pos>
+			<size>136,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -73,7 +73,7 @@
 		<object class="wxButton" name="ID_BUTTONBAJACLIENTE" variable="ButtonBajaCliente" member="yes">
 			<label>Baja</label>
 			<pos>192,136</pos>
-			<size>128,32</size>
+			<size>136,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -88,8 +88,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONAGREGARCUENTA" variable="ButtonAgregarCuenta" member="yes">
 			<label>Agregar</label>
-			<pos>624,80</pos>
-			<size>128,32</size>
+			<pos>592,80</pos>
+			<size>136,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -104,8 +104,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONBAJACUENTA" variable="ButtonBajaCuenta" member="yes">
 			<label>Baja</label>
-			<pos>736,136</pos>
-			<size>128,32</size>
+			<pos>728,136</pos>
+			<size>136,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -120,8 +120,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTONMOV" variable="ButtonMovimientos" member="yes">
 			<label>Movimientos</label>
-			<pos>848,80</pos>
-			<size>128,32</size>
+			<pos>864,80</pos>
+			<size>136,32</size>
 			<fg>#000000</fg>
 			<bg>#008080</bg>
 			<font>
@@ -149,7 +149,7 @@
 		<object class="wxStaticBox" name="ID_STATICBOX3" variable="StaticBoxListados" member="yes">
 			<label>Listados</label>
 			<pos>32,216</pos>
-			<size>992,88</size>
+			<size>992,136</size>
 			<fg>#FFFFFF</fg>
 			<bg>#606060</bg>
 			<font>
@@ -163,8 +163,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="ButtonClientes" member="yes">
 			<label>Clientes</label>
-			<pos>96,248</pos>
-			<size>128,31</size>
+			<pos>56,248</pos>
+			<size>136,31</size>
 			<bg>#008080</bg>
 			<font>
 				<size>10</size>
@@ -178,8 +178,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTON2" variable="ButtonCA" member="yes">
 			<label>Cajas de Ahorro</label>
-			<pos>344,248</pos>
-			<size>128,32</size>
+			<pos>328,248</pos>
+			<size>136,32</size>
 			<bg>#008080</bg>
 			<font>
 				<size>10</size>
@@ -192,9 +192,9 @@
 			<handler function="OnButtonCAClick" entry="EVT_BUTTON" />
 		</object>
 		<object class="wxButton" name="ID_BUTTON3" variable="ButtonCC" member="yes">
-			<label>Cuentas Corriente</label>
-			<pos>592,248</pos>
-			<size>128,32</size>
+			<label>Cuentas Corrientes</label>
+			<pos>600,248</pos>
+			<size>136,32</size>
 			<bg>#008080</bg>
 			<font>
 				<size>10</size>
@@ -208,8 +208,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTON4" variable="ButtonMov" member="yes">
 			<label>Movimientos</label>
-			<pos>840,248</pos>
-			<size>128,32</size>
+			<pos>864,248</pos>
+			<size>136,32</size>
 			<bg>#008080</bg>
 			<font>
 				<size>10</size>
@@ -220,6 +220,51 @@
 				<face>Agency FB</face>
 			</font>
 			<handler function="OnButtonMovClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON5" variable="ButtonSDeudor" member="yes">
+			<label>CC Saldo Deudor</label>
+			<pos>192,296</pos>
+			<size>136,31</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonSDeudorClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON6" variable="ButtonSAcreedor" member="yes">
+			<label>Saldo Acreedor</label>
+			<pos>464,296</pos>
+			<size>136,31</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonSAcreedorClick" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxButton" name="ID_BUTTON7" variable="ButtonCSC" member="yes">
+			<label>Cuentas Saldo 0</label>
+			<pos>728,296</pos>
+			<size>136,32</size>
+			<bg>#008080</bg>
+			<font>
+				<size>10</size>
+				<style>normal</style>
+				<weight>bold</weight>
+				<underlined>0</underlined>
+				<family>swiss</family>
+				<face>Agency FB</face>
+			</font>
+			<handler function="OnButtonCSCClick" entry="EVT_BUTTON" />
 		</object>
 	</object>
 </wxsmith>

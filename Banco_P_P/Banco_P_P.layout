@@ -2,64 +2,64 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="Movimientos.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14070" topLine="332" />
+		</Cursor>
+	</File>
+	<File name="BajaCuenta.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6465" topLine="123" />
+		</Cursor>
+	</File>
+	<File name="ModificarCliente.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10071" topLine="191" />
+		</Cursor>
+	</File>
+	<File name="AgregarCliente.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6255" topLine="107" />
+		</Cursor>
+	</File>
+	<File name="Cuenta.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="757" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="Banco_P_PMain.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="463" topLine="92" />
+		</Cursor>
+	</File>
 	<File name="Movimiento.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1026" topLine="0" />
+			<Cursor1 position="729" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="Banco_P_PMain.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funciones.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="463" topLine="0" />
+			<Cursor1 position="1706" topLine="93" />
 		</Cursor>
 	</File>
-	<File name="AppPrincipal.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="BajaCliente.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="10543" topLine="176" />
+			<Cursor1 position="8528" topLine="175" />
 		</Cursor>
 	</File>
-	<File name="Cuenta.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AgregarCuenta.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="757" topLine="0" />
+			<Cursor1 position="6005" topLine="123" />
 		</Cursor>
 	</File>
-	<File name="ModificarCliente.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AppPrincipal.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="10060" topLine="221" />
+			<Cursor1 position="21324" topLine="460" />
 		</Cursor>
 	</File>
-	<File name="Cliente.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Cliente.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="300" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="AgregarCliente.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6218" topLine="102" />
-		</Cursor>
-	</File>
-	<File name="funciones.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="820" topLine="219" />
-		</Cursor>
-	</File>
-	<File name="AgregarCuenta.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7843" topLine="146" />
-		</Cursor>
-	</File>
-	<File name="Movimientos.cpp" open="1" top="1" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="13092" topLine="385" />
-		</Cursor>
-	</File>
-	<File name="BajaCuenta.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6453" topLine="122" />
-		</Cursor>
-	</File>
-	<File name="BajaCliente.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8516" topLine="174" />
+			<Cursor1 position="300" topLine="2" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

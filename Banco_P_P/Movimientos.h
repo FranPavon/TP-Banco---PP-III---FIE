@@ -26,6 +26,8 @@ class Movimientos: public wxDialog
 		wxStaticText* StaticTextM;
 		wxStaticText* StaticTextNC;
 		wxStaticText* StaticTextNroCuenta;
+		wxStaticText* StaticTextS;
+		wxStaticText* StaticTextSaldo;
 		wxStaticText* StaticTextTC;
 		wxStaticText* StaticTextTM;
 		wxStaticText* StaticTextTipoCuenta;
@@ -52,6 +54,8 @@ class Movimientos: public wxDialog
 		static const long ID_STATICTEXT7;
 		static const long ID_STATICTEXT8;
 		static const long ID_STATICTEXT9;
+		static const long ID_STATICTEXT10;
+		static const long ID_STATICTEXT11;
 		//*)
 
 	private:

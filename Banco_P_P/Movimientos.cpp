@@ -31,6 +31,8 @@ const long Movimientos::ID_STATICTEXT6 = wxNewId();
 const long Movimientos::ID_STATICTEXT7 = wxNewId();
 const long Movimientos::ID_STATICTEXT8 = wxNewId();
 const long Movimientos::ID_STATICTEXT9 = wxNewId();
+const long Movimientos::ID_STATICTEXT10 = wxNewId();
+const long Movimientos::ID_STATICTEXT11 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(Movimientos,wxDialog)
@@ -56,37 +58,42 @@ Movimientos::Movimientos(wxWindow* parent,wxWindowID id,const wxPoint& pos,const
 	TextCtrlCuenta = new wxTextCtrl(this, ID_TEXTCTRL1, wxEmptyString, wxPoint(88,88), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
 	wxFont TextCtrlCuentaFont(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	TextCtrlCuenta->SetFont(TextCtrlCuentaFont);
-	ButtonConfimar = new wxButton(this, ID_BUTTON2, _("Confirmar"), wxPoint(56,344), wxSize(119,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	ButtonConfimar = new wxButton(this, ID_BUTTON2, _("Confirmar"), wxPoint(56,352), wxSize(119,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
 	ButtonConfimar->Hide();
 	ButtonConfimar->SetBackgroundColour(wxColour(0,128,128));
-	ButtonSalir = new wxButton(this, ID_BUTTON3, _("Salir"), wxPoint(224,344), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
+	ButtonSalir = new wxButton(this, ID_BUTTON3, _("Salir"), wxPoint(224,352), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
 	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
-	TextCtrlMonto = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(56,296), wxSize(296,33), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	TextCtrlMonto = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(232,304), wxSize(112,33), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
 	TextCtrlMonto->Hide();
 	wxFont TextCtrlMontoFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	TextCtrlMonto->SetFont(TextCtrlMontoFont);
-	ChoiceMov = new wxChoice(this, ID_CHOICE1, wxPoint(232,216), wxSize(124,32), 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
+	ChoiceMov = new wxChoice(this, ID_CHOICE1, wxPoint(232,232), wxSize(124,32), 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
 	ChoiceMov->Append(_("Extracción"));
 	ChoiceMov->Append(_("Depósito"));
 	ChoiceMov->Hide();
 	wxFont ChoiceMovFont(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	ChoiceMov->SetFont(ChoiceMovFont);
-	StaticTextTM = new wxStaticText(this, ID_STATICTEXT2, _("Tipo de movimiento:"), wxPoint(56,216), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+	StaticTextTM = new wxStaticText(this, ID_STATICTEXT2, _("Tipo de movimiento:"), wxPoint(56,232), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	StaticTextTM->Hide();
-	StaticText1D = new wxStaticText(this, ID_STATICTEXT3, _("DNI Titular:"), wxPoint(56,48), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
+	StaticText1D = new wxStaticText(this, ID_STATICTEXT3, _("DNI Titular:"), wxPoint(56,40), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
 	StaticText1D->Hide();
-	StaticTextNC = new wxStaticText(this, ID_STATICTEXT4, _("Nro Cuenta:"), wxPoint(56,104), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
+	StaticTextNC = new wxStaticText(this, ID_STATICTEXT4, _("Nro Cuenta:"), wxPoint(56,88), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
 	StaticTextNC->Hide();
-	StaticTextTC = new wxStaticText(this, ID_STATICTEXT5, _("Tipo de cuenta:"), wxPoint(56,160), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+	StaticTextTC = new wxStaticText(this, ID_STATICTEXT5, _("Tipo de cuenta:"), wxPoint(56,136), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
 	StaticTextTC->Hide();
-	StaticTextDNI = new wxStaticText(this, ID_STATICTEXT6, _("Label"), wxPoint(192,48), wxSize(176,25), 0, _T("ID_STATICTEXT6"));
+	StaticTextDNI = new wxStaticText(this, ID_STATICTEXT6, _("Label"), wxPoint(192,40), wxSize(176,25), 0, _T("ID_STATICTEXT6"));
 	StaticTextDNI->Hide();
-	StaticTextNroCuenta = new wxStaticText(this, ID_STATICTEXT7, _("Label"), wxPoint(192,104), wxSize(176,25), 0, _T("ID_STATICTEXT7"));
+	StaticTextNroCuenta = new wxStaticText(this, ID_STATICTEXT7, _("Label"), wxPoint(192,88), wxSize(176,25), 0, _T("ID_STATICTEXT7"));
 	StaticTextNroCuenta->Hide();
-	StaticTextTipoCuenta = new wxStaticText(this, ID_STATICTEXT8, _("Label"), wxPoint(192,160), wxSize(160,25), 0, _T("ID_STATICTEXT8"));
+	StaticTextTipoCuenta = new wxStaticText(this, ID_STATICTEXT8, _("Label"), wxPoint(192,136), wxSize(160,25), 0, _T("ID_STATICTEXT8"));
 	StaticTextTipoCuenta->Hide();
-	StaticTextM = new wxStaticText(this, ID_STATICTEXT9, _("Ingrese el monto (entre 1 y 1000000):"), wxPoint(56,264), wxDefaultSize, 0, _T("ID_STATICTEXT9"));
+	StaticTextM = new wxStaticText(this, ID_STATICTEXT9, _("Ingrese el monto (entre 1 y 1000000):"), wxPoint(56,272), wxDefaultSize, 0, _T("ID_STATICTEXT9"));
 	StaticTextM->Hide();
+	StaticTextS = new wxStaticText(this, ID_STATICTEXT10, _("Saldo:"), wxPoint(56,184), wxDefaultSize, 0, _T("ID_STATICTEXT10"));
+	StaticTextS->Hide();
+	StaticTextSaldo = new wxStaticText(this, ID_STATICTEXT11, _("Label"), wxPoint(192,184), wxSize(160,25), 0, _T("ID_STATICTEXT11"));
+	StaticTextSaldo->Hide();
+	Center();
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Movimientos::OnButtonBuscarClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Movimientos::OnButtonConfimarClick);
@@ -148,6 +155,10 @@ void Movimientos::OnButtonBuscarClick(wxCommandEvent& event)
         else
             StaticTextTipoCuenta->SetLabel("Cuenta Corriente");
         StaticTextTipoCuenta->Show();
+        string s = to_string(cuenta.getSaldo());
+        StaticTextSaldo->SetLabel(s);
+        StaticTextSaldo->Show();
+        StaticTextS->Show();
         StaticTextTM->Show();
         ChoiceMov->Show();
         TextCtrlMonto->Show();
@@ -246,7 +257,6 @@ void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
     mov.setApellido(cliente.getApellido());
     mov.setNombre(cliente.getNombre());
     mov.setMonto(m);
-    mov.setFecha();
     bool tipoMov = (ChoiceMov->GetSelection()==0)?true:false;
     mov.setTipoMovimiento(tipoMov);
 
@@ -289,6 +299,9 @@ void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
 
     archCuenta.seekg(-sizeof(Cuenta),ios::cur);
     archCuenta.write(reinterpret_cast<const char *>(&cuenta),sizeof(Cuenta));
+    archMov.seekg (0, ios::end);
+    archMov.write(reinterpret_cast<const char *>(&mov),sizeof(Movimiento));
+
     archMov.close();
     archCuenta.close();
     archClientes.close();
@@ -307,7 +320,10 @@ void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
     StaticTextTM->Hide();
     ChoiceMov->Hide();
     TextCtrlMonto->Hide();
+    TextCtrlMonto->Clear();
     StaticTextM->Hide();
+    StaticTextSaldo->Hide();
+    StaticTextS->Hide();
 }
 
 void Movimientos::OnButtonSalirClick(wxCommandEvent& event)
@@ -335,69 +351,19 @@ void Movimientos::OnButtonSalirClick(wxCommandEvent& event)
         wxString msg = "Error de apertura de archivo";
         wxMessageBox(msg, _("Moviemientos - Banco P&P"));
     }
-    archTM<<left<<setw(5)<<"Día"<<setw(5)<<"Mes"<<setw(5)<<"Año"<<setw(15)<<"Hora"<<setw(15)<<"Nro Cuenta"<<setw(15)<<"DNI"<<setw(15)<<"Apellido"<<setw(15)<<"Nombre"<<setw(5)<<"T Cta"<<setw(5)<<"T Op"<<setw(5)<<"Monto"<<endl;
+    archTM<<left<<setw(15)<<"Nro Cuenta"<<setw(15)<<"DNI"<<setw(15)<<"Apellido"<<setw(15)<<"Nombre"<<setw(8)<<"T Cta"<<setw(8)<<"T Op"<<setw(8)<<"Monto"<<endl;
 
     archMov.seekg(0);
     archMov.read(reinterpret_cast<char *>(&mov),sizeof(Movimiento));
-    while(!archTM.eof())
+    while(!archMov.eof())
     {
-        const char* TC = (mov.getTipoCuenta())?"CA":"CC";
-        const char* TM = (mov.getTipoMovimiento())?"E":"D";
-        tm * fecha = mov.getFecha();
-        archTM<<left<<setw(5)<<fecha->tm_mday<<setw(5)<<fecha->tm_mon<<setw(5)<<fecha->tm_year<<setw(15)<<fecha->tm_hour<<setw(15)<<mov.getNroCuenta()<<setw(15)<<mov.getDniTitular()<<setw(15)<<mov.getApellido()<<setw(15)<<mov.getNombre()<<setw(5)<<TC<<setw(5)<<TM<<setw(5)<<mov.getMonto()<<endl;
+        const char * TC = (mov.getTipoCuenta())?"CA":"CC";
+        const char * TM = (mov.getTipoMovimiento())?"E":"D";
+        archTM<<left<<setw(15)<<mov.getNroCuenta()<<setw(15)<<mov.getDniTitular()<<setw(15)<<mov.getApellido()<<setw(15)<<mov.getNombre()<<setw(8)<<TC<<setw(8)<<TM<<setw(8)<<mov.getMonto()<<endl;
         archMov.read(reinterpret_cast<char *>(&mov),sizeof(Movimiento));
     }
     archTM.close();
     archMov.close();
-
-    Cuenta reg;
-    fstream arch;
-    arch.open("Cuentas.dat",ios::app|ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Movimientos- Banco P&P"));
-    }
-    arch.close();
-    arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Movimientos - Banco P&P"));
-    }
-
-    ofstream archca;
-    archca.open("Cajas_de_Ahorro.txt",ios::out);
-    if(!archca)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Movimientos - Banco P&P"));
-    }
-    archca<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
-
-    ofstream archcc;
-    archcc.open("Cuentas_Corrientes.txt",ios::out);
-    if(!archca)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Movimientos - Banco P&P"));
-    }
-    archcc<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
-
-
-    arch.seekg(0);
-    arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
-    while(!arch.eof())
-    {
-        if (reg.getTipo())
-            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
-        else
-            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
-        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
-    }
-    archca.close();
-    archcc.close();
-    arch.close();
     Close();
 
 }

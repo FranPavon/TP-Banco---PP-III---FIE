@@ -91,6 +91,7 @@ ModificarCliente::ModificarCliente(wxWindow* parent,wxWindowID id,const wxPoint&
 	StaticText10->Hide();
 	StaticTextNombre = new wxStaticText(this, ID_STATICTEXT12, _("Label"), wxPoint(152,56), wxSize(224,25), 0, _T("ID_STATICTEXT12"));
 	StaticTextNombre->Hide();
+	Center();
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonBuscarClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ModificarCliente::OnButtonSalirClick);

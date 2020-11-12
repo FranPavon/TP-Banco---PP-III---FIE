@@ -83,6 +83,7 @@ BajaCliente::BajaCliente(wxWindow* parent,wxWindowID id,const wxPoint& pos,const
 	StaticText4->Hide();
 	StaticText5 = new wxStaticText(this, ID_STATICTEXT8, _("Apellido:"), wxPoint(72,152), wxDefaultSize, 0, _T("ID_STATICTEXT8"));
 	StaticText5->Hide();
+	Center();
 
 	Connect(ID_BUTTONCONFIRMAR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCliente::OnButtonConfirmarClick);
 	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BajaCliente::OnButtonSalirClick);

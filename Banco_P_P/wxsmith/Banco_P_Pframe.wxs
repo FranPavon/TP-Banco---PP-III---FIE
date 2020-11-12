@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="Banco_P_PFrame">
+		<centered>1</centered>
 		<size>438,470</size>
 		<bg>#202020</bg>
 		<id_arg>0</id_arg>

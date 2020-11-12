@@ -22,10 +22,13 @@ class AppPrincipal: public wxFrame
 		wxButton* ButtonBajaCuenta;
 		wxButton* ButtonCA;
 		wxButton* ButtonCC;
+		wxButton* ButtonCSC;
 		wxButton* ButtonClientes;
 		wxButton* ButtonModificarCliente;
 		wxButton* ButtonMov;
 		wxButton* ButtonMovimientos;
+		wxButton* ButtonSAcreedor;
+		wxButton* ButtonSDeudor;
 		wxStaticBox* StaticBox1;
 		wxStaticBox* StaticBox2;
 		wxStaticBox* StaticBoxListados;
@@ -49,6 +52,9 @@ class AppPrincipal: public wxFrame
 		static const long ID_BUTTON2;
 		static const long ID_BUTTON3;
 		static const long ID_BUTTON4;
+		static const long ID_BUTTON5;
+		static const long ID_BUTTON6;
+		static const long ID_BUTTON7;
 		//*)
 
 	private:
@@ -68,6 +74,9 @@ class AppPrincipal: public wxFrame
 		void OnButtonCAClick(wxCommandEvent& event);
 		void OnButtonCCClick(wxCommandEvent& event);
 		void OnButtonMovClick(wxCommandEvent& event);
+		void OnButtonCSCClick(wxCommandEvent& event);
+		void OnButtonSAcreedorClick(wxCommandEvent& event);
+		void OnButtonSDeudorClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

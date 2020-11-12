@@ -2,6 +2,7 @@
 <wxsmith>
 	<object class="wxFrame" name="AgregarCliente">
 		<title>Agregar Cliente</title>
+		<centered>1</centered>
 		<size>480,394</size>
 		<fg>#008080</fg>
 		<bg>#303030</bg>

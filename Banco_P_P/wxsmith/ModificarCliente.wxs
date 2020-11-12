@@ -2,6 +2,7 @@
 <wxsmith>
 	<object class="wxDialog" name="ModificarCliente">
 		<title>Modificar Cliente</title>
+		<centered>1</centered>
 		<size>400,312</size>
 		<fg>#008080</fg>
 		<bg>#202020</bg>

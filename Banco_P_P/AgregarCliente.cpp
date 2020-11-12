@@ -72,6 +72,7 @@ AgregarCliente::AgregarCliente(wxWindow* parent,wxWindowID id,const wxPoint& pos
 	ButtonSalir->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonSalirFont(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonSalir->SetFont(ButtonSalirFont);
+	Center();
 
 	Connect(ID_BUTTONAGREGAR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCliente::OnButtonAgregarClick);
 	Connect(ID_BUTTONSALIR,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&AgregarCliente::OnButtonSalirClick);
