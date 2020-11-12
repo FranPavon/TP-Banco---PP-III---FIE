@@ -155,7 +155,9 @@ void Movimientos::OnButtonBuscarClick(wxCommandEvent& event)
         else
             StaticTextTipoCuenta->SetLabel("Cuenta Corriente");
         StaticTextTipoCuenta->Show();
-        string s = to_string(cuenta.getSaldo());
+        ostringstream temp;
+        temp<<cuenta.getSaldo();
+        string s = temp.str();
         StaticTextSaldo->SetLabel(s);
         StaticTextSaldo->Show();
         StaticTextS->Show();

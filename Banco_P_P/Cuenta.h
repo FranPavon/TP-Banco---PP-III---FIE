@@ -7,7 +7,7 @@ using namespace std;
 class Cuenta
 {
     public:
-        Cuenta(int =0, int=0, bool = true, double = 0.0,float = 0.0);
+        Cuenta(int =0, int=0, bool = true, double = 0.0,float = 1.05);
         void setNroCuenta(int);
         int getNroCuenta();
         void setDniTitular(int);

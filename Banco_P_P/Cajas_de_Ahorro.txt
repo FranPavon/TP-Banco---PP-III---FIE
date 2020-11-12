@@ -1,2 +1,1 @@
 Nro de Cuenta  DNI Titular    Saldo          Interes        
-4745           32333222       2150           0              

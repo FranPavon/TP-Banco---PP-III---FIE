@@ -23,6 +23,7 @@ class AppPrincipal: public wxFrame
 		wxButton* ButtonCA;
 		wxButton* ButtonCC;
 		wxButton* ButtonCSC;
+		wxButton* ButtonCalcIntereses;
 		wxButton* ButtonClientes;
 		wxButton* ButtonModificarCliente;
 		wxButton* ButtonMov;
@@ -55,6 +56,7 @@ class AppPrincipal: public wxFrame
 		static const long ID_BUTTON5;
 		static const long ID_BUTTON6;
 		static const long ID_BUTTON7;
+		static const long ID_BUTTON8;
 		//*)
 
 	private:
@@ -77,6 +79,7 @@ class AppPrincipal: public wxFrame
 		void OnButtonCSCClick(wxCommandEvent& event);
 		void OnButtonSAcreedorClick(wxCommandEvent& event);
 		void OnButtonSDeudorClick(wxCommandEvent& event);
+		void OnButtonCalcInteresesClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

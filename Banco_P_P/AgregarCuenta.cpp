@@ -87,7 +87,7 @@ AgregarCuenta::AgregarCuenta(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	wxFont StaticText7Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText7->SetFont(StaticText7Font);
 	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(80,104), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(232,104), wxSize(112,23), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(224,104), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonBuscar->SetFont(ButtonBuscarFont);

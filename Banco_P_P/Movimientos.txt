@@ -1,8 +1,3 @@
-     Nro Cuenta            DNI       Apellido         Nombre   T Cta    T Op   Monto
-           4745       32333222          Lopez           Fran      CA       E    2000
-           2966       32333222          Lopez           Fran      CC       E     900
-           4745       32333222          Lopez           Fran      CA       D    1800
-           4745       32333222          Lopez           Fran      CA       D     300
-           4745       32333222          Lopez           Fran      CA       D    1500
-           4745       32333222          Lopez           Fran      CA       E     366
-           4745       32333222          Lopez           Fran      CA       E       7
+Nro Cuenta     DNI            Apellido       Nombre         T Cta   T Op    Monto   
+6068           32333222       Lopez          Fran           CC      E       900     
+8204           32333222       Lopez          Fran           CC      E       1000    

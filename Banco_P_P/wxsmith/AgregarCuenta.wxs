@@ -153,8 +153,8 @@
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="ButtonBuscar" member="yes">
 			<label>Buscar</label>
-			<pos>232,104</pos>
-			<size>112,23</size>
+			<pos>224,104</pos>
+			<size>120,32</size>
 			<bg>#008080</bg>
 			<font>
 				<size>12</size>

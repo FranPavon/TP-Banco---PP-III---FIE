@@ -253,26 +253,23 @@ void BajaCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
     cuenta.buscar(arch);
     arch.seekg(-sizeof(Cuenta),ios::cur);
     arch.read(reinterpret_cast<char *>(&cuenta),sizeof(Cuenta));
-    cuenta.setBorrado(true);
-    arch.seekg(-sizeof(Cuenta),ios::cur);
-    arch.write(reinterpret_cast<const char *>(&cuenta),sizeof(Cuenta));
-    arch.close();
-    if (cuenta.getSaldo()>0)
+
+    if (cuenta.getSaldo()==0)
     {
-        //todo: registrar el movimiento!
-        string s;
-        ostringstream temp;  // 'temp' as in temporary
-        temp << cuenta.getSaldo();
-        s = temp.str();
-        wxString msg = ("Baja exitosa. Retire su saldo de $ "+s);
+        wxString msg = ("Baja exitosa.");
         wxMessageBox(msg, _("Baja de cliente - Banco P&P"));
+        cuenta.setBorrado(true);
+        arch.seekg(-sizeof(Cuenta),ios::cur);
+        arch.write(reinterpret_cast<const char *>(&cuenta),sizeof(Cuenta));
+
     }
     else
     {
-        wxString msg = "Baja exitosa";
+        wxString msg = "No puede realizar la baja. Diríjase a la caja a retirar/depositar el saldo.";
         wxMessageBox(msg, _("Baja de cuenta - Banco P&P"));
     }
 
+    arch.close();
     TextCtrl1->Show();
     ButtonBuscar->Show();
     StaticTextT1->Show();
