@@ -1987,9 +1987,10 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1605138788 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+1605558231 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
 	"BajaCliente.h"
 	"Cliente.h"
+	"Cuenta.h"
 	<fstream>
 	<wx/msgdlg.h>
 	<iomanip>
@@ -2134,7 +2135,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\choice.h
 
-1605192753 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+1605193516 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
 	"AgregarCuenta.h"
 	"Cliente.h"
 	"Cuenta.h"

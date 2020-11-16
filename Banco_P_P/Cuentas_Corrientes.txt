@@ -1,1 +1,3 @@
-Nro de Cuenta  DNI Titular    Saldo          Interes        
+Baja de Cuenta DNI Titular    Saldo          Interes        
+8168           32333222       0.000484229    1.05           
+8204           32333222       -231.525       1.05           

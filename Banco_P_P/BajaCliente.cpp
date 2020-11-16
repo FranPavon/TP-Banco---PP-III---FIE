@@ -1,5 +1,6 @@
 #include "BajaCliente.h"
 #include "Cliente.h"
+#include "Cuenta.h"
 #include <fstream>
 #include <wx/msgdlg.h>
 #include <iomanip>
@@ -164,6 +165,7 @@ void BajaCliente::OnButtonSalirClick(wxCommandEvent& event)
 void BajaCliente::OnButtonBuscarClick(wxCommandEvent& event)
 {
     Cliente reg,cli;
+    Cuenta c;
     fstream arch;
     arch.open("Clientes.dat",ios::app|ios::binary);
     if(!arch)
@@ -180,37 +182,72 @@ void BajaCliente::OnButtonBuscarClick(wxCommandEvent& event)
     }
     wxString str = TextCtrlDNI->GetValue();
     int d = wxAtoi(str);
-    cli.setDni(d);
-    cli.buscar(arch);
-    if(!arch.eof())//SI EXISTE PUEDO CARGAR LA INFORMACION
+
+    fstream archC;
+
+    archC.open("Cuentas.dat",ios::app|ios::binary);
+    if(!archC)
     {
-        arch.seekg(-sizeof(Cliente),ios::cur);
-        arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
-
-        TextCtrlDNI->Hide();
-        StaticText2->Hide();
-        ButtonBuscar->Hide();
-
-        ButtonConfirmar->Show();
-        StaticText1->Show();
-        StaticText3->Show();
-        StaticText4->Show();
-        StaticText5->Show();
-
-        StaticTextDNI->Show();
-        StaticTextDNI->SetLabel(str);
-        StaticTextNombre->Show();
-        StaticTextNombre->SetLabel(reg.getNombre());
-        StaticTextApellido->Show();
-        StaticTextApellido->SetLabel(reg.getApellido());
-
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de cliente - Banco P&P"));
     }
-    else //si no existe reintento
+    archC.close();
+    archC.open("Cuentas.dat",ios::in|ios::out|ios::binary);
+    if(!archC)
     {
-        wxString msg = "Cliente inexistente, reintente.";
+        wxString msg = "Error de apertura de archivo";
+        wxMessageBox(msg, _("Baja de Cuentas - Banco P&P"));
+    }
+
+    archC.seekg(0,ios::beg);
+    archC.read(reinterpret_cast<char *>(&c),sizeof(Cuenta));
+    while(!archC.eof()&&c.getDniTitular()!=d)
+    {
+        archC.read(reinterpret_cast<char *>(&c),sizeof(Cuenta));
+    }
+
+    if (archC.eof()) //NO TIENE NINGUNA CUENTA ABIERTA
+    {
+        cli.setDni(d);
+        cli.buscar(arch);
+        if(!arch.eof())//SI EXISTE PUEDO CARGAR LA INFORMACION
+        {
+            arch.seekg(-sizeof(Cliente),ios::cur);
+            arch.read(reinterpret_cast<char *>(&reg),sizeof(Cliente));
+
+            TextCtrlDNI->Hide();
+            StaticText2->Hide();
+            ButtonBuscar->Hide();
+
+            ButtonConfirmar->Show();
+            StaticText1->Show();
+            StaticText3->Show();
+            StaticText4->Show();
+            StaticText5->Show();
+
+            StaticTextDNI->Show();
+            StaticTextDNI->SetLabel(str);
+            StaticTextNombre->Show();
+            StaticTextNombre->SetLabel(reg.getNombre());
+            StaticTextApellido->Show();
+            StaticTextApellido->SetLabel(reg.getApellido());
+
+        }
+        else //si no existe reintento
+        {
+            wxString msg = "Cliente inexistente, reintente.";
+            wxMessageBox(msg, _("Baja de cliente - Banco P&P"));
+            TextCtrlDNI->Clear();
+        }
+    }
+    else
+    {
+        wxString msg = "El cliente posee cuentas abiertas.\nCierre las cuentas y luego realice la baja del cliente.";
         wxMessageBox(msg, _("Baja de cliente - Banco P&P"));
         TextCtrlDNI->Clear();
     }
+
+    archC.close();
     arch.close();
 }
 
