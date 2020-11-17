@@ -269,7 +269,7 @@ void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
         double st = cuenta.getSaldo()- m;
         if (cuenta.getTipo())
         {
-            if (st>0) //es CA, no puede ser negativo
+            if (st>=0) //es CA, no puede ser negativo
                 cuenta.setSaldo(st);
             else
             {
