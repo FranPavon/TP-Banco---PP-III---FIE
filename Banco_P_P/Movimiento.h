@@ -3,9 +3,10 @@
 
 #include<fstream>
 #include<string>
-#include <ctime>
 
 using namespace std;
+/*Clase movimiento:
+Posee la informacion requerida para asentar los movimientos*/
 class Movimiento
 {
     public:
@@ -24,7 +25,6 @@ class Movimiento
         string getNombre();
         void setMonto(double);
         double getMonto();
-        void buscar(fstream &);
 
     private:
         int numeroCuenta, dniTitular;

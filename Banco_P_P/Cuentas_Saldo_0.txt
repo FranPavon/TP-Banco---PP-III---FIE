@@ -1,3 +1,2 @@
 Nro de Cuenta  DNI Titular    Tipo de cuenta 
-9497           36333222       Cuenta Corriente
-9555           36333222       Cuenta Corriente
+8204           32333222       Cuenta Corriente

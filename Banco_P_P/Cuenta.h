@@ -24,9 +24,9 @@ class Cuenta
 
     private:
         int numero, dniTitular;
-        bool tipo, borrado; //CA True CC False
+        bool tipo, borrado; //CA True CC False - borrado true si hay que borrarlo
         double saldo;
-        float interes;
+        float interes; //como es el mismo para todos lo colocamos como valor por defecto
 };
 
 

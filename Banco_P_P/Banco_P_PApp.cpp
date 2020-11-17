@@ -1,6 +1,6 @@
 /***************************************************************
  * Name:      Banco_P_PApp.cpp
- * Purpose:   Code for Application Class
+ * Purpose:   Develop a bank aplication with C++ and wxWidgets
  * Author:    Horacio Patricelli & Francisco Pavon (pavonfrancisco@gmail.com)
  * Created:   2020-10-25
  * Copyright: Horacio Patricelli & Francisco Pavon (https://github.com/CTPavon)

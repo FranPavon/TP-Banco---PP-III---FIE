@@ -139,6 +139,8 @@ bool Cuenta::getTipo()
 
 void Cuenta::setSaldo(double s)
 {
+    if (s>-0.01 && s<0.01)
+        s = 0;
     saldo = s;
 }
 

@@ -24,7 +24,7 @@ class Cliente
 
     private:
         int dni;
-        bool borrado;
+        bool borrado; //true si lo tengo que borrar
         char nombre[25];
         char apellido[25];
         char direccion[40];

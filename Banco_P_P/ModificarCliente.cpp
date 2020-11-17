@@ -105,11 +105,9 @@ ModificarCliente::~ModificarCliente()
 	//*)
 }
 
-
-
-
 void ModificarCliente::OnButtonSalirClick(wxCommandEvent& event)
 {
+    //Genero el archivo de texto a partir del .dat modificado
     fstream arch;
     arch.open("Clientes.dat",ios::app|ios::binary);
     if(!arch)
@@ -149,6 +147,7 @@ void ModificarCliente::OnButtonSalirClick(wxCommandEvent& event)
 
 void ModificarCliente::OnButtonBuscarClick(wxCommandEvent& event)
 {
+    //Verifico la existencia del cliente. En caso afirmativo, visualizo la información.
     Cliente reg,cli;
     fstream arch;
     int d;
@@ -211,6 +210,7 @@ void ModificarCliente::OnButtonBuscarClick(wxCommandEvent& event)
 
 void ModificarCliente::OnButtonConfirmarClick(wxCommandEvent& event)
 {
+    //Ingreso los campos a modificar y persisto la información en el archivo .dat
     Cliente reg,cli;
     fstream arch;
     arch.open("Clientes.dat",ios::in|ios::out |ios::binary);

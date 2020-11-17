@@ -5,3 +5,4 @@ Nro Cuenta     DNI            Apellido       Nombre         T Cta   T Op    Mont
 9497           36333222       Ficticio       Cliente        CC      E       1000    
 8129           32333222       Lopez          Fran           CA      E       578.812 
 8168           32333222       Lopez          Fran           CC      E       115.762 
+8204           32333222       Lopez          Fran           CC      D       231.52  

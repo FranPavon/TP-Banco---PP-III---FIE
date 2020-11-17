@@ -102,6 +102,10 @@ BajaCuenta::~BajaCuenta()
 
 void BajaCuenta::OnButtonSalirClick(wxCommandEvent& event)
 {
+    /*
+    Considerando el atributo borrado de los objetos cuenta genera el nuevo archivo .dat.
+    Reescribe los archivos .txt de las cuentas.
+    */
     Cuenta reg;
     fstream arch;
     arch.open("Cuentas.dat",ios::app|ios::binary);
@@ -179,6 +183,7 @@ void BajaCuenta::OnButtonSalirClick(wxCommandEvent& event)
 
 void BajaCuenta::OnButtonBuscarClick(wxCommandEvent& event)
 {
+    //Verifica la existencia de la cuenta y visualiza su información
     Cuenta cuenta;
     fstream arch;
     int nc;
@@ -239,6 +244,7 @@ void BajaCuenta::OnButtonBuscarClick(wxCommandEvent& event)
 
 void BajaCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
 {
+    // En caso de poseer saldo 0 en la cuenta permite modificar el atributo borrado del registro.
     Cuenta cuenta;
     fstream arch;
     arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);

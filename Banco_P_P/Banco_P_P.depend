@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1603725327 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_papp.cpp
+1605625856 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\banco_p_papp.cpp
 	"Banco_P_PApp.h"
 	"Banco_P_PMain.h"
 	<wx/image.h>
@@ -1762,7 +1762,7 @@
 1595438406 c:\wxwidgets\include\wx\qt\msgdlg.h
 	"wx/msgdlg.h"
 
-1605192571 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\appprincipal.cpp
+1605624945 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\appprincipal.cpp
 	"AppPrincipal.h"
 	"AgregarCliente.h"
 	"BajaCliente.h"
@@ -1971,7 +1971,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\statbox.h
 
-1605138788 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.cpp
+1605622974 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcliente.cpp
 	"AgregarCliente.h"
 	"Cliente.h"
 	<fstream>
@@ -1987,7 +1987,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1605558231 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
+1605627339 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacliente.cpp
 	"BajaCliente.h"
 	"Cliente.h"
 	"Cuenta.h"
@@ -2135,7 +2135,7 @@
 
 1595438406 c:\wxwidgets\include\wx\qt\choice.h
 
-1605193516 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
+1605624433 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\agregarcuenta.cpp
 	"AgregarCuenta.h"
 	"Cliente.h"
 	"Cuenta.h"
@@ -2297,7 +2297,7 @@
 	<wx/dialog.h>
 	<wx/stattext.h>
 
-1605187237 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.cpp
+1605625611 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\bajacuenta.cpp
 	"BajaCuenta.h"
 	"Cuenta.h"
 	<fstream>
@@ -2315,7 +2315,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1605138788 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
+1605626174 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\modificarcliente.cpp
 	"ModificarCliente.h"
 	"Cliente.h"
 	<fstream>
@@ -2334,7 +2334,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1605140933 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
+1605625767 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\funciones.cpp
 	"Cliente.h"
 	"Cuenta.h"
 	"Movimiento.h"
@@ -2342,15 +2342,15 @@
 	<fstream>
 	<ctime>
 
-1604629334 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cliente.h
+1605621211 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cliente.h
 	<fstream>
 	<string>
 
-1605190165 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cuenta.h
+1605621312 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\cuenta.h
 	<fstream>
 	<string>
 
-1605187237 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\movimientos.cpp
+1605624779 source:c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\movimientos.cpp
 	"Movimientos.h"
 	"Movimiento.h"
 	"Cuenta.h"
@@ -2372,8 +2372,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1605140933 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\movimiento.h
+1605621133 c:\users\pancho\desktop\pp iii\tp-banco---pp-iii---fie\banco_p_p\movimiento.h
 	<fstream>
 	<string>
-	<ctime>
 

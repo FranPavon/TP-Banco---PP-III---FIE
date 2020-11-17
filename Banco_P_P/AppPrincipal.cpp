@@ -11,6 +11,12 @@
 #include <iomanip>
 #include <wx/msgdlg.h>
 
+/*
+Genera todos los archivos .dat y .txt del sistema.
+Permite el acceso a las distintas ventanas de gestion de cuentas y clientes.
+*/
+
+
 //(*InternalHeaders(AppPrincipal)
 #include <wx/font.h>
 #include <wx/intl.h>

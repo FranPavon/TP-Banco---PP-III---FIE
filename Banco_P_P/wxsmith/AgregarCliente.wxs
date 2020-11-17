@@ -85,8 +85,8 @@
 			<pos>160,240</pos>
 		</object>
 		<object class="wxStaticText" name="ID_STATICTEXT6" variable="StaticText6" member="yes">
-			<label>Todos los campos son obligatorios</label>
-			<pos>128,280</pos>
+			<label>Ingrese el teléfono con el código de área sin el 0 y sin el 15.&#x0A;Todos los campos son obligatorios</label>
+			<pos>160,272</pos>
 			<font>
 				<size>10</size>
 				<style>normal</style>

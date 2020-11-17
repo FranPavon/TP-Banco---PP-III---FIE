@@ -59,7 +59,7 @@ AgregarCliente::AgregarCliente(wxWindow* parent,wxWindowID id,const wxPoint& pos
 	wxFont StaticText5Font(14,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText5->SetFont(StaticText5Font);
 	TextCtrlTelefono = new wxTextCtrl(this, ID_TEXTCTRL5, wxEmptyString, wxPoint(160,240), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
-	StaticText6 = new wxStaticText(this, ID_STATICTEXT6, _("Todos los campos son obligatorios"), wxPoint(128,280), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+	StaticText6 = new wxStaticText(this, ID_STATICTEXT6, _("Ingrese el teléfono con el código de área sin el 0 y sin el 15.\nTodos los campos son obligatorios"), wxPoint(160,272), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
 	wxFont StaticText6Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText6->SetFont(StaticText6Font);
 	ButtonAgregar = new wxButton(this, ID_BUTTONAGREGAR, _("Agregar"), wxPoint(80,328), wxSize(128,32), 0, wxDefaultValidator, _T("ID_BUTTONAGREGAR"));
@@ -88,6 +88,8 @@ AgregarCliente::~AgregarCliente()
 
 void AgregarCliente::OnButtonSalirClick(wxCommandEvent& event)
 {
+    //Creacion y escritura de los archivos .dat y .txt
+
     fstream arch;
     arch.open("Clientes.dat",ios::app|ios::binary);
     if(!arch)
@@ -126,59 +128,72 @@ void AgregarCliente::OnButtonSalirClick(wxCommandEvent& event)
 
 void AgregarCliente::OnButtonAgregarClick(wxCommandEvent& event)
 {
-    Cliente reg,cli;
-    fstream arch;
-    int d;
-    int tel;
-    wxString nom;
-    wxString ape;
-    wxString dir;
-
-    arch.open("Clientes.dat",ios::app|ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
-    }
-    arch.close();
-    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
-    }
+    // Ingreso de datos del nuevo cliente, con validación de DNI y Teléfono
     wxString str = TextCtrlDNI->GetValue();
-    d = wxAtoi(str);
-    nom = TextCtrlNombre->GetValue();
-    ape = TextCtrlApellido->GetValue();
-    dir = TextCtrlDireccion->GetValue();
-    str = TextCtrlTelefono->GetValue();
-    tel = wxAtoi(str);
-    cli.setDni(d);
-    cli.buscar(arch);
-    if(!arch.eof())
+    wxString str2 = TextCtrlTelefono->GetValue();
+
+    if (strlen(str)==8 && strlen(str2)==10)
     {
-        wxString msg = "Cliente existente, vaya a modificar cliente o revise el ingreso";
-        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        Cliente reg,cli;
+        fstream arch;
+        wxString nom;
+        wxString ape;
+        wxString dir;
+        int d;
+        int tel;
+
+        arch.open("Clientes.dat",ios::app|ios::binary);
+        if(!arch)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        }
+        arch.close();
+        arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+        if(!arch)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        }
+
+        d = wxAtoi(str);
+        nom = TextCtrlNombre->GetValue();
+        ape = TextCtrlApellido->GetValue();
+        dir = TextCtrlDireccion->GetValue();
+        tel = wxAtoi(str2);
+        cli.setDni(d);
+        cli.buscar(arch);
+        if(!arch.eof())
+        {
+            wxString msg = "Cliente existente, vaya a modificar cliente o revise el ingreso";
+            wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        }
+        else
+        {
+            arch.clear();
+            reg.setDni(d);
+            reg.setNombre(nom.ToStdString());
+            reg.setApellido(ape.ToStdString());
+            reg.setDireccion(dir.ToStdString());
+            reg.setTelefono(tel);
+            reg.setBorrado(0);
+            arch.seekp(0,ios::end);
+            arch.write(reinterpret_cast<const char *>(&reg),sizeof(Cliente));
+            wxString msg = "Alta exitosa";
+            wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        }
+        arch.close();
+        TextCtrlDNI->Clear();
+        TextCtrlNombre->Clear();
+        TextCtrlApellido->Clear();
+        TextCtrlDireccion->Clear();
+        TextCtrlTelefono->Clear();
     }
     else
     {
-        arch.clear();
-        reg.setDni(d);
-        reg.setNombre(nom.ToStdString());
-        reg.setApellido(ape.ToStdString());
-        reg.setDireccion(dir.ToStdString());
-        reg.setTelefono(tel);
-        reg.setBorrado(0);
-        arch.seekp(0,ios::end);
-        arch.write(reinterpret_cast<const char *>(&reg),sizeof(Cliente));
-        wxString msg = "Alta exitosa";
+        wxString msg = "Ingreso de DNI o teléfono incorrecto. Reintente.";
         wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        TextCtrlDNI->Clear();
+        TextCtrlTelefono->Clear();
     }
-     arch.close();
-     TextCtrlDNI->Clear();
-     TextCtrlNombre->Clear();
-     TextCtrlApellido->Clear();
-     TextCtrlDireccion->Clear();
-     TextCtrlTelefono->Clear();
 }

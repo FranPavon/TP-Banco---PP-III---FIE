@@ -110,6 +110,7 @@ Movimientos::~Movimientos()
 
 void Movimientos::OnButtonBuscarClick(wxCommandEvent& event)
 {
+    //Busca la cuenta. De existir visualiza las opciones para realizar los movimientos.
     Cuenta cuenta;
     fstream arch;
     int nc;
@@ -177,6 +178,7 @@ void Movimientos::OnButtonBuscarClick(wxCommandEvent& event)
 
 void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
 {
+    //Valido el monto del movimiento. De ser correcto se persiste el mismo en el archivo .dat
     Cuenta cuenta;
     Cliente cliente;
     Movimiento mov;
@@ -330,6 +332,7 @@ void Movimientos::OnButtonConfimarClick(wxCommandEvent& event)
 
 void Movimientos::OnButtonSalirClick(wxCommandEvent& event)
 {
+    //Genero el archivo .txt a partir de la información del archivo .dat
     Movimiento mov;
     fstream archMov;
     archMov.open("Movimientos.dat",ios::app|ios::binary);
@@ -367,5 +370,4 @@ void Movimientos::OnButtonSalirClick(wxCommandEvent& event)
     archTM.close();
     archMov.close();
     Close();
-
 }

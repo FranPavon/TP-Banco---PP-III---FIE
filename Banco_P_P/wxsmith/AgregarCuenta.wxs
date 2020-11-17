@@ -150,6 +150,14 @@
 		</object>
 		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrlDNI" member="yes">
 			<pos>80,104</pos>
+			<font>
+				<size>12</size>
+				<style>normal</style>
+				<weight>normal</weight>
+				<underlined>0</underlined>
+				<family>default</family>
+				<face>Arial</face>
+			</font>
 		</object>
 		<object class="wxButton" name="ID_BUTTON1" variable="ButtonBuscar" member="yes">
 			<label>Buscar</label>

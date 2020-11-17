@@ -62,7 +62,9 @@ BajaCliente::BajaCliente(wxWindow* parent,wxWindowID id,const wxPoint& pos,const
 	wxFont StaticText2Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText2->SetFont(StaticText2Font);
 	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL1, wxEmptyString, wxPoint(88,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(208,56), wxSize(112,24), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	wxFont TextCtrlDNIFont(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	TextCtrlDNI->SetFont(TextCtrlDNIFont);
+	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(208,56), wxSize(112,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	ButtonBuscar->SetFont(ButtonBuscarFont);
@@ -101,6 +103,9 @@ BajaCliente::~BajaCliente()
 
 void BajaCliente::OnButtonSalirClick(wxCommandEvent& event)
 {
+    /*Elimina el cliente del archivo .dat y .txt.
+    Utiliza el atributo borrado de la clase Cliente
+    */
     fstream arch;
     arch.open("Clientes.dat",ios::app|ios::binary);
     if(!arch)
@@ -161,9 +166,13 @@ void BajaCliente::OnButtonSalirClick(wxCommandEvent& event)
     Close ();
 }
 
-
 void BajaCliente::OnButtonBuscarClick(wxCommandEvent& event)
 {
+    /*
+    Verifica que el cliente exista.
+    Si no tiene cuentas abiertas carga la informacion para su baja.
+    Si tiene cuentas abriertas debe cerrarlas para ser dado de baja como cliente.
+    */
     Cliente reg,cli;
     Cuenta c;
     fstream arch;
@@ -253,6 +262,10 @@ void BajaCliente::OnButtonBuscarClick(wxCommandEvent& event)
 
 void BajaCliente::OnButtonConfirmarClick(wxCommandEvent& event)
 {
+    /*
+    Permite verificar visualmente la información del cliente para proceder a su baja.
+    Reestablece los valores de inicio.
+    */
     Cliente reg,cli;
     fstream arch;
     arch.open("Clientes.dat",ios::in|ios::out |ios::binary);

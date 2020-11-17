@@ -87,6 +87,8 @@ AgregarCuenta::AgregarCuenta(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	wxFont StaticText7Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
 	StaticText7->SetFont(StaticText7Font);
 	TextCtrlDNI = new wxTextCtrl(this, ID_TEXTCTRL2, wxEmptyString, wxPoint(80,104), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	wxFont TextCtrlDNIFont(12,wxFONTFAMILY_DEFAULT,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	TextCtrlDNI->SetFont(TextCtrlDNIFont);
 	ButtonBuscar = new wxButton(this, ID_BUTTON1, _("Buscar"), wxPoint(224,104), wxSize(120,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	ButtonBuscar->SetBackgroundColour(wxColour(0,128,128));
 	wxFont ButtonBuscarFont(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Agency FB"),wxFONTENCODING_DEFAULT);
@@ -107,6 +109,8 @@ AgregarCuenta::~AgregarCuenta()
 
 void AgregarCuenta::OnButtonSalirClick(wxCommandEvent& event)
 {
+    //Crea y escibe los archivos .dat y .txt de las cuentas corrientes y cajas de ahorro.
+
     Cuenta reg;
     fstream arch;
     arch.open("Cuentas.dat",ios::app|ios::binary);
@@ -141,7 +145,6 @@ void AgregarCuenta::OnButtonSalirClick(wxCommandEvent& event)
     }
     archcc<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
 
-
     arch.seekg(0);
     arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
     while(!arch.eof())
@@ -158,134 +161,151 @@ void AgregarCuenta::OnButtonSalirClick(wxCommandEvent& event)
     Close();
 }
 
-
 void AgregarCuenta::OnButtonBuscarClick(wxCommandEvent& event)
 {
-    Cliente cli;
-    fstream arch;
-    int d;
-
-    arch.open("Cuentas.dat",ios::app|ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
-    }
-    arch.close();
-    arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
-    }
-
-    ofstream archca;
-    archca.open("Cajas_de_Ahorro.txt",ios::out);
-    if(!archca)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
-    }
-    archca<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
-
-    ofstream archcc;
-    archcc.open("Cuentas_Corrientes.txt",ios::out);
-    if(!archca)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
-    }
-    archcc<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
-
+    //Busca el DNI del cliente. De ser correcto, visualiza las opciones de creación de cuenta
     wxString str = TextCtrlDNI->GetValue();
-    d = wxAtoi(str);
-    cli.setDni(d);
-    cli.buscar(arch);
-    if(!arch.eof())
+    if (strlen(str)==8)
     {
+        Cliente cli;
+        fstream arch;
+        int d;
 
-        StaticText1->Show();
-        StaticText2->Show(); //nro cuenta
-        StaticText3->Show();
-        StaticText4->Show();
-        StaticText5->Show(); //dni
-        StaticText6->Show();
-        Choice1->Show();
-        TextCtrlSaldo->Show();
-        ButtonConfirmar->Show();
-        ButtonBuscar->Hide();
-        TextCtrlDNI->Hide();
-        StaticText7->Hide();
-        StaticText5->SetLabel(str);
+        arch.open("Cuentas.dat",ios::app|ios::binary);
+        if(!arch)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+        }
+        arch.close();
+        arch.open("Clientes.dat",ios::in|ios::out |ios::binary);
+        if(!arch)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de cliente - Banco P&P"));
+        }
 
-        srand((unsigned) time(0));
-        int nc = 1 + (rand() % 10000);
-        string ncs = to_string(nc);
-        StaticText2->SetLabel(ncs);
+        ofstream archca;
+        archca.open("Cajas_de_Ahorro.txt",ios::out);
+        if(!archca)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+        }
+        archca<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+        ofstream archcc;
+        archcc.open("Cuentas_Corrientes.txt",ios::out);
+        if(!archca)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de Cuentas - Banco P&P"));
+        }
+        archcc<<left<<setw(15)<<"Nro de Cuenta"<<setw(15)<<"DNI Titular"<<setw(15)<<"Saldo"<<setw(15)<<"Interes"<<endl;
+
+        d = wxAtoi(str);
+        cli.setDni(d);
+        cli.buscar(arch);
+        if(!arch.eof())
+        {
+            StaticText1->Show();
+            StaticText2->Show(); //nro cuenta
+            StaticText3->Show();
+            StaticText4->Show();
+            StaticText5->Show(); //dni
+            StaticText6->Show();
+            Choice1->Show();
+            TextCtrlSaldo->Show();
+            ButtonConfirmar->Show();
+            ButtonBuscar->Hide();
+            TextCtrlDNI->Hide();
+            StaticText7->Hide();
+            StaticText5->SetLabel(str);
+
+            srand((unsigned) time(0));
+            int nc = 1 + (rand() % 10000);
+            string ncs = to_string(nc);
+            StaticText2->SetLabel(ncs);
+        }
+        else
+        {
+            wxString msg = "Cliente inexistente, vaya a agregar cliente o reintente con otro DNI.";
+            wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
+        }
+        arch.close();
     }
     else
     {
-        wxString msg = "Cliente inexistente, vaya a agregar cliente o revise el ingreso";
+        wxString msg = "Ingreso de DNI incorrecto, debe tener 8 números. Reintente.";
         wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
     }
-    arch.close();
+
     TextCtrlDNI->Clear();
 }
 
 void AgregarCuenta::OnButtonConfirmarClick(wxCommandEvent& event)
 {
-    Cuenta c;
+    //Controla el saldo ingresado. De ser correcto, persiste la nueva cuenta en el archivo .dat
     double s;
-    bool t;
-    int nc;
-    int d;
-    fstream arch;
-    arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
-    if(!arch)
-    {
-        wxString msg = "Error de apertura de archivo";
-        wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
-    }
-
     wxString str = TextCtrlSaldo->GetValue();
     s = wxAtof(str);
-    t = (Choice1->GetSelection()==0)?true:false;
-    str = StaticText5->GetLabel();
-    d = wxAtoi (str);
-    str = StaticText2->GetLabel();
-    nc = wxAtoi (str);
-
-    c.setDniTitular(d);
-    c.setTipo(t);
-    c.setNroCuenta(nc);
-    c.setSaldo(s);
-
-    c.buscar(arch);
-    srand((unsigned) time(0));
-    while (!arch.eof())
+    if (s>0)
     {
-        nc = 1 + (rand() % 10000);
+        Cuenta c;
+        bool t;
+        int nc;
+        int d;
+        fstream arch;
+        arch.open("Cuentas.dat",ios::in|ios::out |ios::binary);
+        if(!arch)
+        {
+            wxString msg = "Error de apertura de archivo";
+            wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
+        }
+
+        t = (Choice1->GetSelection()==0)?true:false;
+        str = StaticText5->GetLabel();
+        d = wxAtoi (str);
+        str = StaticText2->GetLabel();
+        nc = wxAtoi (str);
+
+        c.setDniTitular(d);
+        c.setTipo(t);
         c.setNroCuenta(nc);
+        c.setSaldo(s);
+
         c.buscar(arch);
+        srand((unsigned) time(0));
+        while (!arch.eof())
+        {
+            nc = 1 + (rand() % 10000);
+            c.setNroCuenta(nc);
+            c.buscar(arch);
+        }
+        c.setBorrado(false);
+        arch.clear();
+        arch.seekp(0,ios::end);
+        arch.write(reinterpret_cast<const char *>(&c),sizeof(Cuenta));
+        wxString msg = "Alta exitosa";
+        wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
+        StaticText1->Hide();
+        StaticText2->Hide(); //nro cuenta
+        StaticText3->Hide();
+        StaticText4->Hide();
+        StaticText5->Hide(); //dni
+        StaticText6->Hide();
+        Choice1->Hide();
+        TextCtrlSaldo->Hide();
+        ButtonConfirmar->Hide();
+        ButtonBuscar->Show();
+        TextCtrlDNI->Show();
+        StaticText7->Show();
+        arch.close();
     }
-    c.setBorrado(false);
-    arch.clear();
-    arch.seekp(0,ios::end);
-    arch.write(reinterpret_cast<const char *>(&c),sizeof(Cuenta));
-    wxString msg = "Alta exitosa";
-    wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
-    StaticText1->Hide();
-    StaticText2->Hide(); //nro cuenta
-    StaticText3->Hide();
-    StaticText4->Hide();
-    StaticText5->Hide(); //dni
-    StaticText6->Hide();
-    Choice1->Hide();
+    else
+    {
+        wxString msg = "El saldo debe ser mayor a 0, reintente";
+        wxMessageBox(msg, _("Alta de cuenta - Banco P&P"));
+    }
     TextCtrlSaldo->Clear();
-    TextCtrlSaldo->Hide();
-    ButtonConfirmar->Hide();
-    ButtonBuscar->Show();
-    TextCtrlDNI->Show();
-    StaticText7->Show();
-    arch.close();
 }

@@ -1,2 +1,1 @@
 Nro de Cuenta  DNI Titular    Saldo          
-8204           32333222       -231.525       
