@@ -1,2 +1,3 @@
 Nro de Cuenta  DNI Titular    Tipo de cuenta 
-8204           32333222       Cuenta Corriente
+8129           32333222       Caja de Ahorro 
+8168           32333222       Cuenta Corriente

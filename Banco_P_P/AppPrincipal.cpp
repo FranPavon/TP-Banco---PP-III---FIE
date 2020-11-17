@@ -281,9 +281,9 @@ void AppPrincipal::OnButtonCAClick(wxCommandEvent& event)
     while(!arch.eof())
     {
         if (reg.getTipo())
-            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
         else
-            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
         arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
     }
     archca.close();
@@ -336,9 +336,9 @@ void AppPrincipal::OnButtonCCClick(wxCommandEvent& event)
     while(!arch.eof())
     {
         if (reg.getTipo())
-            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
         else
-            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
         arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
     }
     archca.close();
@@ -383,7 +383,7 @@ void AppPrincipal::OnButtonMovClick(wxCommandEvent& event)
     {
         const char * TC = (mov.getTipoCuenta())?"CA":"CC";
         const char * TM = (mov.getTipoMovimiento())?"E":"D";
-        archTM<<left<<setw(15)<<mov.getNroCuenta()<<setw(15)<<mov.getDniTitular()<<setw(15)<<mov.getApellido()<<setw(15)<<mov.getNombre()<<setw(8)<<TC<<setw(8)<<TM<<setw(8)<<mov.getMonto()<<endl;
+        archTM<<left<<setw(15)<<mov.getNroCuenta()<<setw(15)<<mov.getDniTitular()<<setw(15)<<mov.getApellido()<<setw(15)<<mov.getNombre()<<setw(8)<<TC<<setw(8)<<TM<<setw(8)<<fixed<<setprecision(2)<<mov.getMonto()<<endl;
         archMov.read(reinterpret_cast<char *>(&mov),sizeof(Movimiento));
     }
     archTM.close();
@@ -476,7 +476,7 @@ void AppPrincipal::OnButtonSAcreedorClick(wxCommandEvent& event)
         if (reg.getSaldo()>0)
         {
             const char * TC= (reg.getTipo())?"Caja de Ahorro":"Cuenta Corriente";
-            archT<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(20)<<TC<<setw(20)<<reg.getSaldo()<<endl;
+            archT<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(20)<<TC<<setw(20)<<fixed<<setprecision(2)<<reg.getSaldo()<<endl;
         }
         arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
     }
@@ -520,7 +520,7 @@ void AppPrincipal::OnButtonSDeudorClick(wxCommandEvent& event)
     while(!arch.eof())
     {
         if (reg.getSaldo()<0 && !reg.getTipo())
-            archT<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<endl;
+            archT<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<endl;
         arch.read(reinterpret_cast<char *>(&reg),sizeof(Cuenta));
     }
     archT.close();
@@ -576,9 +576,9 @@ void AppPrincipal::OnButtonCalcInteresesClick(wxCommandEvent& event)
         double s = reg.getSaldo()*reg.getInteres();
         reg.setSaldo(s);
         if (reg.getTipo())
-            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+            archca<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
         else
-            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
+            archcc<<left<<setw(15)<<reg.getNroCuenta()<<setw(15)<<reg.getDniTitular()<<setw(15)<<fixed<<setprecision(2)<<reg.getSaldo()<<setw(15)<<reg.getInteres()<<endl;
 
         arch.seekg(-sizeof(Cuenta),ios::cur);
         arch.write(reinterpret_cast<const char *>(&reg),sizeof(Cuenta));

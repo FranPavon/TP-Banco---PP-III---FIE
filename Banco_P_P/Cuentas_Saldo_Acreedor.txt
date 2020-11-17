@@ -1,3 +1,3 @@
 Nro de Cuenta  DNI Titular    Tipo de cuenta      Saldo               
-8129           32333222       Caja de Ahorro      0.000421143         
-8168           32333222       Cuenta Corriente    115.762             
+8129           32333222       Caja de Ahorro      1.10                
+9737           37333222       Caja de Ahorro      115.76              
