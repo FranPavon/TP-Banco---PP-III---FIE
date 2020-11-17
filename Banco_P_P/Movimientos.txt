@@ -7,3 +7,4 @@ Nro Cuenta     DNI            Apellido       Nombre         T Cta   T Op    Mont
 8168           32333222       Lopez          Fran           CC      E       115.762 
 8204           32333222       Lopez          Fran           CC      D       231.52  
 8129           32333222       Lopez          Fran           CA      D       1       
+1775           31720668       patricelli     patry          CA      E       20000   
