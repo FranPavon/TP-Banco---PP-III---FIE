@@ -1,3 +1,1 @@
 Nro de Cuenta  DNI Titular    Tipo de cuenta 
-8168           32333222       Cuenta Corriente
-1775           31720668       Caja de Ahorro 

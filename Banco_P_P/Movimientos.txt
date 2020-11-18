@@ -1,10 +1,6 @@
 Nro Cuenta     DNI            Apellido       Nombre         T Cta   T Op    Monto   
-6068           32333222       Lopez          Fran           CC      E       900     
-8204           32333222       Lopez          Fran           CC      E       1000    
-9555           36333222       Ficticio       Cliente        CC      D       100     
-9497           36333222       Ficticio       Cliente        CC      E       1000    
-8129           32333222       Lopez          Fran           CA      E       578.812 
-8168           32333222       Lopez          Fran           CC      E       115.762 
-8204           32333222       Lopez          Fran           CC      D       231.52  
-8129           32333222       Lopez          Fran           CA      D       1       
-1775           31720668       patricelli     patry          CA      E       20000   
+5329           11333222       Schamberger    Edith          CC      E       2500.00 
+5522           33333222       Pita           Carlos         CA      E       500.00  
+5636           31720668       Padre del CieloHoratius       CA      D       4780.00 
+4074           55666777       Lopez          Pepe           CC      E       200.00  
+5564           33333222       Pita           Carlos         CA      E       1500.00 
